@@ -1,11 +1,24 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <TopHeader id="header"/>
+    <NavBar id="navbar"/>
+    <router-view/>
+    <TopFooter/>
+  </div>
 </template>
-
+<script>
+import NavBar from './components/NavBar.vue'
+import TopFooter from './components/TopFooter.vue'
+import TopHeader from './components/TopHeader.vue'
+export default {
+  name: 'App',
+  components: {
+    NavBar,
+    TopFooter,
+    TopHeader
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -13,18 +26,15 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  scroll-behavior: smooth;
+
 }
 
-nav {
-  padding: 30px;
+
+#navbar{
+  position: sticky top;
+  z-index: 1;
+
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
