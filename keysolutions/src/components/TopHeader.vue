@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header >
     <div class="container">
       <div class="row align-items-center">
         <div class="col-sm-4">
@@ -28,7 +28,7 @@ export default {
 header {
   background-color: darkgrey;
   padding: 0.5px 0px;
-  position:sticky;
+
 }
 
 header p {

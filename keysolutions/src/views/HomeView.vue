@@ -133,15 +133,28 @@
 <script>
 export default {
   name: 'HomeView',
-   mounted() {
+  mounted() {
     // Set a timer for the carousel to automatically switch slides every 5 seconds
-    setInterval(() => {
+    this.timer = setInterval(() => {
       const carousel = document.querySelector('#carouselExampleCaptions');
       const activeSlide = carousel.querySelector('.carousel-item.active');
       const nextSlide = activeSlide.nextElementSibling || carousel.querySelector('.carousel-item:first-child');
       const nextIndex = Array.from(carousel.querySelectorAll('.carousel-item')).indexOf(nextSlide);
       carousel.querySelector('.carousel-indicators [data-bs-target="#carouselExampleCaptions"][data-bs-slide-to="' + nextIndex + '"]').click();
-    }, 5000);
+    }, 7000);
+    // Add an event listener to stop the timer when the user navigates away from the page
+    window.addEventListener('beforeunload', this.clearTimer);
+  },
+  beforeUnmount() {
+    // Clear the timer when the component is destroyed
+    this.clearTimer();
+    // Remove the event listener when the component is destroyed
+    window.removeEventListener('beforeunload', this.clearTimer);
+  },
+  methods: {
+    clearTimer() {
+      clearInterval(this.timer);
+    }
   }
 }
 </script>
@@ -240,12 +253,21 @@ export default {
     min-width: 100px;
     max-width: 200px;
   }
+
+  .d-block{
+    min-width: 100px;
+    max-width: 200px;
+  }
 }
 
 /* Set a minimum and maximum width for the images on medium screens */
 @media (min-width: 576px) and (max-width: 768px) {
   .card-img-top {
     min-width: 150px;
+    max-width: 250px;
+  }
+  .d-block{
+    min-width: 120px;
     max-width: 250px;
   }
 }
@@ -255,6 +277,10 @@ export default {
   .card-img-top {
     min-width: 200px;
     max-width: 400px;
+  }
+  .d-block{
+    min-width: 300px;
+    max-width: 500px;
   }
 }
 </style>
