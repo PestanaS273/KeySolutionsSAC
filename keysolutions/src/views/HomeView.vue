@@ -7,25 +7,28 @@
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active ">
-          <img src="../assets/tarjeta.png" class="d-block w-80 mx-auto" alt="...">
+        <div class="carousel-item active " id="carousel1">
+          <router-link to="/tarjetas">
+          <img src="../assets/tarjetascarousel.png" id="carousel-1-img" class="d-block w-80 mx-auto" alt="Rarjetas de credito">
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5><b>Tarjetas con Chip Contact Less</b></h5>
+            <p>Creación y personalización de tarjetas para bancos, transporte, hoteles.</p>
+          </div>
+        </router-link>
+        </div>
+        <div class="carousel-item" id="carousel2" >
+          <img src="../assets/papeltermico.png" id="carousel-2-img" class="d-block w-80 mx-auto" alt="Rollos Papel termico">
+          <div class="carousel-caption d-none d-md-block">
+            <h5><b>Rollos Papel Termico</b></h5>
+            <p>Papel termico y autocopiativo para facturacion e impresión.</p>
+            <p>Papel termico 80x80</p>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="../assets/tarjeta.png" class="d-block w-80 mx-auto" alt="...">
+        <div class="carousel-item" id="carousel3">
+          <img src="../assets/mealer.png" id="carousel-3-img" class="d-block w-80 mx-auto" alt="Sobres Pin Mailer">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="../assets/tarjeta.png" class="d-block w-80 mx-auto" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5><b>Sobres Pin Mailer</b></h5>
+            <p>Formatos Pre-impresos, Formas Continuas, Sobres de seguridad Pin Mailer</p>
           </div>
         </div>
       </div>
@@ -38,19 +41,22 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+
+
     <div class="container">
       <div class="below-carousel">
         <div class="row">
-          <div class="col-md-12">
-            <h2><b>Fabricante de Tarjetas PVC con chip...</b></h2>
-            <h5>Fabricacion y personalizacion de tarjetas. Tarjetas contact less y magneticas para transpote, hoteles, monederos, debito / crédito. </h5>
-            
+          <div class="col-md-9 mx-auto">
+            <h2><b>Key Solutions S.A.C : </b><br><br><i>Importación exportación de insumos especializados para el sector financiero y empresarial</i></h2>
+            <br>
+            <h5>Ofrecemos servicios de fabricación y personalización de tarjetas con chip, rollos termicos de diferentes medidas, formatos pre impresos y sobres de seguridad.</h5>
+            <br>
           </div>
         </div>
         <br><br>
         <div class="row">
           <div class="col-md-6">
-            <h3>Seguridad</h3>
+            <h3><i>Seguridad</i></h3>
             <ul class="calidades">
               <li>Comprobamos la calidad de nuestros chips antes de entrega</li>
               <li>Protocolos de seguridad</li>
@@ -58,7 +64,7 @@
             </ul>
           </div>
           <div class="col-md-6">
-            <h3>Calidad</h3>
+            <h3><i>Calidad</i></h3>
             <ul class="calidades">
               <li>Sin intermediarios</li>
               <li>Materiales de calidad asegurando sus años de vida</li>
@@ -68,69 +74,93 @@
         </div>
       </div>
       <br><br>
-      
-      
-      
-      <div class="product-title">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Nuestros productos :</h2>
+      <div id="productos">
+        <div class="product-title">
+          <div class="row">
+            <div class="col-md-12">
+              <h2><b>Nuestros Productos : </b></h2>
+            </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="card mb-3">
-        <router-link to="/tarjetas" class="card-link">
-        <img src="../assets/tarjeta.png" class="card-img-top mx-auto" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        <div class="card mb-3 mx-auto" style="width: 70%;">
+          <router-link to="/tarjetas" class="card-link">
+          <img src="../assets/varias-tarjetas.avif" class="card-img-top mx-auto" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>Tarjetas Débito Crédito</b></h5>
+            <p class="card-text">Fabricación y personalización para el sector financiero <br>
+            <small class="text-body-secondary">VISA | MASTERCARD | DINNER CLUB</small></p>
+          </div>
+        </router-link>
         </div>
-      </router-link>
-      </div>
-      
+        
 
-      <div class="card mb-3">
-        <router-link to="/tarjetas" class="card-link">
-        <img src="../assets/tarjeta.png" class="card-img-top mx-auto" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        
+
+        <div class="card mb-3 mx-auto" style="width: 70%;">
+          <router-link to="/tarjetas" class="card-link">
+          <img src="../assets/tarjeta-hotel.png" class="card-img-top mx-auto" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>  Tarjetas de Identificación</b></h5>
+            <p class="card-text">Tarjetas personalizables para identificación con tecnología Contact Less, banda Magnetica y chip</p>
+            <p class="card-text"><small class="text-body-secondary">Hoteles | Empresas | Transporte | Sistemas educativos </small></p>
+          </div>
+        </router-link>
         </div>
-      </router-link>
+
+        <div class="card mb-3 mx-auto" style="width: 70%;">
+          <router-link to="/tarjetas" class="card-link">
+          <img src="../assets/rollos.png" class="card-img-top mx-auto" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>Papel termico y autocopiativo</b></h5>
+            <p class="card-text">Diferentes medidas de rollo para impresión electronica</p>
+            <p class="card-text"><small class="text-body-secondary">Rollos 80x80</small></p>
+          </div>
+        </router-link>
+        </div>
+
+        <div class="card mb-3 mx-auto" style="width: 70%;">
+          <router-link to="/tarjetas" class="card-link">
+          <img src="../assets/pinmailer.jpeg" class="card-img-top mx-auto" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>Formatos Pre-impresos y Sobres de Seguridad</b></h5>
+            <p class="card-text">Formatos pre impresos y formas continuas para el sector financiero. Sobres de seguridad PIN Mailer de protección para inforamción sensible</p>
+            <p class="card-text"><small class="text-body-secondary"></small></p>
+          </div>
+        </router-link>
+        </div>
       </div>
 
-      <div class="card mb-3">
-        <router-link to="/tarjetas" class="card-link">
-        <img src="../assets/tarjeta.png" class="card-img-top mx-auto" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-        </div>
-      </router-link>
-      </div>
 
-      <div class="card mb-3">
-        <router-link to="/tarjetas" class="card-link">
-        <img src="../assets/tarjeta.png" class="card-img-top mx-auto" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      <br><br><hr><br><br>
+        <div class="clientes">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 style="color: black;">Clientes que confian en Key Solutions S.A.C:</h2>
+              <div class="logos">
+                <img src="../assets/redEnlace.png" alt="Logo 1">
+                <img src="../assets/bancoBisa.png" alt="Logo 2">
+                <img src="../assets/bancoUnidad.png" alt="Logo 3">
+                <img src="../assets/ecofuturo.png" alt="Logo 4">
+                <img src="../assets/bancoEconomico.png" alt="Logo 5">
+                <img src="../assets/bancoFie.png" alt="Logo 6">
+                <img src="../assets/bancoSol.png" alt="Logo 7">
+                <img src="../assets/bancoUnion.png" alt="Logo 8">
+                <img src="../assets/bnb.png" alt="Logo 9">
+                <img src="../assets/jesusCooperativa.png" alt="Logo 10">
+                <img src="../assets/serviRed.png" alt="Logo 11">
+              </div>
+            </div>
+          </div>
         </div>
-      </router-link>
-      </div>
-      
 
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HomeView',
   mounted() {
@@ -160,12 +190,8 @@ export default {
 </script>
 
 <style scoped>
-.home {
   /* Add some margin to the top and bottom of the carousel */
-  .carousel {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+
 
   /* Add some margin to the top and bottom of the text section */
   .text-section {
@@ -173,6 +199,27 @@ export default {
     margin-bottom: 20px;
   }
 
+
+  .clientes {
+
+  
+  padding: 20px;
+}
+  .logos {
+  display: flex; /* use flexbox to align the logos */
+  flex-wrap: wrap; /* allow the logos to wrap to the next line */
+  justify-content: center; /* center the logos horizontally */
+  align-items: center; /* center the logos vertically */
+}
+
+
+
+.logos img {
+  max-width: 150px; /* set the maximum width of the logos to 100% */
+  max-height: 150px; /* set the maximum height of the logos to 100% */
+  margin: 10px; /* add some margin around the logos */
+  /* filter: grayscale(100%); */
+}
   
 
   /* Add some margin to the top and bottom of the columns */
@@ -190,11 +237,13 @@ export default {
 
   /* Add some margin to the top and bottom of the cards */
   .card {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out;
-    padding-top: 100px;
+    padding-top: 30px;
+    font-size: 18px;
+    background-color: #f1f7ff;
 
   }
 
@@ -225,27 +274,45 @@ export default {
 }
 
 .carousel{
-  background-color: #212529;
   margin-top: 0px;
   margin-bottom: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
+
 .below-carousel{
-  /* background-image: url("../assets/backgroundgrey.jpeg"); */
-  background-size: cover;
+
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  background: lightgrey;
 }
 
 .product-title{
   margin-bottom: 0px;
 }
 
+.carousel-item h5,
+.carousel-item h5 b,
+.carousel-item p {
+  font-size: 28px; /* change the font size */
+  color: #ffffff; /* change the text color */
+  font-family: 'Open Sans', sans-serif; /* change the font family */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* add a shadow to the text */
+
 }
+
+
+/* .card-text{
+  font-size: 18px;
+  background-color: #4b6b9e;
+  color: white;
+} */
+
+
+
 
 /* Set a minimum and maximum width for the images on small screens */
 @media (max-width: 576px) {
@@ -258,6 +325,24 @@ export default {
     min-width: 100px;
     max-width: 200px;
   }
+
+#carousel-1-img{
+  min-width: 100%;
+  min-height: max-content;
+}
+
+
+
+#carousel-2-img{
+  min-width: 100%;
+  min-height: max-content;
+}
+
+#carousel-3-img{
+  min-width: 100%;
+  min-height: max-content;
+  max-height: 400px;
+}
 }
 
 /* Set a minimum and maximum width for the images on medium screens */
@@ -270,6 +355,24 @@ export default {
     min-width: 120px;
     max-width: 250px;
   }
+
+  #carousel-1-img{
+  min-width: 100%;
+  min-height: max-content;
+}
+
+
+#carousel-2-img{
+  min-width: 100%;
+  min-height: max-content;
+}
+
+#carousel-3-img{
+  min-width: 100%;
+  min-height: max-content;
+  max-height: 400px;
+}
+
 }
 
 /* Set a minimum and maximum width for the images on large screens */
@@ -280,7 +383,27 @@ export default {
   }
   .d-block{
     min-width: 300px;
-    max-width: 500px;
+    max-width: 400px;
   }
+
+#carousel-1-img{
+  min-width: 100%;
+  min-height: max-content;
+  max-height: 500px;
+}
+
+#carousel-2-img{
+  min-width: 100%;
+  min-height: max-content;
+  max-height: 500px;
+}
+
+#carousel-3-img{
+  min-width: 100%;
+  min-height: max-content;
+  max-height: 500px;
+}
+
+
 }
 </style>

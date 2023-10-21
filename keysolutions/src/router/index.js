@@ -7,35 +7,56 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      cache: true // enable caching for this route
+    }
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    meta: {
+      cache: false // disable caching for this route
+    }
   },
-
   {
     path: '/contact',
     name: 'contact',
-    component: ContactView
+    component: ContactView,
+    meta: {
+      cache: true // enable caching for this route
+    }
   },
-
   {
     path: '/products',
     name: 'products',
-    component: ProductsView
-  },
-  
-
+    component: ProductsView,
+    meta: {
+      cache: true // enable caching for this route
+    }
+  }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.cache) {
+    const cachedData = sessionStorage.getItem(to.path)
+    if (cachedData) {
+      to.params.cachedData = JSON.parse(cachedData)
+    }
+  }
+  next()
+})
+
+router.afterEach((to) => {
+  if (to.meta.cache && !to.params.cachedData) {
+    sessionStorage.setItem(to.path, JSON.stringify(to.matched[0].instances.default.$data))
+  }
 })
 
 export default router

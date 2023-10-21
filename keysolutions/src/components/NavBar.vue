@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" :class="{ 'navbar-smaller': isNavbarSmaller }">
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-      <router-link to="/" class="navbar-brand"><h2><b>Key Solutions S.A.C</b></h2></router-link>
+      <router-link to="/" class="navbar-brand"><img src="../assets/logoKey.png" alt="Logo Key Solutions S.A.C" id="logoKey"></router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,43 +35,18 @@
 <script>
 export default {
   name: 'NavBar',
-  data() {
-    return {
-      isNavbarSmaller: false,
-      lastScrollPosition: 0
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      const currentScrollPosition = window.scrollY;
-      if (currentScrollPosition > this.lastScrollPosition) {
-        this.isNavbarSmaller = true;
-      } else {
-        this.isNavbarSmaller = false;
-      }
-      this.lastScrollPosition = currentScrollPosition;
-    }
-  }
+
 }
 </script>
 
 <style scoped>
 /* Add your header styles here */
 .navbar {
-  transition: all 0.3s ease-in-out;
+background-color: #fff;
+
 }
 
-.navbar-smaller {
-  height: 60px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
+
 .btn-outline-success{
   color: #fff;
   background-color: grey;
@@ -121,4 +96,36 @@ export default {
 
 }
 
+
+/* Set a minimum and maximum width for the images on small screens */
+
+@media (max-width: 576px) {
+
+  #logoKey{
+    width: 200px;
+    height: 60px;
+  }
+}
+
+
+
+/* Set a minimum and maximum width for the images on medium screens */
+@media (min-width: 576px) and (max-width: 768px) {
+  #logoKey{
+    width: 200px;
+    height: 60px;
+  }
+}
+
+
+/* Set a minimum and maximum width for the images on large screens */
+@media (min-width: 768px) {
+  #logoKey{
+    width: 200px;
+    height: 60px;
+  }
+}
+
+
 </style>
+

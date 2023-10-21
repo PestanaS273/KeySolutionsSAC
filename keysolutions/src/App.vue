@@ -27,13 +27,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   scroll-behavior: smooth;
-
 }
 
 
 #navbar{
-  position: sticky top;
-  z-index: 1;
+  z-index: 2;
+
 
 }
 
