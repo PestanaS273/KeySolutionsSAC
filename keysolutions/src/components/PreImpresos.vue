@@ -1,5 +1,5 @@
 <template>
-    <div class="Rollos">
+    <div class="sobres">
       <div class="row">
         <div class="col-md-5 mx-auto" v-for="card in data" :key="card.title">
           <div class="card">
@@ -18,7 +18,7 @@
   
   <script>
   export default {
-    name: 'RollosComponent',
+    name: 'SobresComponent',
     props: {
       data: {
         type: Array,

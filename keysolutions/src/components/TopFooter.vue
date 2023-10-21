@@ -5,17 +5,17 @@
           <div class="col-md-4">
             <h5>Key Solutions S.A.C</h5>
             <hr>
-            <p>Key Solutions es una empresa situada en... que se dedica a... con la finalidad de brindar mejor calidad...</p>
+            <p>Key Solutions es una empresa situada en Lima - PERU que se dedica a la importación exportación de insumos especializados en el sector financiero con la finalidad de brindar soluciones con la mejor calidad a nuestros clientes</p>
           </div>
           <div class="col-md-4">
             <h5>Nuestro Portafolio</h5>
             <hr>
             <ul>
-              <li><router-link to="#">Tarjetas Personalizadas</router-link></li>
-              <li><router-link to="#">Tarjetas Neutras</router-link></li>
-              <li><router-link to="#">Tarjetas Con panel Rasca</router-link></li>
-              <li><router-link to="#">Tarjeta LLavero</router-link></li>
-              <li><router-link to="#">Tarjeta con etiqueta removible</router-link></li>
+              <li><router-link to="/tarjetas-banca">Tarjetas Personalizadas</router-link></li>
+              <li><router-link to="/tarjetas-banca">Tarjetas Neutras</router-link></li>
+              <li><router-link to="/tarjetas-empresa">Tarjetas Con panel Rasca</router-link></li>
+              <li><router-link to="/tarjetas-empresa">Tarjeta LLavero</router-link></li>
+              <li><router-link to="/tarjetas-banca">Tarjeta con etiqueta removible</router-link></li>
             </ul>
           </div>
           <div class="col-md-4">
@@ -23,13 +23,20 @@
             <hr>
             <ul>
                 <li><router-link to="/about">Nosotros</router-link></li>
-                <li>(+51) 123-456-789</li>
-                <li>ejemplo@gmail.com</li>
+                <li>(+51) 949 284 735</li>
+                <li>rpestana@keysolutionssac.com</li>
                 <li>fax</li>
-                <li>Direccion...</li>
+                <li>Direccion</li>
             </ul>
           </div>
         </div>
+        <div class="row text-end">
+        <div class="col-md-12">
+          <div class="copyright" style="font-size: smaller;">
+            © Todos los derechos reservados | Diseñado y desarrollado por <a href="https://www.linkedin.com/in/pestanasm/" target="_blank" style="text-decoration: underline;">Sebastian Pestana</a>
+          </div>
+        </div>
+      </div>
       </div>
     </footer>
   </template>

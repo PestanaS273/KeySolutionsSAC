@@ -8,28 +8,32 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active " id="carousel1">
-          <router-link to="/tarjetas">
+          <router-link to="/tarjetas-banca">
           <img src="../assets/tarjetascarousel.png" id="carousel-1-img" class="d-block w-80 mx-auto" alt="Rarjetas de credito">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-md-block">
             <h5><b>Tarjetas con Chip Contact Less</b></h5>
             <p>Creación y personalización de tarjetas para bancos, transporte, hoteles.</p>
           </div>
         </router-link>
         </div>
         <div class="carousel-item" id="carousel2" >
+          <router-link to="/rollos">
           <img src="../assets/papeltermico.png" id="carousel-2-img" class="d-block w-80 mx-auto" alt="Rollos Papel termico">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-md-block">
             <h5><b>Rollos Papel Termico</b></h5>
             <p>Papel termico y autocopiativo para facturacion e impresión.</p>
             <p>Papel termico 80x80</p>
           </div>
+        </router-link>
         </div>
         <div class="carousel-item" id="carousel3">
+          <router-link to="/sobres-preimpresos">
           <img src="../assets/mealer.png" id="carousel-3-img" class="d-block w-80 mx-auto" alt="Sobres Pin Mailer">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-md-block">
             <h5><b>Sobres Pin Mailer</b></h5>
             <p>Formatos Pre-impresos, Formas Continuas, Sobres de seguridad Pin Mailer</p>
           </div>
+        </router-link>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -85,7 +89,7 @@
 
 
         <div class="card mb-3 mx-auto" style="width: 70%;">
-          <router-link to="/tarjetas" class="card-link">
+          <router-link to="/tarjetas-banca" class="card-link">
           <img src="../assets/varias-tarjetas.avif" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
             <h5 class="card-title"><b>Tarjetas Débito Crédito</b></h5>
@@ -99,7 +103,7 @@
         
 
         <div class="card mb-3 mx-auto" style="width: 70%;">
-          <router-link to="/tarjetas" class="card-link">
+          <router-link to="/tarjetas-empresa" class="card-link">
           <img src="../assets/tarjeta-hotel.png" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
             <h5 class="card-title"><b>  Tarjetas de Identificación</b></h5>
@@ -110,7 +114,7 @@
         </div>
 
         <div class="card mb-3 mx-auto" style="width: 70%;">
-          <router-link to="/tarjetas" class="card-link">
+          <router-link to="/rollos" class="card-link">
           <img src="../assets/rollos.png" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
             <h5 class="card-title"><b>Papel termico y autocopiativo</b></h5>
@@ -121,7 +125,7 @@
         </div>
 
         <div class="card mb-3 mx-auto" style="width: 70%;">
-          <router-link to="/tarjetas" class="card-link">
+          <router-link to="/sobres-preimpresos" class="card-link">
           <img src="../assets/pinmailer.jpeg" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
             <h5 class="card-title"><b>Formatos Pre-impresos y Sobres de Seguridad</b></h5>
@@ -326,22 +330,24 @@ export default {
     max-width: 200px;
   }
 
-#carousel-1-img{
-  min-width: 100%;
-  min-height: max-content;
+  #carousel-1-img{
+  min-width: max-content;
+  min-height:300px;
+  max-height: 300px;
 }
 
 
 
 #carousel-2-img{
-  min-width: 100%;
+  min-width: max-content;
   min-height: max-content;
+  max-height: 300px;
 }
 
 #carousel-3-img{
-  min-width: 100%;
-  min-height: max-content;
-  max-height: 400px;
+  min-width: max-content;
+  min-height: 300px;
+  max-height: 300px;
 }
 }
 
@@ -357,21 +363,25 @@ export default {
   }
 
   #carousel-1-img{
-  min-width: 100%;
-  min-height: max-content;
+  min-width: max-content;
+  min-height:max-content;
+  max-height: 300px;
 }
+
 
 
 #carousel-2-img{
-  min-width: 100%;
-  min-height: max-content;
+  min-width: max-content;
+  min-height: 300px;
+  max-height: 300px;
 }
 
 #carousel-3-img{
-  min-width: 100%;
-  min-height: max-content;
-  max-height: 400px;
+  min-width: max-content;
+  min-height: 300px;
+  max-height: 300px;
 }
+
 
 }
 
@@ -386,21 +396,23 @@ export default {
     max-width: 400px;
   }
 
-#carousel-1-img{
+  #carousel-1-img{
   min-width: 100%;
-  min-height: max-content;
+  min-height:500px;
   max-height: 500px;
 }
 
+
+
 #carousel-2-img{
   min-width: 100%;
-  min-height: max-content;
+  min-height:500px;
   max-height: 500px;
 }
 
 #carousel-3-img{
   min-width: 100%;
-  min-height: max-content;
+  min-height:500px;
   max-height: 500px;
 }
 

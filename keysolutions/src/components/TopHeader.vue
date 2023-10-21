@@ -3,13 +3,13 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-sm-4">
-          <p class="small mb-0"><i class="fas fa-phone"></i> &#x1F4F1; 123-456-7890</p>
+          <p class="small mb-0"><i class="fas fa-phone"></i> &#x1F4F1; (+51) 949 284 735</p>
         </div>
         <div class="col-sm-4 text-center">
-          <p class="small mb-0"><i class="fas fa-envelope"></i>&#x1F4E7; example@example.com</p>
+          <p class="small mb-0"><i class="fas fa-envelope"></i>&#x1F4E7; rpestana@keysolutionssac.com</p>
         </div>
         <div class="col-sm-4 text-end">
-          <a href="#" class="small"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://www.linkedin.com/in/roberto-pestana-elias-4b0b98202/" class="small"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
       </div>
     </div>

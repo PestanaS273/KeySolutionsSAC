@@ -2,6 +2,10 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue'
 import ProductsView from '../views/ProductsView.vue'
+import TarjetasBanca from '../views/TarjetasBanca.vue'
+import TarjetasEmpresa from '../views/TarjetasEmpresa.vue'
+import RollosView from '../views/RollosView.vue'
+import SobresView from '../views/SobresView.vue'
 
 const routes = [
   {
@@ -35,7 +39,40 @@ const routes = [
     meta: {
       cache: true // enable caching for this route
     }
-  }
+  },
+  {
+    path: '/tarjetas-empresa',
+    name: 'tarjetas-empresa',
+    component: TarjetasEmpresa,
+    meta: {
+      cache: true // enable caching for this route
+    }
+  },
+
+  {
+    path: '/tarjetas-banca',
+    name: 'tarjetas-banca',
+    component: TarjetasBanca,
+    meta: {
+      cache: true // enable caching for this route
+    }
+  },
+  {
+    path: '/rollos',
+    name: 'rollos',
+    component: RollosView,
+    meta: {
+      cache: true // enable caching for this route
+    }
+  },
+  {
+    path: '/sobres-preimpresos',
+    name: 'sobres-preimpresos',
+    component: SobresView,
+    meta: {
+      cache: true // enable caching for this route
+    }
+  },
 ]
 
 const router = createRouter({

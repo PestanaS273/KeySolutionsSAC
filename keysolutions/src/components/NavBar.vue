@@ -12,9 +12,10 @@
               Productos
             </a>
             <ul class="dropdown-menu">
-              <li><router-link to="/tarjetas" class="dropdown-item">Tarjetas</router-link></li>
+              <li><router-link to="/tarjetas-banca" class="dropdown-item">Tarjetas Banca</router-link></li>
+              <li><router-link to="/tarjetas-empresa" class="dropdown-item">Tarjetas Empresa</router-link></li>
               <li><router-link to="/rollos" class="dropdown-item">Rollos</router-link></li>
-              <li><router-link to="/servicios" class="dropdown-item">Servicios</router-link></li>
+              <li><router-link to="/sobres-preimpresos" class="dropdown-item">Sobres y Pre-Impresos</router-link></li>
               <li><hr class="dropdown-divider"></li>
               <li><router-link to="/products" class="dropdown-item">Todos los productos</router-link></li>
             </ul>
