@@ -26,9 +26,9 @@
           </div>
         </router-link>
         </div>
-        <div class="carousel-item" id="carousel3">
+        <div class="carousel-item" id="carousel3" no-wra>
           <router-link to="/sobres-preimpresos">
-          <img src="../assets/mealer.png" id="carousel-3-img" class="d-block w-80 mx-auto" alt="Sobres Pin Mailer">
+          <img src="../assets/mealer.png" id="carousel-3-img" class="d-block w-80 mx-auto" alt="Sobres Pin Mailer" no-wrap>
           <div class="carousel-caption d-md-block">
             <h5><b>Sobres Pin Mailer</b></h5>
             <p>Formatos Pre-impresos, Formas Continuas, Sobres de seguridad Pin Mailer</p>
@@ -332,22 +332,22 @@ export default {
 
   #carousel-1-img{
   min-width: max-content;
-  min-height:300px;
-  max-height: 300px;
+  min-height:350px;
+  max-height: 350px;
 }
 
 
 
 #carousel-2-img{
   min-width: max-content;
-  min-height: max-content;
-  max-height: 300px;
+  min-height:350px;
+  max-height: 350px;
 }
 
 #carousel-3-img{
   min-width: max-content;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 350px;
+  max-height: 350px;
 }
 }
 
@@ -364,7 +364,7 @@ export default {
 
   #carousel-1-img{
   min-width: max-content;
-  min-height:max-content;
+  min-height: 300px;
   max-height: 300px;
 }
 
