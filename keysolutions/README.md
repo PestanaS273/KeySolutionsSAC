@@ -1,4 +1,4 @@
-# keysolutions
+# Key Solutions S.A.C
 
 Key Solutions S.A.C is a web application that offers solutions in plastic cards with the best quality to our clients. This project was built using Vue.js, a progressive JavaScript framework for building user interfaces.
 
@@ -27,10 +27,12 @@ npm run serve
 ```
 This will start the development server at http://localhost:8080/. You can open this URL in your web browser to view the application.
 
-### Compiles and minifies for production
+### Building for Production
+To build the application for production, you can run the following command:
 ```
 npm run build
 ```
+This will create a dist directory with the compiled files that can be deployed to a web server.
 
 ### Lints and fixes files
 ```
