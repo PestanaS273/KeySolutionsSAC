@@ -23,12 +23,12 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                        <label for="inputnumber3" class="col-sm-2 col-form-label">Telefono</label>
                         <div class="col-sm-2">
                             <input type="text" class="form-control" placeholder="+51" aria-label="Codigo País">
                         </div>
                         <div class="col-sm-6">
-                        <input type="phone" class="form-control" id="inputPassword3" >
+                        <input type="phone" class="form-control" id="inputnumber3" >
                         </div>
                     </div>
                     <fieldset class="row mb-3">
@@ -81,4 +81,23 @@ export default {
 
 <style scoped>
 
+@media (max-width: 576px) {
+    img{
+        width: 100%;
+    }
+}
+
+/* Set a minimum and maximum width for the images on medium screens */
+@media (min-width: 576px) and (max-width: 768px) {
+    img{
+        width: 100%;
+    }
+}
+
+/* Set a minimum and maximum width for the images on large screens */
+@media (min-width: 768px) {
+    img{
+        width: 100%;
+    }
+}
 </style>

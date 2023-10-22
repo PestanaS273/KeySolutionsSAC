@@ -77,8 +77,16 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 })
+
 
 router.beforeEach((to, from, next) => {
   if (to.meta.cache) {
@@ -87,12 +95,16 @@ router.beforeEach((to, from, next) => {
       to.params.cachedData = JSON.parse(cachedData)
     }
   }
-  next()
-})
+  next();
+});
+
 
 router.afterEach((to) => {
   if (to.meta.cache && !to.params.cachedData) {
-    sessionStorage.setItem(to.path, JSON.stringify(to.matched[0].instances.default.$data))
+    const dataInstance = to.matched[0]?.instances?.default;
+    if (dataInstance) {
+      sessionStorage.setItem(to.path, JSON.stringify(dataInstance.$data))
+    }
   }
 })
 

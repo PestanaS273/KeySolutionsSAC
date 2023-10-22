@@ -12,16 +12,16 @@
               Productos
             </a>
             <ul class="dropdown-menu">
-              <li><router-link to="/tarjetas-banca" class="dropdown-item">Tarjetas Banca</router-link></li>
-              <li><router-link to="/tarjetas-empresa" class="dropdown-item">Tarjetas Empresa</router-link></li>
-              <li><router-link to="/rollos" class="dropdown-item">Rollos</router-link></li>
-              <li><router-link to="/sobres-preimpresos" class="dropdown-item">Sobres y Pre-Impresos</router-link></li>
+              <li><router-link to="/tarjetas-banca" class="dropdown-item" @click="closeNavbar">Tarjetas Banca</router-link></li>
+              <li><router-link to="/tarjetas-empresa" class="dropdown-item"  @click="closeNavbar">Tarjetas Empresa</router-link></li>
+              <li><router-link to="/rollos" class="dropdown-item"  @click="closeNavbar">Rollos</router-link></li>
+              <li><router-link to="/sobres-preimpresos" class="dropdown-item"  @click="closeNavbar">Sobres y Pre-Impresos</router-link></li>
               <li><hr class="dropdown-divider"></li>
-              <li><router-link to="/products" class="dropdown-item">Todos los productos</router-link></li>
+              <li><router-link to="/products" class="dropdown-item"  @click="closeNavbar">Todos los productos</router-link></li>
             </ul>
           </li>
           <li class="nav-item">
-            <router-link to="/contact" class="nav-link">Contacto</router-link>
+            <router-link to="/contact" class="nav-link"  @click="closeNavbar">Contacto</router-link>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -36,7 +36,14 @@
 <script>
 export default {
   name: 'NavBar',
-
+  methods: {
+  closeNavbar() {
+    const navbarToggler = this.$el.querySelector('.navbar-toggler');
+    if (navbarToggler && !navbarToggler.classList.contains('collapsed')) {
+      navbarToggler.click();
+    }
+  }
+}
 }
 </script>
 
