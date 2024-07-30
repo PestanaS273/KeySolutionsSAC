@@ -1,25 +1,36 @@
-# Ignore node_modules and dist directories
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,dotenv,vuejs
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,dotenv,vuejs
+
+### dotenv ###
+.env
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+### Vuejs ###
+# Recommended template: Node.gitignore
+
 node_modules/
 dist/
+npm-debug.log
+yarn-error.log
 
-# Ignore local env files
-.env.local
-.env.*.local
-
-# Ignore log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Ignore editor directories and files
-.idea/
-.vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,dotenv,vuejs
 # Ignore macOS specific files
 .DS_Store

@@ -51,9 +51,9 @@
       <div class="below-carousel">
         <div class="row">
           <div class="col-md-9 mx-auto">
-            <h2><b>Key Solutions S.A.C : </b><br><br><i>Importación exportación de insumos especializados para el sector financiero y empresarial</i></h2>
+            <h1><b>Key Solutions S.A.C : </b><br><br><i>Importación exportación de insumos especializados para el sector financiero y empresarial</i></h1>
             <br>
-            <h5>Ofrecemos servicios de fabricación y personalización de tarjetas con chip, rollos termicos de diferentes medidas, formatos pre impresos y sobres de seguridad.</h5>
+            <h4>Ofrecemos servicios de fabricación y personalización de tarjetas con chip, rollos termicos de diferentes medidas, formatos pre impresos y sobres de seguridad.</h4>
             <br>
           </div>
         </div>
@@ -62,16 +62,16 @@
           <div class="col-md-6">
             <h3><i>Seguridad</i></h3>
             <ul class="calidades">
-              <li>Comprobamos la calidad de nuestros chips antes de entrega</li>
-              <li>Protocolos de seguridad</li>
-              <li>Chip modelo...</li>
+              <li>Las tarjetas que ofrecemos son elaboradas en instalaciones de producción certificadas</li>
+              <li>Aseguran Precisión, Confiabilidad y Seguridad</li>
+              <li>CHIP utilizado en tarjetas Visa y MasterCard certificadas por las Marcas</li>
             </ul>
           </div>
           <div class="col-md-6">
             <h3><i>Calidad</i></h3>
             <ul class="calidades">
-              <li>Sin intermediarios</li>
-              <li>Materiales de calidad asegurando sus años de vida</li>
+              <li>Tarjetas fabricadas con PVC de alta calidad</li>
+              <li>Materiales resistentes al desgaste del uso diario</li>
               <li>Entrega sin retrasos</li>
             </ul>
           </div>
@@ -306,6 +306,10 @@ export default {
   font-family: 'Open Sans', sans-serif; /* change the font family */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* add a shadow to the text */
 
+}
+
+.col-md-6 li{
+  font-size: 20px;
 }
 
 

@@ -17,12 +17,27 @@
   </template>
   
   <script>
+  import { useHead } from '@vueuse/head'
   export default {
     name: 'RollosComponent',
     props: {
       data: {
         type: Array,
         required: true
+      }
+    },
+    setup() {
+      const head = useHead({
+        title: 'Rollos Térmicos',
+        meta: [
+          {
+            name: 'description',
+            content: 'Rollos térmicos para impresoras de punto de venta.'
+          }
+        ]
+      })
+      return {
+        head
       }
     }
   }

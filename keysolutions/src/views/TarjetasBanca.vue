@@ -1,7 +1,33 @@
 <template>
   <div class="ProductsView" >
     <h1>Key Solutions S.A.C</h1>
-    <h2>Tarjetas Banca:</h2>
+    <div class="row">
+      <hr>
+      <div class="col-md-6  mx-auto text-center">
+        
+        <div class="blue-background" >
+          <span class="description d-block">Las tarjetas que ofrecemos son elaboradas en instalaciones de producción certificadas que aseguran Precisión, Confiabilidad y Seguridad. 
+          <br><br>
+          Las tarjetas de plástico son una excelente herramienta de marketing y fidelización de clientes, fabricadas en PVC de alta calidad, con impresión de alta resolución y durabilidad.
+          <br><br>
+          Contamos con una amplia gama de tarjetas de plástico, con diferentes acabados y opciones de personalización, que se adaptan a las necesidades de cada cliente.
+          <br><br>
+          Adicionalmente, la manufactura de tarjetas de débito virgenes, ofrecemos la personalización variable (Impresión del BIN / CVV), grabación de banda magnetica y chip, asi como la confección del sobre de entrega.
+          </span>
+        </div>
+        
+      </div>
+      <div class="col-md-6">
+        <img src="../assets/frente-reverso.avif" class="img-fluid" alt="Amberso y reverso tarjeta débito">
+      </div>
+      <div class="text-center">
+        <router-link to="/contact" class="btn rounded-pill contact-btn">
+          Conoce más 
+        </router-link>
+      </div>
+      <hr>
+    </div>
+    <h2>Tarjetas de Débito / Crédito :</h2>
     <br>
     <tarjetas :data="tarjetasbanco" />
   </div>
@@ -39,3 +65,28 @@ export default {
   }
 }
 </script>
+
+<style scoped> 
+  .blue-background {
+    background-color: #f0f8ff;
+
+    
+  }
+
+  .description {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+
+  .contact-btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    background-color: #0c3e6b;
+    color: white;
+    letter-spacing: 1px;
+  }
+</style>

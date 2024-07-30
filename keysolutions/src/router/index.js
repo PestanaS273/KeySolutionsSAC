@@ -73,6 +73,12 @@ const routes = [
       cache: true // enable caching for this route
     }
   },
+
+  {
+    path: '/fundas-bloqueo',
+    name: 'fundas-bloqueo',
+    component: () => import(/* webpackChunkName: "fundas-bloqueo" */ '../views/FundasBloqueoView.vue'),
+  }
 ]
 
 const router = createRouter({

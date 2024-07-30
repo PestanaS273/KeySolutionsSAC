@@ -1,6 +1,33 @@
 <template>
     <div class="ProductsView" >
       <h1>Key Solutions S.A.C</h1>
+
+      <div class="row">
+      <hr>
+
+      <div class="col-md-6  mx-auto text-center">
+
+        <h3 class="title">Tarjetas para Hoteles, Casinos, Seguros, Empresas, Calendarios y Más : </h3>
+
+        
+        <div class="blue-background" >
+          <span class="description d-block">La versatilidad de nuestro producto permite diseños a la medida de los requerimientos de nuestros clientes, con la posibilidad de incluir tecnología de banda magnética, chip, código de barras, impresión de datos variables, entre otros.
+          <br><br>
+          Trabjamos con todo tipo de modelos para tarjetas White.
+          </span>
+        </div>
+        
+      </div>
+      <div class="col-md-5">
+        <img src="../assets/tarjeta-pvc-hotel.png" class="img-fluid" alt="Amberso y reverso tarjeta débito">
+      </div>
+      <div class="text-center">
+        <router-link to="/contact" class="btn rounded-pill contact-btn">
+          Conoce más 
+        </router-link>
+      </div>
+      <hr>
+    </div>
       <h2>Tarjetas Empresa:</h2>
       <br>
       <tarjetas :data="tarjetasempresa" />
@@ -33,3 +60,35 @@
     }
   }
   </script>
+
+
+<style scoped> 
+.blue-background {
+  background-color: #f0f8ff;
+
+  
+}
+
+.description {
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.contact-btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  background-color: #0c3e6b;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.title{
+  font-size: 2em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+</style>

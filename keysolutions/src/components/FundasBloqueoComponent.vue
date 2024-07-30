@@ -1,5 +1,5 @@
 <template>
-    <div class="sobres">
+    <div class="Fundas">
       <div class="row">
         <div class="col-md-5 mx-auto" v-for="card in data" :key="card.title">
           <div class="card">
@@ -20,7 +20,7 @@
   import { useHead } from '@vueuse/head'
 
   export default {
-    name: 'SobresComponent',
+    name: 'FundasBloqueoComponent',
     props: {
       data: {
         type: Array,
@@ -29,11 +29,11 @@
     },
     setup() {
       const head = useHead({
-        title: 'Sobres y Pre-Impresos',
+        title: 'Fundas de Bloqueo RFID',
         meta: [
           {
             name: 'description',
-            content: 'Sobres y Pre-Impresos'
+            content: 'Fundas de bloqueo RFID para tarjetas de crédito y débito.'
           }
         ]
       })

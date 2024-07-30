@@ -9,17 +9,22 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Productos
+              Productos y Servicios 
             </a>
             <ul class="dropdown-menu">
               <li><router-link to="/tarjetas-banca" class="dropdown-item" @click="closeNavbar">Tarjetas Banca</router-link></li>
               <li><router-link to="/tarjetas-empresa" class="dropdown-item"  @click="closeNavbar">Tarjetas Empresa</router-link></li>
-              <li><router-link to="/rollos" class="dropdown-item"  @click="closeNavbar">Rollos</router-link></li>
+              <li><router-link to="/rollos" class="dropdown-item"  @click="closeNavbar">Rollos Termicos</router-link></li>
               <li><router-link to="/sobres-preimpresos" class="dropdown-item"  @click="closeNavbar">Sobres y Pre-Impresos</router-link></li>
+              <li><router-link to="/fundas-bloqueo" class="dropdown-item"  @click="closeNavbar">Fundas de Bloqueo RFID</router-link></li>
               <li><hr class="dropdown-divider"></li>
               <li><router-link to="/products" class="dropdown-item"  @click="closeNavbar">Todos los productos</router-link></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <router-link to="/about" class="nav-link"  @click="closeNavbar">Nosotros </router-link>
+          </li>
+          
           <li class="nav-item">
             <router-link to="/contact" class="nav-link"  @click="closeNavbar">Contacto</router-link>
           </li>

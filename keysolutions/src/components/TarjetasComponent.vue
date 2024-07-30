@@ -17,6 +17,9 @@
   </template>
   
   <script>
+
+  import {useHead}  from '@vueuse/head'
+
   export default {
     name: 'TarjetasComponent',
     props: {
@@ -24,6 +27,27 @@
         type: Array,
         required: true
       }
+    },
+    setup() {
+      const head = useHead({
+        title: 'Tarjetas de PVC',
+        meta: [
+          {
+            name: 'description',
+            content: 'Tarjetas de PVC para identificación y control de acceso.'
+          }
+        ]
+      })
+      return {
+        head
+      }
     }
   }
   </script>
+
+  <style scoped>
+
+
+
+
+</style>
