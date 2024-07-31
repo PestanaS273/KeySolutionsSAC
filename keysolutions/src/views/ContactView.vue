@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-5 mx-auto">
             <h2>Contactanos</h2>
-            <p class="description">Contacto para conocer nuestra calidad y nuestros precios. Estaremos agradecidos por su interés.
+            <p class="description">Contactanos para cotizar determinado producto y/o consultas.
             </p>
           <br>
           <form ref="form" @submit.prevent="sendEmail">
@@ -46,27 +46,28 @@
             <fieldset class="row mb-3">
                 <legend class="col-form-label col-sm-2 pt-0">Producto</legend>
                 <div class="col-sm-10">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="products" id="gridCheck1" value="Tarjetas" v-model="form.products">
+                <div class="form-check text-start">
+                    <input class="form-check-input " type="checkbox" name="products" id="gridCheck1" value="Tarjetas" v-model="form.products">
                     <label class="form-check-label" for="gridCheck1">Tarjetas</label>
                 </div>
-                <div class="form-check">
+                <div class="form-check text-start">
                     <input class="form-check-input" type="checkbox" name="products" id="gridCheck2" value="Rollos" v-model="form.products">
                     <label class="form-check-label" for="gridCheck2">Rollos</label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="products" id="gridCheck3" value="Servicios" v-model="form.products">
-                    <label class="form-check-label" for="gridCheck3">Servicios</label>
+                <div class="form-check text-start">
+                    <input class="form-check-input" type="checkbox" name="products" id="gridCheck3" value="Sobres" v-model="form.products">
+                    <label class="form-check-label" for="gridCheck4">Sobres</label>
+                </div>
+                <div class="form-check text-start">
+                    <input class="form-check-input" type="checkbox" name="products" id="gridCheck3" value="Formularios" v-model="form.products">
+                    <label class="form-check-label" for="gridCheck5">Formularios</label>
                 </div>
                 </div>
             </fieldset>
             <div class="row mb-3">
+                <label for="inputMessage" class="col-sm-2 col-form-label">Describe tu Solicitud</label>
                 <div class="col-sm-10">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck4" name="subscribe" v-model="form.subscribe">
-                    <label class="form-check-label" for="gridCheck4">Deseo recibir información a mi correo</label>
-                    <br><br>
-                </div>
+                <input type="text" class="form-control" id="inputMessage" name="message" placeholder="" v-model="form.message">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
@@ -88,7 +89,8 @@
           email: '',
           phone: '',
           products: [],
-          subscribe: false
+          subscribe: false,
+          message:'',
         }
       };
     },

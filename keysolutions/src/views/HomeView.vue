@@ -53,12 +53,31 @@
           <div class="col-md-9 mx-auto">
             <h1><b>Key Solutions S.A.C : </b><br><br><i>Importación exportación de insumos especializados para el sector financiero y empresarial</i></h1>
             <br>
-            <h4>Ofrecemos servicios de fabricación y personalización de tarjetas con chip, rollos termicos de diferentes medidas, formatos pre impresos y sobres de seguridad.</h4>
+            <h3>Ofrecemos los siguientes productos y servicios :</h3>
+            <br>
+            <div class="row products-list">
+              <div class="col text-start">
+                <ul>
+                  <li>Tarjetas Contactless (Visa / MasterCard)</li>
+                  <li>Tarjetas de identificación</li>
+                  <li>Llaves de hotel en PVC</li>
+                  <li>Rollos termicos</li>
+                </ul>
+              </div>
+              <div class="col text-start ">
+                <ul>
+                  <li>Impresión de formularios</li>
+                  <li>Formas continuas</li>
+                  <li>Sobres para tarjetas en cartulina o RFID</li>
+                </ul>
+              </div>
+            </div>
+            <!-- <h4>Ofrecemos servicios de fabricación y personalización de tarjetas con chip, tarjetas de identificación, llaves de hotel en PVC, rollos termicos de diferentes medidas, impresión de formularios, formas continuas, sobres para tarjetas en cartulina o RFID.</h4> -->
             <br>
           </div>
         </div>
         <br><br>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-6">
             <h3><i>Seguridad</i></h3>
             <ul class="calidades">
@@ -75,7 +94,7 @@
               <li>Entrega sin retrasos</li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
       <br><br>
       <div id="productos">
@@ -92,9 +111,9 @@
           <router-link to="/tarjetas-banca" class="card-link">
           <img src="../assets/varias-tarjetas.avif" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
-            <h5 class="card-title"><b>Tarjetas Débito Crédito</b></h5>
+            <h5 class="card-title"><b>Tarjetas Débito Crédito Contactless</b></h5>
             <p class="card-text">Fabricación y personalización para el sector financiero <br>
-            <small class="text-body-secondary">VISA | MASTERCARD | DINNER CLUB</small></p>
+            <small class="text-body-secondary">VISA | MASTERCARD | PROPIETARIAS</small></p>
           </div>
         </router-link>
         </div>
@@ -106,9 +125,9 @@
           <router-link to="/tarjetas-empresa" class="card-link">
           <img src="../assets/tarjeta-hotel.png" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
-            <h5 class="card-title"><b>  Tarjetas de Identificación</b></h5>
-            <p class="card-text">Tarjetas personalizables para identificación con tecnología Contact Less, banda Magnetica y chip</p>
-            <p class="card-text"><small class="text-body-secondary">Hoteles | Empresas | Transporte | Sistemas educativos </small></p>
+            <h5 class="card-title"><b>  Tarjetas varias en PVC</b></h5>
+            <p class="card-text">Tarjetas personalizables para identificación con tecnología banda Magnetica y Chip</p>
+            <p class="card-text"><small class="text-body-secondary">Hoteles | Empresas | Transporte | Sistemas Educativos | Identificación </small></p>
           </div>
         </router-link>
         </div>
@@ -117,9 +136,9 @@
           <router-link to="/rollos" class="card-link">
           <img src="../assets/rollos.png" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
-            <h5 class="card-title"><b>Papel termico y autocopiativo</b></h5>
-            <p class="card-text">Diferentes medidas de rollo para impresión electronica</p>
-            <p class="card-text"><small class="text-body-secondary">Rollos 80x80</small></p>
+            <h5 class="card-title"><b>Papel Térmico y Autocopiativo</b></h5>
+            <p class="card-text">Diferentes medidas de rollo para impresoras, ATM y POS</p>
+            <!-- <p class="card-text"><small class="text-body-secondary">Rollos 80x80</small></p> -->
           </div>
         </router-link>
         </div>
@@ -128,8 +147,8 @@
           <router-link to="/sobres-preimpresos" class="card-link">
           <img src="../assets/pinmailer.jpeg" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
-            <h5 class="card-title"><b>Formatos Pre-impresos y Sobres de Seguridad</b></h5>
-            <p class="card-text">Formatos pre impresos y formas continuas para el sector financiero. Sobres de seguridad PIN Mailer de protección para inforamción sensible</p>
+            <h5 class="card-title"><b>Formatos Impresos y Sobres</b></h5>
+            <p class="card-text">Formatos pre impresos y formas continuas para el sector financiero. Sobres de seguridad (PIN Mailer)</p>
             <p class="card-text"><small class="text-body-secondary"></small></p>
           </div>
         </router-link>
@@ -318,6 +337,14 @@ export default {
   background-color: #4b6b9e;
   color: white;
 } */
+
+.products-list{
+  font-size: 22px;
+  /* background-color: #1f4b85; */
+  color: black;
+  font-style: italic;
+  letter-spacing: 1px;
+}
 
 
 

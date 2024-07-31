@@ -13,7 +13,7 @@
         <div class="blue-background" >
           <span class="description d-block">La versatilidad de nuestro producto permite diseños a la medida de los requerimientos de nuestros clientes, con la posibilidad de incluir tecnología de banda magnética, chip, código de barras, impresión de datos variables, entre otros.
           <br><br>
-          Trabjamos con todo tipo de modelos para tarjetas White.
+          Trabajamos con todo tipo de modelos para tarjetas.
           </span>
         </div>
         
@@ -23,7 +23,7 @@
       </div>
       <div class="text-center">
         <router-link to="/contact" class="btn rounded-pill contact-btn">
-          Conoce más 
+          Solicitar Cotización y/o Consultas 
         </router-link>
       </div>
       <hr>
@@ -47,12 +47,12 @@
         tarjetasempresa: [
         {
           title: 'Tarjeta Identificación / Control de Acceso',
-          description: 'Contact Less | Banda Magnetica',
+          description: 'Chip | Banda Magnetica',
           image: require('@/assets/tarjeta-identificacion.avif')
         },
         {
           title: 'Tarjeta para Hoteles',
-          description: 'Contact Less | Banda Magnetica',
+          description: 'Chip | Banda Magnetica',
           image: require('@/assets/tarjeta-hotel.avif')
         },
         ]

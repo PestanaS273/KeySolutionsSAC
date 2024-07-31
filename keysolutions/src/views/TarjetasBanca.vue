@@ -12,7 +12,7 @@
           <br><br>
           Contamos con una amplia gama de tarjetas de plástico, con diferentes acabados y opciones de personalización, que se adaptan a las necesidades de cada cliente.
           <br><br>
-          Adicionalmente, la manufactura de tarjetas de débito virgenes, ofrecemos la personalización variable (Impresión del BIN / CVV), grabación de banda magnetica y chip, asi como la confección del sobre de entrega.
+          Adicionalmente a la manufactura de tarjetas de débito virgenes, ofrecemos la personalización variable (Impresión del BIN / CVV), grabación de banda magnetica y chip, asi como la confección del sobre de entrega.
           </span>
         </div>
         
@@ -22,7 +22,7 @@
       </div>
       <div class="text-center">
         <router-link to="/contact" class="btn rounded-pill contact-btn">
-          Conoce más 
+          Solicitar Cotización y/o Consultas 
         </router-link>
       </div>
       <hr>
@@ -46,17 +46,17 @@ export default {
       tarjetasbanco: [
         {
           title: 'Tarjeta VISA Crédito / Débito',
-          description: 'Contact Less | Banda Magnetica',
+          description: 'Contactless | Banda Magnetica',
           image: require('@/assets/visa-debito.jpeg')
         },
         {
           title: 'Tarjeta MASTERCARD Crédito / Débito',
-          description: 'Contact Less | Banda Magnetica',
+          description: 'Contactless | Banda Magnetica',
           image: require('@/assets/mastercard-credito.png')
         },
         {
           title: 'Tarjeta Diners Club',
-          description: 'Contact Less | Banda Magnetica',
+          description: 'Contactless | Banda Magnetica',
           image: require('@/assets/dinner.jpeg')
         },
         

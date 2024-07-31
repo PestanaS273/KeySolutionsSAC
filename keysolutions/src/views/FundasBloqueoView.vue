@@ -4,7 +4,7 @@
       <div class="row">
         <hr>
         <div class="col-md-6  mx-auto text-center">
-          <h3 class="title">Fundas de Bloqueo RFID para Tarjetas de Crédito y Débito </h3>
+          <h3 class="title">Fundas Protectoras RFID para Tarjetas de Crédito y Débito </h3>
 
           <div class="blue-background" >
             <span class="description d-block">Hechas de material Impermeable de papel aluminio, el diseño de perfil delgado facilita el transporte en la billetera o el bolsillo sin ocupar espacio adicional.
@@ -21,7 +21,7 @@
         </div>
         <div class="text-center">
           <router-link to="/contact" class="btn rounded-pill contact-btn">
-            Conoce más 
+            Solicitar Cotización y/o Consultas 
           </router-link>
         </div>
         <hr>

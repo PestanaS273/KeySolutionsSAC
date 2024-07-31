@@ -43,3 +43,10 @@
     }
   }
   </script>
+
+  <style scoped>
+  /* .sobres {
+    height: 20%;
+    object-fit: cover;
+  } */
+  </style>

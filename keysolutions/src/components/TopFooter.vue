@@ -5,7 +5,7 @@
           <div class="col-md-4">
             <h5>Key Solutions S.A.C</h5>
             <hr>
-            <p>Key Solutions es una empresa situada en Lima - PERU que se dedica a la importación exportación de insumos especializados en el sector financiero con la finalidad de brindar soluciones con la mejor calidad a nuestros clientes</p>
+            <p>Key Solutions es una empresa con sede central en Lima - PERU que se dedica a la importación exportación de insumos especializados en el sector financiero con la finalidad de brindar soluciones con la mejor calidad a nuestros clientes en Perú y Bolivia.</p>
           </div>
           <div class="col-md-4">
             <h5>Nuestro Portafolio</h5>
@@ -25,8 +25,8 @@
                 <li><router-link to="/about">Nosotros</router-link></li>
                 <li>(+51) 949 284 735</li>
                 <li>rpestana@keysolutionssac.com</li>
-                <li>fax</li>
-                <li>Direccion</li>
+                <li>Av. Raúl Ferrero 1542 La Molina, Lima - Perú</li>
+                <li>Key Solutions Perú S.A.C - RUC: 20612618179</li>
             </ul>
           </div>
         </div>

@@ -8,11 +8,10 @@
         <h3 class="title">Nosotros</h3>
 
         <div class="blue-background" >
-          <span class="description d-block">Key Solutions S.A.C es una empresa que opera en Perú y Bolivia con más de 20 años de experiencia en la fabricación, personalización y distribución de productos de seguridad para tarjetas de crédito y débito.
+          <span class="description d-block">
+          Key Solutions S.A.C es una empresa que brinda insumos especializados para el sistema financiero y empresarial. Los productos que ofrecemos los adecuamos a las necesidades de cada uno de nuestros clientes en cuanto a diseño, material e impresión. Para brindar estos servicios y cumplir con nuestros clientes, contamos con profesionales altamente calificados y con una vasta experiencia en cada rubro que ofrecemos.
           <br><br>
-          Nuestros productos son de alta calidad y están diseñados para proteger la información de tus tarjetas de posibles robos de datos.
-          <br><br>
-          Contamos con una amplia gama de productos, desde fundas de bloqueo RFID hasta rollos térmicos y sobres pre-impresos.
+          Somos una empresa con una experiencia de más de 20 años en el mercado, lo que nos permite brindar un servicio de calidad y con la garantía de satisfacción de nuestros clientes. Nuestro compromiso es brindar productos de calidad.
           </span>
         </div>
         
