@@ -10,19 +10,23 @@
           <div class="col-md-4">
             <h5>Nuestro Portafolio</h5>
             <hr>
-            <ul>
-              <li><router-link to="/tarjetas-banca">Tarjetas Personalizadas</router-link></li>
-              <li><router-link to="/tarjetas-banca">Tarjetas Neutras</router-link></li>
-              <li><router-link to="/tarjetas-empresa">Tarjetas Con panel Rasca</router-link></li>
-              <li><router-link to="/tarjetas-empresa">Tarjeta LLavero</router-link></li>
-              <li><router-link to="/tarjetas-banca">Tarjeta con etiqueta removible</router-link></li>
-            </ul>
+            <div class="row">
+              <ul>
+                <div class="col">
+                  <li><router-link to="/tarjetas-banca">Tarjetas Crédito Débito</router-link></li>
+                  <li><router-link to="/tarjetas-empresa">Tarjetas Empresa</router-link></li>
+                  <li><router-link to="/rollos">Rollos Térmicos</router-link></li>
+                  <li><router-link to="/sobres-preimpresos">Sobres y Formularios</router-link></li>
+                  <li><router-link to="/sobres-seguridad">Sobres de Seguridad RFID</router-link></li>
+                </div>
+              </ul>
+            </div>
           </div>
           <div class="col-md-4">
             <h5>Contactos</h5>
             <hr>
             <ul>
-                <li><router-link to="/about">Nosotros</router-link></li>
+                <li><router-link to="/nosotros">Nosotros</router-link></li>
                 <li>(+51) 949 284 735</li>
                 <li>rpestana@keysolutionssac.com</li>
                 <li>Av. Raúl Ferrero 1542 La Molina, Lima - Perú</li>
@@ -60,8 +64,9 @@ footer{
 }
 
 a{
-    text-decoration: none;
+    text-decoration: underline;
     color: #fff;
+    
 
 }
 

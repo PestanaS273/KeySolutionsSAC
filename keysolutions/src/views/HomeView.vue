@@ -5,35 +5,45 @@
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active " id="carousel1">
           <router-link to="/tarjetas-banca">
-          <img src="../assets/tarjetascarousel.png" id="carousel-1-img" class="d-block w-80 mx-auto" alt="Rarjetas de credito">
-          <div class="carousel-caption d-md-block">
-            <h5><b>Tarjetas con Chip Contact Less</b></h5>
-            <p>Creación y personalización de tarjetas para bancos, transporte, hoteles.</p>
-          </div>
-        </router-link>
+            <img src="../assets/tarjetascarousel.png" id="carousel-1-img" class="d-block w-80 mx-auto" alt="Rarjetas de credito">
+            <div class="carousel-caption d-md-block">
+              <h5><b>Tarjetas con Chip Contact Less</b></h5>
+              <p>Creación y personalización de tarjetas para bancos, transporte, hoteles.</p>
+            </div>
+          </router-link>
         </div>
-        <div class="carousel-item" id="carousel2" >
+        <div class="carousel-item" id="carousel2" no-wra>
+          <router-link to="/fundas-bloqueo">
+            <img src="../assets/sobrerfid-portada.svg" id="carousel-2-img" class="d-block w-80 mx-auto" alt="Sobres RFID Aluminio" no-wrap>
+            <div class="carousel-caption d-md-block">
+              <h5><b>Fundas Protectoras RFID para Tarjetas de Crédito y Débito</b></h5>
+              <p>Sobres protectores en varios colores con posibilidad de impresión personalizada</p>
+            </div>
+          </router-link>
+        </div>
+        <div class="carousel-item" id="carousel3" >
           <router-link to="/rollos">
-          <img src="../assets/papeltermico.png" id="carousel-2-img" class="d-block w-80 mx-auto" alt="Rollos Papel termico">
-          <div class="carousel-caption d-md-block">
-            <h5><b>Rollos Papel Termico</b></h5>
-            <p>Papel termico y autocopiativo para facturacion e impresión.</p>
-            <p>Papel termico 80x80</p>
-          </div>
-        </router-link>
+            <img src="../assets/papeltermico.png" id="carousel-3-img" class="d-block w-80 mx-auto" alt="Rollos Papel termico">
+            <div class="carousel-caption d-md-block">
+              <h5><b>Rollos Papel Termico</b></h5>
+              <p>Papel termico y autocopiativo para facturacion e impresión.</p>
+              <p>Papel termico 80x80</p>
+            </div>
+          </router-link>
         </div>
-        <div class="carousel-item" id="carousel3" no-wra>
+        <div class="carousel-item" id="carousel4" no-wra>
           <router-link to="/sobres-preimpresos">
-          <img src="../assets/mealer.png" id="carousel-3-img" class="d-block w-80 mx-auto" alt="Sobres Pin Mailer" no-wrap>
-          <div class="carousel-caption d-md-block">
-            <h5><b>Sobres Pin Mailer</b></h5>
-            <p>Formatos Pre-impresos, Formas Continuas, Sobres de seguridad Pin Mailer</p>
-          </div>
-        </router-link>
+            <img src="../assets/mealer.png" id="carousel-3-img" class="d-block w-80 mx-auto" alt="Sobres Pin Mailer" no-wrap>
+            <div class="carousel-caption d-md-block">
+              <h5><b>Sobres Pin Mailer</b></h5>
+              <p>Formatos Pre-impresos, Formas Continuas, Sobres de seguridad Pin Mailer</p>
+            </div>
+          </router-link>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -117,13 +127,24 @@
           </div>
         </router-link>
         </div>
+
+        <div class="card mb-3 mx-auto" style="width: 70%;">
+          <router-link to="/tarjetas-banca" class="card-link">
+            <img src="../assets/sobre-rfid.jpg" class="card-img-top mx-auto" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><b>Funda de Protección RFID Tarjetas Débito Crédito</b></h5>
+              <p class="card-text">Fabricación y personalización<br>
+              <small class="text-body-secondary">Tarjetas Banca | Empresa </small></p>
+            </div>
+          </router-link>
+        </div>
         
 
         
 
         <div class="card mb-3 mx-auto" style="width: 70%;">
           <router-link to="/tarjetas-empresa" class="card-link">
-          <img src="../assets/tarjeta-hotel.png" class="card-img-top mx-auto" alt="...">
+          <img src="../assets/varias-tarjetas.png" class="card-img-top mx-auto" alt="...">
           <div class="card-body">
             <h5 class="card-title"><b>  Tarjetas varias en PVC</b></h5>
             <p class="card-text">Tarjetas personalizables para identificación con tecnología banda Magnetica y Chip</p>
