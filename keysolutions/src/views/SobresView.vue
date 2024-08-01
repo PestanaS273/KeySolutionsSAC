@@ -32,6 +32,7 @@
   
   <script>
   import SobresComponent from '@/components/PreImpresos.vue'
+  import { useHead } from '@vueuse/head'
   
   export default {
     name: 'SobresView',
@@ -51,6 +52,26 @@
             image: require('@/assets/sobre-ventana.avif')
           },
         ],
+      }
+    },
+    setup() {
+      const head = useHead({
+        title: 'Sobres y Formularios Impresos Perú - Bolivia',
+        meta: [
+          {
+            name: 'description',
+            content: 'Sobres de seguridad y pre-impresos, formularios impresos y formas continuas para empresas y sistemas financieros.'
+          }
+        ],
+        link: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com/sobres-preimpresos'
+          }
+        ]
+      })
+      return {
+        head
       }
     }
   }

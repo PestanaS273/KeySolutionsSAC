@@ -183,8 +183,10 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
 
 export default {
+
   name: 'HomeView',
   mounted() {
     // Set a timer for the carousel to automatically switch slides every 5 seconds
@@ -208,7 +210,27 @@ export default {
     clearTimer() {
       clearInterval(this.timer);
     }
-  }
+  },
+  setup() {
+      const head = useHead({
+        title: 'Key Solutions S.A.C',
+        meta: [
+          {
+            name: 'description',
+            content: 'Importación exportación de insumos especializados para el sector financiero y empresarial'
+          }
+        ],
+        link: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com'
+        }
+        ]
+      })
+      return {
+        head
+      }
+    }
 }
 </script>
 

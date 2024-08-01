@@ -26,6 +26,7 @@
 import Tarjetas from '@/components/TarjetasComponent.vue'
 import Rollos from '@/components/RollosComponent.vue'
 import SobresComponent from '@/components/PreImpresos.vue'
+import { useHead } from '@vueuse/head'
 
 export default {
   name: 'TarjetasBanca',
@@ -88,6 +89,26 @@ export default {
           },
         ],
     }
-  }
+  },
+  setup() {
+      const head = useHead({
+        title: 'Productos - Key Solutions S.A.C',
+        meta: [
+          {
+            name: 'description',
+            content: 'Productos de alta calidad para el sistema financiero y empresarial.'
+          }
+        ],
+        links: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com/products'
+          }
+        ]
+      })
+      return {
+        head
+      }
+    }
 }
 </script>

@@ -33,6 +33,7 @@
   
   <script>
   import Rollos from '@/components/RollosComponent.vue'
+  import { useHead } from '@vueuse/head'
   
   export default {
     name: 'RollosView',
@@ -51,6 +52,20 @@
           image: require('@/assets/rollo-autocopiante.jpeg')
         },
         ]
+      }
+    },
+    setup() {
+      const head = useHead({
+        title: 'Rollos Perú - Bolivia',
+        meta: [
+          {
+            name: 'description',
+            content: 'Rollos térmicos y autocopiantes para impresoras de todo tipo, ATM y POS.'
+          }
+        ]
+      })
+      return {
+        head
       }
     }
   }

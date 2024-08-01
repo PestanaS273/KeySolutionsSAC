@@ -34,6 +34,7 @@
   
   <script>
   import FundasBloqueoComponent from '@/components/FundasBloqueoComponent.vue'
+  import { useHead } from '@vueuse/head'
   
   export default {
     name: 'FundasBloqueoView',
@@ -53,6 +54,26 @@
           //   image: require('@/assets/pinmailer.jpeg')
           // },
         ],
+      }
+    },
+    setup() {
+      const head = useHead({
+        title: 'Fundas de Bloqueo RFID Perú - Bolivia',
+        meta: [
+          {
+            name: 'description',
+            content: 'Fundas de bloqueo RFID para tarjetas de crédito y débito, en aluminio de alta calidad y personalizables para protección de datos.'
+          }
+        ],
+        link: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com/fundas-bloqueo'
+          }
+        ]
+      })
+      return {
+        head
       }
     }
   }

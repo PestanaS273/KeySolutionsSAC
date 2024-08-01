@@ -30,8 +30,29 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
 export default {
-  name: 'AboutView',
+  name: 'NosotrosView',
+  setup() {
+      const head = useHead({
+        title: 'Nosotros - Key Solutions S.A.C',
+        meta: [
+          {
+            name: 'description',
+            content: 'Key Solutions S.A.C - Una empresa especializada en insumos para el sistema financiero y empresarial.'
+          }
+        ],
+        links: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com/nosotros'
+          }
+        ]
+      })
+      return {
+        head
+      }
+    }
 }
 </script>
 

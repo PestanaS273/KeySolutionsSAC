@@ -79,6 +79,7 @@
   
   <script>
   import emailjs from '@emailjs/browser';
+  import { useHead } from '@vueuse/head'
   
   export default {
     data() {
@@ -115,6 +116,26 @@
                 );
             }
 
+    },
+    setup() {
+      const head = useHead({
+        title: 'Contacto Key Solutions S.A.C',
+        meta: [
+          {
+            name: 'description',
+            content: 'Contactanos para cotizar determinado producto y/o consultas.'
+          }
+        ],
+        link: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com/contact'
+          }
+        ]
+      })
+      return {
+        head
+      }
     }
   };
   </script>

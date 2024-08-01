@@ -36,6 +36,7 @@
   
   <script>
   import Tarjetas from '@/components/TarjetasComponent.vue'
+  import { useHead } from '@vueuse/head'
   
   export default {
     name: 'TarjetaEmpresa',
@@ -56,6 +57,26 @@
           image: require('@/assets/tarjeta-hotel.avif')
         },
         ]
+      }
+    },
+    setup() {
+      const head = useHead({
+        title: 'Tarjetas de Empresa Perú - Bolivia',
+        meta: [
+          {
+            name: 'description',
+            content: 'Tarjetas de identificación y control de acceso, tarjetas para hoteles y casinos, con tecnología de chip y banda magnetica.'
+          }
+        ],
+        link: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com/tarjetas-empresa'
+          }
+        ]
+      })
+      return {
+        head
       }
     }
   }

@@ -17,7 +17,7 @@
   </template>
   
   <script>
-  import { useHead } from '@vueuse/head'
+
 
   export default {
     name: 'FundasBloqueoComponent',
@@ -27,19 +27,6 @@
         required: true
       }
     },
-    setup() {
-      const head = useHead({
-        title: 'Fundas de Bloqueo RFID',
-        meta: [
-          {
-            name: 'description',
-            content: 'Fundas de bloqueo RFID para tarjetas de crédito y débito.'
-          }
-        ]
-      })
-      return {
-        head
-      }
-    }
+
   }
   </script>

@@ -35,6 +35,7 @@
 
 <script>
 import Tarjetas from '@/components/TarjetasComponent.vue'
+import { useHead } from '@vueuse/head'
 
 export default {
   name: 'TarjetasBanca',
@@ -62,7 +63,27 @@ export default {
         
       ],
     }
-  }
+  },
+  setup() {
+      const head = useHead({
+        title: 'Tarjetas de Débito y Crédito Perú - Bolivia',
+        meta: [
+          {
+            name: 'description',
+            content: 'Tarjetas de débito y crédito para sistemas financieros, con tecnología contactless y banda magnetica.'
+          }
+        ],
+        link: [
+          {
+            rel: 'canonical',
+            href: 'https://keysolutionssac.com/tarjetas-banca'
+          }
+        ]
+      })
+      return {
+        head
+      }
+    }
 }
 </script>
 

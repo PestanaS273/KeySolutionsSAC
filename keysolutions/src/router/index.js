@@ -17,9 +17,9 @@ const routes = [
     }
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    path: '/nosotros',
+    name: 'nosotros',
+    component: () => import(/* webpackChunkName: "nosotros" */ '../views/NosotrosView.vue'),
     meta: {
       cache: false // disable caching for this route
     }
