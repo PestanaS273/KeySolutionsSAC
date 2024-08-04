@@ -129,7 +129,7 @@
         </div>
 
         <div class="card mb-3 mx-auto" style="width: 70%;">
-          <router-link to="/tarjetas-banca" class="card-link">
+          <router-link to="/fundas-bloqueo" class="card-link">
             <img src="../assets/sobre-rfid.jpg" class="card-img-top mx-auto" alt="...">
             <div class="card-body">
               <h5 class="card-title"><b>Funda de Protección RFID Tarjetas Débito Crédito</b></h5>

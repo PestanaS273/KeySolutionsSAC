@@ -10,6 +10,11 @@
     <tarjetas :data="tarjetasempresa" />
     <br>
 
+    <h2>Fundas RFID:</h2>
+    <br>
+    <FundasBloqueo :data="fundas" />
+    <br>
+
     <h2>Sobres de Seguridad y Pre-Impresos:</h2>
     <br>
     <SobresComponent :data="sobres" />
@@ -27,13 +32,15 @@ import Tarjetas from '@/components/TarjetasComponent.vue'
 import Rollos from '@/components/RollosComponent.vue'
 import SobresComponent from '@/components/PreImpresos.vue'
 import { useHead } from '@vueuse/head'
+import FundasBloqueo from '@/components/FundasBloqueoComponent.vue'
 
 export default {
   name: 'TarjetasBanca',
   components: {
     Tarjetas,
     Rollos,
-    SobresComponent
+    SobresComponent,
+    FundasBloqueo
   },
   data() {
     return {
@@ -88,6 +95,12 @@ export default {
             image: require('@/assets/pinmailer.jpeg')
           },
         ],
+        fundas: [
+          {
+            title: 'Sobre Aluminio RFID Personalizables',
+            image: require('@/assets/un-sobre.webp')
+          },
+        ]
     }
   },
   setup() {

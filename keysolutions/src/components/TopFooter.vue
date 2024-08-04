@@ -17,7 +17,7 @@
                   <li><router-link to="/tarjetas-empresa">Tarjetas Empresa</router-link></li>
                   <li><router-link to="/rollos">Rollos Térmicos</router-link></li>
                   <li><router-link to="/sobres-preimpresos">Sobres y Formularios</router-link></li>
-                  <li><router-link to="/sobres-seguridad">Sobres de Seguridad RFID</router-link></li>
+                  <li><router-link to="/fundas-bloqueo">Sobres de Seguridad RFID</router-link></li>
                 </div>
               </ul>
             </div>
