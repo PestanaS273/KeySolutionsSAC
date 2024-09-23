@@ -36,10 +36,10 @@
             <label for="phone" class="form-label">Telefono</label>
             <div class="row">
               <div class="col-sm-4">
-                <input type="text" class="form-control" v-model="form.countryCode" placeholder="Código País">
+                <input type="text" class="form-control" v-model="form.countryCode" name="country_code" placeholder="Código País">
               </div>
               <div class="col-sm-8">
-                <input type="tel" class="form-control" id="phone" v-model="form.phone" placeholder="Numero de telefono" required>
+                <input type="tel" class="form-control" id="phone" name="user_phone" v-model="form.phone" placeholder="Numero de telefono" required>
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default {
 }
 
 .form-container {
-  margin: 20px; /* Ajusta este valor según necesites */
+  margin: 20px; 
 }
 
 @media (max-width: 576px) {
@@ -154,14 +154,14 @@ export default {
   }
 }
 
-/* Set a minimum and maximum width for the images on medium screens */
+
 @media (min-width: 576px) and (max-width: 768px) {
   img {
     width: 100%;
   }
 }
 
-/* Set a minimum and maximum width for the images on large screens */
+
 @media (min-width: 768px) {
   img {
     width: 100%;
