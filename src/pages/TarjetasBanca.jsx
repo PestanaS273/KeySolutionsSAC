@@ -20,7 +20,7 @@ const structuredData = {
       '@type': 'ListItem',
       position: 1,
       item: {
-        '@type': 'Product',
+        '@type': 'Service',
         name: 'Tarjeta PVC Bancaria con Chip EMV Contacto (ISO 7816)',
         description:
           'Tarjeta PVC bancaria con chip EMV de contacto estándar ISO 7816. Compatible con redes VISA, Mastercard y Diners Club. Personalización variable BIN/CVV. Estándar CR-80 (85.6×54 mm).',
@@ -35,7 +35,7 @@ const structuredData = {
       '@type': 'ListItem',
       position: 2,
       item: {
-        '@type': 'Product',
+        '@type': 'Service',
         name: 'Tarjeta PVC Bancaria con Chip EMV Contactless (ISO 14443)',
         description:
           'Tarjeta PVC bancaria con chip EMV contactless NFC estándar ISO 14443. Pago sin contacto certificado para bancos en Perú y Bolivia.',
@@ -50,7 +50,7 @@ const structuredData = {
       '@type': 'ListItem',
       position: 3,
       item: {
-        '@type': 'Product',
+        '@type': 'Service',
         name: 'Tarjeta PVC Dual Interface (Contacto + Contactless)',
         description:
           'Tarjeta PVC bancaria dual interface con chip EMV de contacto y contactless en un solo plástico. Máxima versatilidad para bancos.',
@@ -65,7 +65,7 @@ const structuredData = {
       '@type': 'ListItem',
       position: 4,
       item: {
-        '@type': 'Product',
+        '@type': 'Service',
         name: 'Tarjeta PVC con Chip MIFARE Classic / DESFire',
         description:
           'Tarjeta PVC con chip MIFARE Classic o MIFARE DESFire EV2/EV3 para control de acceso, fidelización y aplicaciones bancarias de alta seguridad.',

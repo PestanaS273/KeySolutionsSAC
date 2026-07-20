@@ -50,11 +50,11 @@ const homeStructuredData = {
     '@type': 'OfferCatalog',
     name: 'Catálogo Key Solutions S.A.C',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Tarjetas PVC Bancarias con Chip (EMV, Contactless, Dual Interface, MIFARE)' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Tarjetas PVC para Hoteles, Acceso y Empresas' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Rollos Térmicos POS y ATM 80x80' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Fundas de Bloqueo RFID Anti-Clonación' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Sobres PIN Mailer, Con Ventana y Formas Continuas' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Tarjetas PVC Bancarias con Chip (EMV, Contactless, Dual Interface, MIFARE)' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Tarjetas PVC para Hoteles, Acceso y Empresas' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Rollos Térmicos POS y ATM 80x80' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fundas de Bloqueo RFID Anti-Clonación' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sobres PIN Mailer, Con Ventana y Formas Continuas' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Desarrollo Web a Medida' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Software Empresarial a Medida' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Key ERP — Sistema de Gestión Modular' } },
@@ -144,9 +144,12 @@ export default function Home() {
 
           {/* Left: copy */}
           <div>
-            <motion.span {...fadeUp(0)} className="inline-block px-4 py-1.5 bg-amber-400/20 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-widest uppercase rounded-full mb-6">
-              Importadora especializada · Perú y Bolivia
-            </motion.span>
+            <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2.5 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
+              <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
+                Importadora especializada · Perú y Bolivia
+              </span>
+            </motion.div>
 
             <motion.h1
               {...fadeUp(0.1)}
@@ -310,9 +313,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <AnimatedSection>
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-amber-400/20 text-amber-300 mb-4">
-                Tecnologías disponibles
-              </span>
+              <div className="inline-flex items-center gap-2.5 mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
+                <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
+                  Tecnologías disponibles
+                </span>
+              </div>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 Tarjetas PVC con el chip que su banco necesita
               </h2>

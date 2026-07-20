@@ -76,9 +76,12 @@ export default function SoftwareAMedida() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <AnimatedSection>
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-amber-400/20 text-amber-300 mb-4">
-                Nuestro enfoque
-              </span>
+              <div className="inline-flex items-center gap-2.5 mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
+                <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
+                  Nuestro enfoque
+                </span>
+              </div>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 Software construido sobre su proceso real
               </h2>

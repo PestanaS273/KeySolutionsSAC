@@ -55,14 +55,17 @@ export default function SoftwareHero({ eyebrow, lines, subtitle, primaryCta, sec
         className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-28 text-center"
       >
         {eyebrow && (
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-widest uppercase rounded-full mb-7"
+            className="inline-flex items-center gap-2.5 mb-7"
           >
-            {eyebrow}
-          </motion.span>
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
+            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
+              {eyebrow}
+            </span>
+          </motion.div>
         )}
 
         <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight">

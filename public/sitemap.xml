@@ -3,9 +3,38 @@
 
   <url>
     <loc>https://keysolutionssac.com/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Soluciones empresariales de software -->
+  <url>
+    <loc>https://keysolutionssac.com/soluciones-empresariales</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://keysolutionssac.com/desarrollo-web</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://keysolutionssac.com/software-a-medida</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://keysolutionssac.com/key-erp</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <url>
@@ -59,7 +88,7 @@
 
   <url>
     <loc>https://keysolutionssac.com/nosotros</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
