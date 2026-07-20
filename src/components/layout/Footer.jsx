@@ -21,12 +21,18 @@ const productLinks = [
   { label: 'Sobres y Formularios', href: '/sobres-preimpresos' },
 ]
 
+const softwareLinks = [
+  { label: 'Desarrollo Web', href: '/desarrollo-web' },
+  { label: 'Software a Medida', href: '/software-a-medida' },
+  { label: 'Key ERP', href: '/key-erp' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand */}
-        <div className="lg:col-span-2">
+        <div className="sm:col-span-2 lg:col-span-2">
           <img src={logo} alt="Key Solutions" className="h-12 w-auto mb-4 brightness-200" />
           <p className="text-sm leading-relaxed text-gray-400 max-w-xs">
             {company.description}
@@ -61,6 +67,33 @@ export default function Footer() {
             <li>
               <Link to="/clientes" className="text-sm text-gray-400 hover:text-white transition-colors">
                 Nuestros Clientes
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Software solutions */}
+        <div>
+          <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+            Soluciones de Software
+          </h4>
+          <ul className="space-y-2.5">
+            {softwareLinks.map((l) => (
+              <li key={l.href}>
+                <Link
+                  to={l.href}
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                to="/soluciones-empresariales"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Ver todas
               </Link>
             </li>
           </ul>

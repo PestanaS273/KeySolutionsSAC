@@ -7,10 +7,13 @@ import {
 } from 'lucide-react'
 import { productCategories } from '../data/products'
 import { features } from '../data/company'
+import { softwareServices } from '../data/software'
 import ProductCard from '../components/ui/ProductCard'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
+import StatCounter from '../components/ui/StatCounter'
+import SoftwareServiceCard from '../components/ui/SoftwareServiceCard'
 import SEOHead from '../components/SEOHead'
 import { blogPosts } from '../data/blog'
 import fondoBg from '../assets/fondo.avif'
@@ -52,6 +55,9 @@ const homeStructuredData = {
       { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Rollos Térmicos POS y ATM 80x80' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Fundas de Bloqueo RFID Anti-Clonación' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Sobres PIN Mailer, Con Ventana y Formas Continuas' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Desarrollo Web a Medida' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Software Empresarial a Medida' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Key ERP — Sistema de Gestión Modular' } },
     ],
   },
   areaServed: ['PE', 'BO'],
@@ -144,7 +150,7 @@ export default function Home() {
 
             <motion.h1
               {...fadeUp(0.1)}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1]"
+              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight"
             >
               Tarjetas PVC para{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-200">
@@ -210,10 +216,10 @@ export default function Home() {
             className="grid grid-cols-2 gap-4 lg:justify-self-end w-full max-w-xs"
           >
             {[
-              { value: '+20', label: 'Años de experiencia' },
-              { value: '11+', label: 'Clientes institucionales' },
-              { value: '2',   label: 'Países atendidos' },
-              { value: '5',   label: 'Líneas de producto' },
+              { value: 20, prefix: '+', label: 'Años de experiencia' },
+              { value: 11, suffix: '+', label: 'Clientes institucionales' },
+              { value: 2,  label: 'Países atendidos' },
+              { value: 5,  label: 'Líneas de producto' },
             ].map((s, i) => (
               <motion.div
                 key={s.label}
@@ -223,7 +229,13 @@ export default function Home() {
                 className="rounded-2xl p-5 text-center border border-white/15"
                 style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)' }}
               >
-                <p className="text-3xl font-extrabold text-amber-300">{s.value}</p>
+                <StatCounter
+                  value={s.value}
+                  prefix={s.prefix}
+                  suffix={s.suffix}
+                  viewportMargin="0px"
+                  className="font-display block text-3xl font-bold text-amber-300"
+                />
                 <p className="text-xs text-blue-100/70 mt-1 leading-tight">{s.label}</p>
               </motion.div>
             ))}
@@ -301,7 +313,7 @@ export default function Home() {
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-amber-400/20 text-amber-300 mb-4">
                 Tecnologías disponibles
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 Tarjetas PVC con el chip que su banco necesita
               </h2>
               <p className="mt-4 text-blue-200/70 max-w-2xl mx-auto text-base leading-relaxed">
@@ -334,6 +346,31 @@ export default function Home() {
               className="inline-flex items-center gap-2 text-sm font-semibold text-amber-300 hover:text-amber-200 transition-colors"
             >
               Ver tarjetas bancarias <ArrowRight size={14} />
+            </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── MÁS QUE INSUMOS ──────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <SectionTitle
+            label="Más que insumos"
+            title="Soluciones empresariales de tecnología, integradas a su negocio"
+            subtitle="Además de importar insumos para el sector financiero, desarrollamos el software que su empresa necesita: sitios web, sistemas a medida y Key ERP, nuestro sistema de gestión modular."
+          />
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {softwareServices.map((service, i) => (
+              <SoftwareServiceCard key={service.id} service={service} index={i} />
+            ))}
+          </div>
+          <AnimatedSection className="text-center mt-12">
+            <Link
+              to="/soluciones-empresariales"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-navy-900 text-white font-semibold rounded-xl hover:bg-navy-800 transition-colors"
+            >
+              Ver soluciones empresariales
+              <ArrowRight size={17} />
             </Link>
           </AnimatedSection>
         </div>
@@ -424,7 +461,7 @@ export default function Home() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
             <Star size={28} className="text-amber-400 mx-auto mb-5" />
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
               ¿Necesita tarjetas PVC u otros insumos financieros?
             </h2>
             <p className="text-blue-200/75 text-lg mb-9 leading-relaxed">

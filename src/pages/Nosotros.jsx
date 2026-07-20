@@ -3,6 +3,7 @@ import { Shield, Award, Globe, Users } from 'lucide-react'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
+import StatCounter from '../components/ui/StatCounter'
 import SEOHead from '../components/SEOHead'
 import { company } from '../data/company'
 import logo from '../assets/logo.png'
@@ -54,7 +55,7 @@ export default function Nosotros() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-extrabold text-white leading-tight"
+            className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight"
           >
             Quiénes somos
           </motion.h1>
@@ -90,10 +91,10 @@ export default function Nosotros() {
           <AnimatedSection direction="right">
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: '+20', label: 'Años de experiencia' },
-                { value: '11+', label: 'Clientes institucionales' },
-                { value: '2', label: 'Países' },
-                { value: '5', label: 'Líneas de producto' },
+                { value: 20, prefix: '+', label: 'Años de experiencia' },
+                { value: 11, suffix: '+', label: 'Clientes institucionales' },
+                { value: 2, label: 'Países' },
+                { value: 5, label: 'Líneas de producto' },
               ].map((s, i) => (
                 <motion.div
                   key={s.label}
@@ -103,7 +104,12 @@ export default function Nosotros() {
                   transition={{ delay: i * 0.1, duration: 0.4 }}
                   className="bg-brand-light rounded-2xl p-6 text-center shadow-card"
                 >
-                  <p className="text-4xl font-extrabold text-brand-blue">{s.value}</p>
+                  <StatCounter
+                    value={s.value}
+                    prefix={s.prefix}
+                    suffix={s.suffix}
+                    className="font-display block text-4xl font-bold text-brand-blue"
+                  />
                   <p className="text-sm text-gray-500 mt-1">{s.label}</p>
                 </motion.div>
               ))}

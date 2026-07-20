@@ -8,7 +8,7 @@ export default function SectionTitle({ label, title, subtitle, center = true }) 
           {label}
         </span>
       )}
-      <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-tight">
+      <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 leading-tight tracking-tight">
         {title}
       </h2>
       {subtitle && (

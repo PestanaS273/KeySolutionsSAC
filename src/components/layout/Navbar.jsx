@@ -12,9 +12,16 @@ const products = [
   { label: 'Sobres y Formularios', href: '/sobres-preimpresos' },
 ]
 
+const software = [
+  { label: 'Desarrollo Web', href: '/desarrollo-web' },
+  { label: 'Software a Medida', href: '/software-a-medida' },
+  { label: 'Key ERP', href: '/key-erp' },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [softwareOpen, setSoftwareOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { pathname } = useLocation()
 
@@ -27,6 +34,7 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false)
     setDropdownOpen(false)
+    setSoftwareOpen(false)
   }, [pathname])
 
   const navLink = 'text-sm font-medium transition-colors duration-200'
@@ -109,6 +117,61 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          {/* Software dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setSoftwareOpen(true)}
+            onMouseLeave={() => setSoftwareOpen(false)}
+          >
+            <button
+              className={`${navLink} flex items-center gap-1 ${
+                pathname === '/soluciones-empresariales' ||
+                pathname === '/desarrollo-web' ||
+                pathname === '/software-a-medida' ||
+                pathname === '/key-erp'
+                  ? activeClass
+                  : inactiveClass
+              }`}
+            >
+              Soluciones de Software
+              <ChevronDown
+                size={15}
+                className={`transition-transform duration-200 ${softwareOpen ? 'rotate-180' : ''}`}
+              />
+            </button>
+            <AnimatePresence>
+              {softwareOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-56 bg-white rounded-xl shadow-card-hover border border-gray-100 overflow-hidden"
+                >
+                  {software.map((s) => (
+                    <Link
+                      key={s.href}
+                      to={s.href}
+                      className={`block px-4 py-3 text-sm font-medium transition-colors ${
+                        pathname === s.href
+                          ? 'bg-blue-50 text-brand-blue'
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-brand-blue'
+                      }`}
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/soluciones-empresariales"
+                    className="block px-4 py-3 text-sm font-semibold text-brand-navy border-t border-gray-100 hover:bg-navy-50 transition-colors"
+                  >
+                    Ver todas las soluciones →
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Link
             to="/clientes"
             className={`${navLink} ${pathname === '/clientes' ? activeClass : inactiveClass}`}
@@ -174,6 +237,26 @@ export default function Navbar() {
                   className="block py-2 pl-3 text-sm font-semibold text-brand-navy border-l-2 border-brand-navy"
                 >
                   Ver todos →
+                </Link>
+              </div>
+              <div className="py-1">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                  Soluciones de Software
+                </p>
+                {software.map((s) => (
+                  <Link
+                    key={s.href}
+                    to={s.href}
+                    className="block py-2 pl-3 text-sm text-gray-700 hover:text-brand-blue border-l-2 border-gray-100 hover:border-brand-blue transition-colors"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+                <Link
+                  to="/soluciones-empresariales"
+                  className="block py-2 pl-3 text-sm font-semibold text-brand-navy border-l-2 border-brand-navy"
+                >
+                  Ver todas →
                 </Link>
               </div>
               <Link

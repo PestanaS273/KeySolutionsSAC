@@ -16,6 +16,10 @@ import Contacto from './pages/Contacto'
 import Clientes from './pages/Clientes'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import SolucionesEmpresariales from './pages/SolucionesEmpresariales'
+import DesarrolloWeb from './pages/DesarrolloWeb'
+import SoftwareAMedida from './pages/SoftwareAMedida'
+import KeyErp from './pages/KeyErp'
 
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
@@ -48,6 +52,12 @@ function AnimatedRoutes() {
           <Route path="/clientes" element={<Clientes />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* Soluciones empresariales de software */}
+          <Route path="/soluciones-empresariales" element={<SolucionesEmpresariales />} />
+          <Route path="/desarrollo-web" element={<DesarrolloWeb />} />
+          <Route path="/software-a-medida" element={<SoftwareAMedida />} />
+          <Route path="/key-erp" element={<KeyErp />} />
 
           {/* Redirects de URLs antiguas → nuevas (301 equivalente en cliente) */}
           <Route path="/tarjetas-banca" element={<Navigate to="/tarjetas-bancarias" replace />} />

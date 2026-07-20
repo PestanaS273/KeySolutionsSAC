@@ -1,16 +1,38 @@
-# React + Vite
+# Key Solutions S.A.C — Sitio web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio corporativo de Key Solutions S.A.C: importación y distribución de insumos para el sector
+financiero (tarjetas PVC bancarias, rollos térmicos, fundas RFID, formularios preimpresos) y
+soluciones empresariales de software (desarrollo web, software a medida y Key ERP).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [React 19](https://react.dev) + [Vite](https://vitejs.dev)
+- [React Router](https://reactrouter.com) para el ruteo
+- [Tailwind CSS](https://tailwindcss.com) para estilos
+- [Framer Motion](https://www.framer.com/motion/) para animaciones
+- [react-helmet-async](https://github.com/staylor/react-helmet-async) para SEO por página
+- [react-hook-form](https://react-hook-form.com) + [Web3Forms](https://web3forms.com) para el formulario de contacto
 
-## React Compiler
+## Desarrollo local
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+cp .env.example .env   # completar VITE_WEB3FORMS_KEY con una clave de web3forms.com
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `npm run dev` — servidor de desarrollo
+- `npm run build` — build de producción
+- `npm run preview` — previsualizar el build
+- `npm run lint` — ESLint
+
+## Estructura
+
+```
+src/
+  components/    componentes reutilizables (layout, UI, SEO)
+  data/          contenido del sitio (productos, software, clientes, blog, empresa)
+  pages/         una página por ruta
+```

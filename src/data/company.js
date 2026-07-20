@@ -10,8 +10,8 @@ export const company = {
   countries: ['Perú', 'Bolivia'],
   experience: '+20',
   description:
-    'Empresa especializada en la importación y distribución de insumos para el sector financiero y empresarial. Con más de 20 años en el mercado, ofrecemos soluciones personalizadas en diseño, materiales e impresión.',
-  tagline: 'Soluciones especializadas para el sector financiero',
+    'Empresa especializada en la importación y distribución de insumos para el sector financiero y empresarial. Con más de 20 años en el mercado, ofrecemos soluciones personalizadas en diseño, materiales e impresión. También desarrollamos soluciones empresariales de software: sitios web, aplicaciones a medida y Key ERP, nuestro sistema de gestión modular.',
+  tagline: 'Insumos y soluciones empresariales para el sector financiero y corporativo',
 }
 
 export const features = [
