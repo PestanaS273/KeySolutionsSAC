@@ -1,6 +1,6 @@
 # Key Solutions S.A.C — Sitio web
 
-Sitio corporativo de Key Solutions S.A.C: importación y distribución de insumos para el sector
+Sitio corporativo de Key Solutions S.A.C: provisión y distribución de insumos para el sector
 financiero (tarjetas PVC bancarias, rollos térmicos, fundas RFID, formularios preimpresos) y
 soluciones empresariales de software (desarrollo web, software a medida y Key ERP).
 

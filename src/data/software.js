@@ -1,5 +1,5 @@
 // ─── Soluciones empresariales de software ──────────────────────────────────
-// Segunda línea de negocio de Key Solutions, junto a la importación de insumos.
+// Segunda línea de negocio de Key Solutions, junto a la provisión de insumos.
 
 export const softwareServices = [
   {

@@ -11,7 +11,7 @@ export const productCategories = [
     title: 'Tarjetas PVC Bancarias',
     subtitle: 'EMV · MIFARE · Dual Interface · Spec del banco',
     description:
-      'Importamos tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto, EMV contactless, dual interface, MIFARE Classic, MIFARE DESFire y chip según especificación. Personalización variable para VISA, Mastercard, Diners Club y más.',
+      'Ofrecemos tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto, EMV contactless, dual interface, MIFARE Classic, MIFARE DESFire y chip según especificación. Personalización variable para VISA, Mastercard, Diners Club y más.',
     image: variasTarjetas,
     href: '/tarjetas-bancarias',
     tags: ['EMV', 'MIFARE', 'Dual Interface'],

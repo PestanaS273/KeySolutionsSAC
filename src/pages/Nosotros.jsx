@@ -35,9 +35,9 @@ export default function Nosotros() {
   return (
     <>
       <SEOHead
-        title="Nosotros | Key Solutions S.A.C — Importadores Tarjetas PVC Bancarias +20 Años en Perú"
-        description="Key Solutions S.A.C: importadores y distribuidores de tarjetas PVC bancarias VISA, Mastercard y Diners Club con chip EMV en Perú y Bolivia. Más de 20 años de experiencia en el sector financiero. RUC 20612618179."
-        keywords="Key Solutions SAC Peru, importadores tarjetas PVC bancarias Lima, proveedor insumos bancarios Peru Bolivia, empresa tarjetas bancarias chip EMV Peru, RUC 20612618179, distribuidor VISA Mastercard Peru, sector financiero insumos Peru"
+        title="Nosotros | Key Solutions S.A.C — Proveedores Especializados Tarjetas PVC Bancarias +20 Años en Perú"
+        description="Key Solutions S.A.C: proveedores especializados de tarjetas PVC bancarias VISA, Mastercard y Diners Club con chip EMV en Perú y Bolivia. Más de 20 años de experiencia en el sector financiero. RUC 20612618179."
+        keywords="Key Solutions SAC Peru, proveedores especializados tarjetas PVC bancarias Lima, proveedor insumos bancarios Peru Bolivia, empresa tarjetas bancarias chip EMV Peru, RUC 20612618179, distribuidor VISA Mastercard Peru, sector financiero insumos Peru"
         path="/nosotros"
       />
 
@@ -149,7 +149,7 @@ export default function Nosotros() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             label="Marcas y certificaciones"
-            title="Importadores autorizados para las principales redes"
+            title="Proveedores especializados para las principales redes"
             subtitle="Trabajamos con las redes de pago más importantes del mundo bajo estándares internacionales de seguridad."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">

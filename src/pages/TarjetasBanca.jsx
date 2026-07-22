@@ -13,7 +13,7 @@ const structuredData = {
   '@type': 'ItemList',
   name: 'Tarjetas PVC Bancarias — Key Solutions S.A.C',
   description:
-    'Importación y distribución de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto, EMV contactless, dual interface, MIFARE Classic, MIFARE DESFire y chip según especificación del banco. Perú y Bolivia.',
+    'Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto, EMV contactless, dual interface, MIFARE Classic, MIFARE DESFire y chip según especificación del banco. Perú y Bolivia.',
   url: 'https://keysolutionssac.com/tarjetas-bancarias',
   itemListElement: [
     {
@@ -150,15 +150,15 @@ export default function TarjetasBanca() {
   return (
     <>
       <SEOHead
-        title="Tarjetas PVC Bancarias — EMV, MIFARE, Dual Interface | Importadora Perú y Bolivia — Key Solutions S.A.C"
-        description="Importadora de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto (ISO 7816), EMV contactless (ISO 14443), dual interface, MIFARE Classic, MIFARE DESFire EV2/EV3 y chip según especificación del banco. Proveedor para bancos, cooperativas y financieras en Perú y Bolivia. VISA · Mastercard · Diners Club."
-        keywords="tarjetas PVC bancarias Peru, chip EMV Peru Bolivia, tarjetas debito credito PVC Peru, MIFARE DESFire tarjetas banco, dual interface tarjeta bancaria, tarjetas contactless NFC bancarias, proveedor tarjetas PVC banco Lima, importadora tarjetas PVC financiero, tarjetas VISA Mastercard PVC Peru, chip ISO 7816 ISO 14443 banco, tarjetas bancarias Bolivia, personalización variable tarjetas banco"
+        title="Tarjetas PVC Bancarias — EMV, MIFARE, Dual Interface | Proveedores Especializados Perú y Bolivia — Key Solutions S.A.C"
+        description="Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto (ISO 7816), EMV contactless (ISO 14443), dual interface, MIFARE Classic, MIFARE DESFire EV2/EV3 y chip según especificación del banco. Proveedor para bancos, cooperativas y financieras en Perú y Bolivia. VISA · Mastercard · Diners Club."
+        keywords="tarjetas PVC bancarias Peru, chip EMV Peru Bolivia, tarjetas debito credito PVC Peru, MIFARE DESFire tarjetas banco, dual interface tarjeta bancaria, tarjetas contactless NFC bancarias, proveedor tarjetas PVC banco Lima, proveedor especializado tarjetas PVC financiero, tarjetas VISA Mastercard PVC Peru, chip ISO 7816 ISO 14443 banco, tarjetas bancarias Bolivia, personalización variable tarjetas banco"
         path="/tarjetas-bancarias"
         structuredData={structuredData}
       />
 
       <ProductDetailHero
-        label="Importadora especializada — Perú y Bolivia"
+        label="Proveedores especializados — Perú y Bolivia"
         title="Tarjetas PVC Bancarias con Múltiples Tecnologías de Chip"
         subtitle="EMV Contacto · EMV Contactless · Dual Interface · MIFARE · Chip según especificación — Para bancos, cooperativas y financieras"
       />

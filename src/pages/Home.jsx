@@ -30,7 +30,7 @@ const homeStructuredData = {
   telephone: '+51-949-284-735',
   email: 'rpestana@keysolutionssac.com',
   description:
-    'Importadora especializada de tarjetas PVC bancarias con múltiples tecnologías de chip (EMV, contactless, dual interface, MIFARE) para bancos y cooperativas, tarjetas de acceso para hoteles y empresas, rollos térmicos POS/ATM, fundas RFID y formularios bancarios en Perú y Bolivia.',
+    'Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip (EMV, contactless, dual interface, MIFARE) para bancos y cooperativas, tarjetas de acceso para hoteles y empresas, rollos térmicos POS/ATM, fundas RFID y formularios bancarios en Perú y Bolivia.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Av. Raúl Ferrero 1542',
@@ -115,9 +115,9 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Importadores de Tarjetas PVC para Bancos y Empresas — Perú y Bolivia | Key Solutions S.A.C"
-        description="Importadora especializada de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV, contactless, dual interface, MIFARE y más, según especificaciones. También tarjetas de acceso para hoteles y empresas, rollos térmicos POS/ATM, fundas RFID y formularios bancarios. +20 años en Perú y Bolivia."
-        keywords="importadores tarjetas PVC bancos Peru Bolivia, tarjetas PVC bancarias chip Peru, tarjetas PVC chip EMV contactless dual interface Peru, tarjetas MIFARE Peru Bolivia, tarjetas acceso hotel empresa Peru, rollos termicos POS ATM Peru Bolivia, fundas RFID Peru Bolivia, formularios bancarios Peru Bolivia, proveedor insumos bancarios Peru Bolivia, Key Solutions SAC"
+        title="Proveedores Especializados de Tarjetas PVC para Bancos y Empresas — Perú y Bolivia | Key Solutions S.A.C"
+        description="Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV, contactless, dual interface, MIFARE y más, según especificaciones. También tarjetas de acceso para hoteles y empresas, rollos térmicos POS/ATM, fundas RFID y formularios bancarios. +20 años en Perú y Bolivia."
+        keywords="proveedores tarjetas PVC bancos Peru Bolivia, tarjetas PVC bancarias chip Peru, tarjetas PVC chip EMV contactless dual interface Peru, tarjetas MIFARE Peru Bolivia, tarjetas acceso hotel empresa Peru, rollos termicos POS ATM Peru Bolivia, fundas RFID Peru Bolivia, formularios bancarios Peru Bolivia, proveedor insumos bancarios Peru Bolivia, Key Solutions SAC"
         path="/"
         structuredData={homeStructuredData}
       />
@@ -147,7 +147,7 @@ export default function Home() {
             <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2.5 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
               <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
-                Importadora especializada · Perú y Bolivia
+                Proveedores especializados · Perú y Bolivia
               </span>
             </motion.div>
 
@@ -161,7 +161,7 @@ export default function Home() {
               </span>
               <br />
               <span className="text-3xl sm:text-4xl lg:text-5xl text-blue-200 font-bold">
-                Importadores en Perú y Bolivia
+                Proveedores Especializados en Perú y Bolivia
               </span>
             </motion.h1>
 
@@ -169,7 +169,7 @@ export default function Home() {
               {...fadeUp(0.2)}
               className="mt-6 text-lg text-blue-100/80 leading-relaxed max-w-xl"
             >
-              Importamos tarjetas PVC bancarias con la tecnología de chip que su institución
+              Ofrecemos tarjetas PVC bancarias con la tecnología de chip que su institución
               requiere — EMV, contactless, dual interface, MIFARE y más. También rollos
               térmicos, fundas RFID y formularios bancarios. Trabajamos con proveedores
               especializados para cualquier especificación.
@@ -261,7 +261,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             label="¿Por qué elegirnos?"
-            title="Importadora con más de 20 años en el sector financiero"
+            title="Proveedores especializados con más de 20 años en el sector financiero"
             subtitle="Trabajamos con proveedores especializados para responder a las especificaciones técnicas de cada institución — desde el tipo de chip hasta la certificación requerida."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -289,7 +289,7 @@ export default function Home() {
           <SectionTitle
             label="Nuestro catálogo"
             title="Cinco líneas de producto para el sector financiero y empresarial"
-            subtitle="Importamos y distribuimos en Perú y Bolivia. Cada producto se adapta a las especificaciones técnicas y comerciales de su institución."
+            subtitle="Ofrecemos y distribuimos en Perú y Bolivia. Cada producto se adapta a las especificaciones técnicas y comerciales de su institución."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {productCategories.map((product, i) => (
@@ -363,7 +363,7 @@ export default function Home() {
           <SectionTitle
             label="Más que insumos"
             title="Soluciones empresariales de tecnología, integradas a su negocio"
-            subtitle="Además de importar insumos para el sector financiero, desarrollamos el software que su empresa necesita: sitios web, sistemas a medida y Key ERP, nuestro sistema de gestión modular."
+            subtitle="Además de proveer insumos para el sector financiero, desarrollamos el software que su empresa necesita: sitios web, sistemas a medida y Key ERP, nuestro sistema de gestión modular."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {softwareServices.map((service, i) => (

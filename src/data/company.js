@@ -10,14 +10,14 @@ export const company = {
   countries: ['Perú', 'Bolivia'],
   experience: '+20',
   description:
-    'Empresa especializada en la importación y distribución de insumos para el sector financiero y empresarial. Con más de 20 años en el mercado, ofrecemos soluciones personalizadas en diseño, materiales e impresión. También desarrollamos soluciones empresariales de software: sitios web, aplicaciones a medida y Key ERP, nuestro sistema de gestión modular.',
+    'Empresa especializada en proveer insumos para el sector financiero y empresarial en Perú y Bolivia. Con más de 20 años en el mercado, ofrecemos soluciones personalizadas en diseño, materiales e impresión. También desarrollamos soluciones empresariales de software: sitios web, aplicaciones a medida y Key ERP, nuestro sistema de gestión modular.',
   tagline: 'Insumos y soluciones empresariales para el sector financiero y corporativo',
 }
 
 export const features = [
   {
     icon: 'Shield',
-    title: 'Importadora Especializada',
+    title: 'Proveedores Especializados',
     description:
       'Trabajamos con proveedores certificados para garantizar tarjetas PVC con los chips, certificaciones y especificaciones que su institución requiere.',
   },
