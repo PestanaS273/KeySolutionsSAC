@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Layers, ShieldCheck, Settings, Clock, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import SoftwareHero from '../components/ui/SoftwareHero'
 import SoftwareServiceCard from '../components/ui/SoftwareServiceCard'
 import SectionTitle from '../components/ui/SectionTitle'
@@ -9,22 +9,18 @@ import { softwareServices } from '../data/software'
 
 const reasons = [
   {
-    icon: Settings,
     title: 'A medida, no genérico',
     description: 'Cada solución se diseña alrededor de cómo trabaja su empresa, no al revés.',
   },
   {
-    icon: Layers,
     title: 'Un mismo equipo, tres frentes',
     description: 'Web, software interno y ERP se piensan como un solo ecosistema, no como proyectos aislados.',
   },
   {
-    icon: ShieldCheck,
     title: 'Respaldo de una empresa establecida',
     description: 'Más de 20 años operando con instituciones financieras nos exigen rigor, seguridad y cumplimiento.',
   },
   {
-    icon: Clock,
     title: 'Evolución continua',
     description: 'El software crece con módulos y funciones nuevas a medida que su negocio lo requiere.',
   },
@@ -52,11 +48,10 @@ export default function SolucionesEmpresariales() {
       />
 
       <SoftwareHero
-        eyebrow="Soluciones empresariales"
-        lines={['Tecnología a medida', 'para su empresa']}
-        subtitle="Además de insumos para el sector financiero, desarrollamos el software que su operación necesita: sitios web, sistemas internos y un ERP propio, modular y adaptable a cada cliente."
-        primaryCta={{ label: 'Hablar con un asesor', href: '/contacto' }}
-        secondaryCta={{ label: 'Conocer Key ERP', href: '/key-erp' }}
+        lines={['Software para empresas', 'que ya saben lo que', 'necesitan.']}
+        subtitle="KeyERP, nuestro sistema de gestión del gasto administrativo, y el desarrollo de sitios web y sistemas a medida. El mismo equipo, la misma exigencia que aprendimos con bancos."
+        primaryCta={{ label: 'Conocer KeyERP', href: 'https://keyerp.keysolutionssac.com', external: true }}
+        secondaryCta={{ label: 'Hablar con nosotros', href: '/contacto' }}
       />
 
       {/* ── SERVICIOS ─────────────────────────────────────────────────── */}
@@ -82,29 +77,19 @@ export default function SolucionesEmpresariales() {
             label="Por qué Key Solutions"
             title="La misma exigencia que aplicamos al sector financiero"
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <dl className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 max-w-4xl mx-auto">
             {reasons.map((r, i) => (
-              <AnimatedSection key={r.title} delay={i * 0.08}>
-                <div className="bg-[#F8FAFC] rounded-2xl p-6 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
-                    <r.icon size={22} className="text-brand-blue" />
-                  </div>
-                  <h3 className="font-bold text-navy-900 mb-2 text-base">{r.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{r.description}</p>
-                </div>
+              <AnimatedSection key={r.title} delay={i * 0.06}>
+                <dt className="font-semibold text-navy-900">{r.title}</dt>
+                <dd className="mt-1.5 text-sm text-gray-700 leading-relaxed">{r.description}</dd>
               </AnimatedSection>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
 
       {/* ── CTA FINAL ─────────────────────────────────────────────────── */}
       <section className="py-24 bg-navy-900 relative overflow-hidden">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-20 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse, #1E6FD9 0%, transparent 70%)' }}
-          aria-hidden="true"
-        />
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
@@ -115,7 +100,7 @@ export default function SolucionesEmpresariales() {
             </p>
             <Link
               to="/contacto"
-              className="inline-flex items-center gap-2 px-9 py-4 bg-amber-400 text-navy-950 font-bold rounded-xl hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-glow"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-navy-950 font-bold rounded-lg hover:bg-blue-50 transition-colors text-lg"
             >
               Conversemos
               <ArrowRight size={19} />

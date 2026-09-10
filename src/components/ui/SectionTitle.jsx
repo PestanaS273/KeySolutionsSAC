@@ -1,18 +1,15 @@
 import AnimatedSection from './AnimatedSection'
 
-export default function SectionTitle({ label, title, subtitle, center = true }) {
+/* `label` se acepta por compatibilidad pero ya no se pinta: el rótulo pequeño en mayúsculas sobre
+   cada título era ruido, no jerarquía. */
+export default function SectionTitle({ title, subtitle, center = true }) {
   return (
     <AnimatedSection className={center ? 'text-center' : ''}>
-      {label && (
-        <span className="inline-block text-xs font-semibold tracking-widest uppercase text-brand-blue mb-3">
-          {label}
-        </span>
-      )}
-      <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 leading-tight tracking-tight">
+      <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 leading-[1.08] tracking-tight text-balance">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3 text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className={`mt-4 text-gray-600 text-lg leading-relaxed ${center ? 'max-w-2xl mx-auto' : 'max-w-2xl'}`}>
           {subtitle}
         </p>
       )}

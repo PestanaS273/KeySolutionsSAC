@@ -5,12 +5,14 @@ export const company = {
   phone: '(+51) 949 284 735',
   whatsapp: '51949284735',
   whatsappMessage: 'Hola, me interesa cotizar productos para el sector financiero.',
-  email: 'rpestana@keysolutionssac.com',
+  email: 'contacto@keysolutionssac.com',
+  erpUrl: 'https://keyerp.keysolutionssac.com',
+  bolivia: 'ACOVI Solutions Bolivia S.R.L. · La Paz',
   linkedin: 'https://www.linkedin.com/in/roberto-pestana-elias-4b0b98202/',
   countries: ['Perú', 'Bolivia'],
   experience: '+20',
   description:
-    'Empresa especializada en proveer insumos para el sector financiero y empresarial en Perú y Bolivia. Con más de 20 años en el mercado, ofrecemos soluciones personalizadas en diseño, materiales e impresión. También desarrollamos soluciones empresariales de software: sitios web, aplicaciones a medida y Key ERP, nuestro sistema de gestión modular.',
+    'Proveedores de insumos para el sector financiero en Perú y Bolivia desde hace más de 20 años, y desarrolladores de KeyERP, nuestro sistema de gestión del gasto administrativo. También construimos sitios web y software a medida.',
   tagline: 'Insumos y soluciones empresariales para el sector financiero y corporativo',
 }
 

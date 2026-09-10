@@ -30,7 +30,6 @@ export default function SoftwareAMedida() {
       />
 
       <SoftwareHero
-        eyebrow="Software a Medida"
         lines={['El sistema que su', 'operación necesita']}
         subtitle="Diseñamos el software alrededor de cómo trabaja su equipo hoy: automatización de procesos, integraciones y herramientas internas que se adaptan a su empresa, no al revés."
         primaryCta={{ label: 'Contar mi proceso', href: '/contacto' }}
@@ -78,7 +77,7 @@ export default function SoftwareAMedida() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2.5 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
-                <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
+                <span className="text-sm font-medium text-blue-100/70">
                   Nuestro enfoque
                 </span>
               </div>

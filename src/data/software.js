@@ -23,11 +23,12 @@ export const softwareServices = [
   {
     id: 'key-erp',
     icon: 'Boxes',
-    title: 'Key ERP',
-    tagline: 'Un solo sistema de gestión, adaptable a cada empresa',
+    title: 'KeyERP',
+    tagline: 'Gestión del gasto administrativo con rastro completo',
     description:
-      'Nuestro ERP propio: un motor central con módulos que se activan según lo que su empresa necesita hoy, y crece con usted sin migrar de sistema.',
-    href: '/key-erp',
+      'Nuestro producto principal: compras, cuentas por pagar, contabilidad, activos, contratos, viáticos, caja chica y presupuesto en un solo sistema, instalado en los servidores de su empresa.',
+    href: 'https://keyerp.keysolutionssac.com',
+    external: true,
   },
 ]
 
@@ -139,46 +140,15 @@ export const customSoftwareApproach = [
 // ─── Key ERP ────────────────────────────────────────────────────────────────
 
 export const erpModules = [
-  {
-    icon: 'Package',
-    title: 'Inventario y Almacenes',
-    description: 'Control de stock por sede, reposición automática y trazabilidad completa de cada movimiento.',
-  },
-  {
-    icon: 'Calculator',
-    title: 'Contabilidad',
-    description: 'Asientos contables automáticos por cada evento del negocio, sobre un único libro central.',
-  },
-  {
-    icon: 'ShoppingBag',
-    title: 'Compras y Pagos a Proveedores',
-    description: 'Verificación automática entre orden, recepción y factura, con cuentas por pagar siempre al día.',
-  },
-  {
-    icon: 'Truck',
-    title: 'Activos Fijos',
-    description: 'Alta automática desde la factura, depreciación calculada sola cada mes y control de traslados entre sedes.',
-  },
-  {
-    icon: 'FileSignature',
-    title: 'Contratos de Servicios',
-    description: 'Devengo mensual automático y alertas de vencimiento antes de que un contrato o garantía expire.',
-  },
-  {
-    icon: 'Receipt',
-    title: 'Viáticos',
-    description: 'Portal de empleado con anticipo precalculado y liquidación balanceada, sin ajustes manuales.',
-  },
-  {
-    icon: 'TrendingUp',
-    title: 'Proyectos y Presupuesto',
-    description: 'Presupuesto por fase con ejecución en vivo y alertas antes de exceder lo aprobado.',
-  },
-  {
-    icon: 'BarChart3',
-    title: 'BI y Reportes Gerenciales',
-    description: 'Panel ejecutivo en tiempo real y reportes que se envían solos por correo, sin armarlos a mano.',
-  },
+  { title: 'Compras', description: 'Requisición, cotización con puntaje, orden de compra y recepción. Cada documento cita al anterior.' },
+  { title: 'Cuentas por pagar', description: 'Factura conciliada en tres vías contra orden y recepción, retenciones calculadas y pago cruzado con el banco.' },
+  { title: 'Contabilidad', description: 'Cada factura, pago y depreciación genera su asiento sobre el plan de cuentas de la empresa.' },
+  { title: 'Activos fijos', description: 'Alta desde la orden de compra, depreciación mensual, traslados entre sedes y baja con asiento.' },
+  { title: 'Contratos de servicio', description: 'Cuotas, devengo mensual y alertas antes de que un contrato venza sin nadie mirando.' },
+  { title: 'Viáticos', description: 'Solicitud, anticipo, rendición con comprobantes y saldo calculado.' },
+  { title: 'Caja chica', description: 'Fondos por sede con reposición automática al llegar al umbral.' },
+  { title: 'Presupuesto', description: 'Comprometido al emitir la orden y ejecutado al facturar: el disponible es real en todo momento.' },
+  { title: 'Paneles', description: 'Gasto por sede, proveedor y categoría, con detección de duplicados y desvíos.' },
 ]
 
 export const erpCustomization = [
@@ -202,15 +172,15 @@ export const erpCustomization = [
   },
   {
     icon: 'Server',
-    title: 'On-premise o en la nube',
+    title: 'Instalado en su empresa',
     description:
-      'Se despliega dentro de la infraestructura de su empresa o en la nube, según sus políticas de seguridad y datos.',
+      'Corre en los servidores de su empresa. Ninguna cifra, documento ni usuario viaja a un tercero.',
   },
 ]
 
 export const erpDifferentiators = [
-  'Un solo motor contable para todos los módulos: cada documento genera su asiento automáticamente, sin duplicar trabajo entre áreas.',
-  'Ciclo de vida de documentos inmutable (borrador → confirmado → contabilizado), pensado para auditorías confiables.',
-  'Instalación en horas, no en meses de consultoría — sin depender de un proyecto de implementación externo.',
-  'Crece módulo por módulo: no se paga ni se mantiene lo que la empresa todavía no usa.',
+  'Cada documento cita al anterior: la pregunta «¿de dónde salió este gasto?» se contesta con un clic, no con una reunión.',
+  'El presupuesto se compromete al emitir la orden, así que nadie descubre el sobregiro a fin de mes.',
+  'Cada cambio queda con quién, cuándo y por qué. Pensado para pasar auditoría en poco tiempo.',
+  'Se licencia por módulos y se instala en los servidores de la empresa; sumar un módulo después no exige reinstalar nada.',
 ]

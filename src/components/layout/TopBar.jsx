@@ -41,8 +41,7 @@ export default function TopBar() {
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-xs text-gray-500 hidden sm:inline">Presencia en:</span>
-          <span className="text-xs font-semibold text-gray-300">🇵🇪 Perú · 🇧🇴 Bolivia</span>
+          <span className="text-xs text-gray-400">Perú y Bolivia</span>
           <a
             href={company.linkedin}
             target="_blank"

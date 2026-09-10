@@ -1,39 +1,30 @@
 import { clients } from '../../data/clients'
 import AnimatedSection from './AnimatedSection'
 
+/* Logos en rejilla fija. Un carrusel infinito no deja leer ninguno; una rejilla sí. */
 export default function ClientsCarousel() {
-  // Duplicate array so the marquee loops seamlessly
-  const doubled = [...clients, ...clients]
-
   return (
     <section className="py-16 bg-white border-y border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10">
-        <AnimatedSection className="text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase text-gray-400">
-            Empresas que confían en nosotros
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <AnimatedSection>
+          <p className="text-center text-sm font-medium text-gray-500">
+            Instituciones financieras que trabajan con nosotros en Perú y Bolivia
           </p>
         </AnimatedSection>
-      </div>
-
-      <div className="relative overflow-hidden">
-        {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-        <div className="flex animate-marquee gap-12 w-max">
-          {doubled.map((client, i) => (
-            <div
-              key={`${client.name}-${i}`}
-              className="flex-shrink-0 flex items-center justify-center h-14 px-4"
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="h-10 max-w-[120px] object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
-              />
-            </div>
+        <ul className="mt-8 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-8 items-center">
+          {clients.map((client, i) => (
+            <AnimatedSection key={client.name} delay={i * 0.04}>
+              <li className="flex items-center justify-center h-12">
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  loading="lazy"
+                  className="max-h-10 max-w-[130px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </li>
+            </AnimatedSection>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )

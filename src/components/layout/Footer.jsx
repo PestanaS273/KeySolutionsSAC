@@ -22,9 +22,9 @@ const productLinks = [
 ]
 
 const softwareLinks = [
+  { label: 'KeyERP', href: 'https://keyerp.keysolutionssac.com', external: true },
   { label: 'Desarrollo Web', href: '/desarrollo-web' },
   { label: 'Software a Medida', href: '/software-a-medida' },
-  { label: 'Key ERP', href: '/key-erp' },
 ]
 
 export default function Footer() {
@@ -50,7 +50,7 @@ export default function Footer() {
 
         {/* Products */}
         <div>
-          <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+          <h4 className="text-white font-semibold mb-4 text-sm">
             Productos
           </h4>
           <ul className="space-y-2.5">
@@ -74,18 +74,21 @@ export default function Footer() {
 
         {/* Software solutions */}
         <div>
-          <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+          <h4 className="text-white font-semibold mb-4 text-sm">
             Soluciones de Software
           </h4>
           <ul className="space-y-2.5">
             {softwareLinks.map((l) => (
               <li key={l.href}>
-                <Link
-                  to={l.href}
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
-                >
-                  {l.label}
-                </Link>
+                {l.external ? (
+                  <a href={l.href} rel="noopener" className="text-sm text-white font-medium hover:text-blue-200 transition-colors">
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link to={l.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                )}
               </li>
             ))}
             <li>
@@ -101,13 +104,17 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+          <h4 className="text-white font-semibold mb-4 text-sm">
             Contacto
           </h4>
           <ul className="space-y-3">
             <li className="flex items-start gap-2 text-sm text-gray-400">
               <MapPin size={15} className="mt-0.5 flex-shrink-0 text-gray-500" />
               {company.address}
+            </li>
+            <li className="flex items-start gap-2 text-sm text-gray-400">
+              <MapPin size={15} className="mt-0.5 flex-shrink-0 text-gray-500" />
+              {company.bolivia}
             </li>
             <li>
               <a

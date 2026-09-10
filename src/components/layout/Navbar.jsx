@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react'
 import logoKey from '../../assets/logoKey.png'
+import { company } from '../../data/company'
 
 const products = [
   { label: 'Tarjetas PVC Bancarias', href: '/tarjetas-bancarias' },
@@ -15,7 +16,6 @@ const products = [
 const software = [
   { label: 'Desarrollo Web', href: '/desarrollo-web' },
   { label: 'Software a Medida', href: '/software-a-medida' },
-  { label: 'Key ERP', href: '/key-erp' },
 ]
 
 export default function Navbar() {
@@ -127,8 +127,7 @@ export default function Navbar() {
               className={`${navLink} flex items-center gap-1 ${
                 pathname === '/soluciones-empresariales' ||
                 pathname === '/desarrollo-web' ||
-                pathname === '/software-a-medida' ||
-                pathname === '/key-erp'
+                pathname === '/software-a-medida'
                   ? activeClass
                   : inactiveClass
               }`}
@@ -172,6 +171,14 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          <a
+            href={company.erpUrl}
+            rel="noopener"
+            className={`${navLink} inline-flex items-center gap-1 text-brand-blue hover:text-navy-900`}
+          >
+            KeyERP
+            <ArrowUpRight size={14} />
+          </a>
           <Link
             to="/clientes"
             className={`${navLink} ${pathname === '/clientes' ? activeClass : inactiveClass}`}
@@ -220,7 +227,7 @@ export default function Navbar() {
                 Nosotros
               </Link>
               <div className="py-1">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                <p className="text-xs font-semibold text-gray-500 mb-2">
                   Productos y Servicios
                 </p>
                 {products.map((p) => (
@@ -240,7 +247,7 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="py-1">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                <p className="text-xs font-semibold text-gray-500 mb-2">
                   Soluciones de Software
                 </p>
                 {software.map((s) => (
@@ -259,6 +266,13 @@ export default function Navbar() {
                   Ver todas →
                 </Link>
               </div>
+              <a
+                href={company.erpUrl}
+                rel="noopener"
+                className="py-2.5 text-sm font-semibold text-brand-blue inline-flex items-center gap-1"
+              >
+                KeyERP <ArrowUpRight size={14} />
+              </a>
               <Link
                 to="/clientes"
                 className="py-2.5 text-sm font-medium text-gray-700 hover:text-brand-blue"

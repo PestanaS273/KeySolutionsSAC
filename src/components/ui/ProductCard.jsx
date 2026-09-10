@@ -28,7 +28,7 @@ export default function ProductCard({ product, index = 0 }) {
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
         {product.subtitle && (
-          <span className="text-xs font-semibold tracking-widest uppercase text-brand-blue mb-2">
+          <span className="text-xs font-medium text-gray-500 mb-2">
             {product.subtitle}
           </span>
         )}

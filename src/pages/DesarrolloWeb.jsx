@@ -19,7 +19,6 @@ const structuredData = {
 }
 
 export default function DesarrolloWeb() {
-  const stackDoubled = [...webDevStack, ...webDevStack]
 
   return (
     <>
@@ -32,7 +31,6 @@ export default function DesarrolloWeb() {
       />
 
       <SoftwareHero
-        eyebrow="Desarrollo Web"
         lines={['Sitios web que', 'representan su marca']}
         subtitle="Diseño y desarrollo a medida, con tecnología moderna y una arquitectura pensada para escalar junto a su negocio — sin plantillas genéricas."
         primaryCta={{ label: 'Cotizar mi sitio', href: '/contacto' }}
@@ -75,26 +73,21 @@ export default function DesarrolloWeb() {
       <section className="py-16 bg-navy-950 border-y border-navy-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-8">
           <AnimatedSection className="text-center">
-            <p className="text-xs font-semibold tracking-widest uppercase text-blue-300/60">
+            <p className="text-sm font-medium text-blue-100/70">
               Tecnología moderna, sin ataduras a un solo proveedor
             </p>
           </AnimatedSection>
         </div>
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-navy-950 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-navy-950 to-transparent z-10 pointer-events-none" />
-          <div className="flex animate-marquee gap-4 w-max">
-            {stackDoubled.map((tech, i) => (
-              <span
-                key={`${tech}-${i}`}
-                className="flex-shrink-0 px-5 py-2.5 rounded-full border border-white/10 text-sm font-semibold text-blue-100/80"
-                style={{ background: 'rgba(255,255,255,0.04)' }}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
+        <ul className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap justify-center gap-3">
+          {webDevStack.map((tech) => (
+            <li
+              key={tech}
+              className="px-4 py-2 rounded-lg border border-white/15 text-sm font-medium text-blue-100/85"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* ── PROCESO ───────────────────────────────────────────────────── */}

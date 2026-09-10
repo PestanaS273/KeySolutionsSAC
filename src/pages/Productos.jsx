@@ -21,7 +21,7 @@ export default function Productos() {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block text-xs font-semibold tracking-widest uppercase text-brand-gold mb-5"
+            className="inline-block text-sm font-medium text-blue-100/70 mb-5"
           >
             Catálogo completo
           </motion.span>

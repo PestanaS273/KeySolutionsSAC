@@ -220,7 +220,7 @@ export default function TarjetasBanca() {
             />
           </AnimatedSection>
           <AnimatedSection direction="right">
-            <span className="text-xs font-semibold tracking-widest uppercase text-brand-blue">
+            <span className="text-xs font-medium text-gray-500">
               Especificaciones técnicas
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-navy-900 mb-6">
@@ -249,7 +249,7 @@ export default function TarjetasBanca() {
       <section className="py-16 bg-brand-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
-            <span className="text-xs font-semibold tracking-widest uppercase text-brand-blue">
+            <span className="text-xs font-medium text-gray-500">
               Certificaciones y estándares
             </span>
             <h2 className="mt-2 text-2xl font-extrabold text-navy-900 mb-3">

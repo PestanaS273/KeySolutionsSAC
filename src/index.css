@@ -16,7 +16,8 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
     background-color: #F8FAFC;
     color: #1A202C;
   }

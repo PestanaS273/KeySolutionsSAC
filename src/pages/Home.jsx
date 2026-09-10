@@ -1,25 +1,20 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import {
-  Shield, Clock, Settings, Globe, ArrowRight, ChevronRight,
-  CreditCard, Cpu, Layers, FileText, Wifi, Key, ShieldCheck,
-  MapPin, Building2, Star,
-} from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { productCategories } from '../data/products'
-import { features } from '../data/company'
-import { softwareServices } from '../data/software'
+import { company } from '../data/company'
+import { erpModules, webDevServices, customSoftwareUseCases } from '../data/software'
 import ProductCard from '../components/ui/ProductCard'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
-import StatCounter from '../components/ui/StatCounter'
-import SoftwareServiceCard from '../components/ui/SoftwareServiceCard'
+import ContactForm from '../components/ui/ContactForm'
 import SEOHead from '../components/SEOHead'
 import { blogPosts } from '../data/blog'
-import fondoBg from '../assets/fondo.avif'
+import heroImg from '../assets/tarjetascarousel.png'
+import keyerpLogo from '../assets/keyerp-logo.png'
 
 const blogPreview = blogPosts.slice(0, 3)
-const iconMap = { Shield, Clock, Settings, Globe }
 
 const homeStructuredData = {
   '@context': 'https://schema.org',
@@ -28,9 +23,9 @@ const homeStructuredData = {
   image: 'https://keysolutionssac.com/og-image.png',
   url: 'https://keysolutionssac.com',
   telephone: '+51-949-284-735',
-  email: 'rpestana@keysolutionssac.com',
+  email: company.email,
   description:
-    'Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip (EMV, contactless, dual interface, MIFARE) para bancos y cooperativas, tarjetas de acceso para hoteles y empresas, rollos térmicos POS/ATM, fundas RFID y formularios bancarios en Perú y Bolivia.',
+    'Proveedores de tarjetas PVC bancarias con chip EMV, contactless, dual interface y MIFARE, rollos térmicos POS/ATM, fundas RFID y formularios bancarios en Perú y Bolivia. Desarrolladores de KeyERP, sistema de gestión del gasto administrativo.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Av. Raúl Ferrero 1542',
@@ -55,59 +50,26 @@ const homeStructuredData = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Rollos Térmicos POS y ATM 80x80' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fundas de Bloqueo RFID Anti-Clonación' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sobres PIN Mailer, Con Ventana y Formas Continuas' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'KeyERP — Gestión del gasto administrativo', url: 'https://keyerp.keysolutionssac.com' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Desarrollo Web a Medida' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Software Empresarial a Medida' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Key ERP — Sistema de Gestión Modular' } },
     ],
   },
   areaServed: ['PE', 'BO'],
 }
 
-const productHighlights = [
-  { icon: CreditCard, label: 'Tarjetas bancarias PVC',  sub: 'Múltiples chips y certificaciones' },
-  { icon: Cpu,        label: 'Acceso y control',        sub: 'Hotel · Empresa · Campus' },
-  { icon: Layers,     label: 'Rollos térmicos',          sub: 'POS · ATM · Autocopiante' },
-  { icon: FileText,   label: 'Formularios bancarios',    sub: 'PIN Mailer · Sobres · Formas continuas' },
-]
-
 const chipTechs = [
-  { icon: CreditCard,  name: 'EMV Contacto',    std: 'ISO 7816' },
-  { icon: Wifi,        name: 'EMV Contactless',  std: 'ISO 14443' },
-  { icon: Layers,      name: 'Dual Interface',   std: 'Contacto + NFC' },
-  { icon: Key,         name: 'MIFARE Classic',   std: 'NXP MIFARE' },
-  { icon: ShieldCheck, name: 'MIFARE DESFire',   std: 'EV2 / EV3' },
-  { icon: Settings,    name: 'Spec. del banco',  std: 'A pedido' },
+  ['EMV contacto', 'ISO 7816'],
+  ['EMV contactless', 'ISO 14443'],
+  ['Dual interface', 'Contacto y NFC'],
+  ['MIFARE Classic', 'NXP'],
+  ['MIFARE DESFire', 'EV2 / EV3'],
+  ['Especificación del banco', 'A pedido'],
 ]
 
-const presence = [
-  {
-    icon: MapPin,
-    country: 'Perú',
-    city: 'Lima — La Molina',
-    detail: 'Sede principal · Av. Raúl Ferrero 1542',
-    extra: 'RUC 20612618179',
-    accent: 'bg-red-50 text-red-600',
-  },
-  {
-    icon: Building2,
-    country: 'Bolivia',
-    city: 'La Paz · Santa Cruz · Cochabamba',
-    detail: 'Distribución a bancos y cooperativas',
-    extra: '11+ clientes institucionales',
-    accent: 'bg-yellow-50 text-yellow-600',
-  },
-]
-
-/* Framer Motion variants */
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 22 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
-})
-
-const scaleIn = (delay = 0) => ({
-  initial: { opacity: 0, scale: 0.92 },
-  animate: { opacity: 1, scale: 1 },
   transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay },
 })
 
@@ -115,171 +77,75 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Proveedores Especializados de Tarjetas PVC para Bancos y Empresas — Perú y Bolivia | Key Solutions S.A.C"
-        description="Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV, contactless, dual interface, MIFARE y más, según especificaciones. También tarjetas de acceso para hoteles y empresas, rollos térmicos POS/ATM, fundas RFID y formularios bancarios. +20 años en Perú y Bolivia."
-        keywords="proveedores tarjetas PVC bancos Peru Bolivia, tarjetas PVC bancarias chip Peru, tarjetas PVC chip EMV contactless dual interface Peru, tarjetas MIFARE Peru Bolivia, tarjetas acceso hotel empresa Peru, rollos termicos POS ATM Peru Bolivia, fundas RFID Peru Bolivia, formularios bancarios Peru Bolivia, proveedor insumos bancarios Peru Bolivia, Key Solutions SAC"
+        title="Tarjetas PVC bancarias, insumos financieros y KeyERP — Perú y Bolivia | Key Solutions S.A.C"
+        description="Proveedores de tarjetas PVC bancarias (EMV, contactless, dual interface, MIFARE), rollos térmicos POS/ATM, fundas RFID y formularios para bancos de Perú y Bolivia. Desarrolladores de KeyERP, sistema de gestión del gasto administrativo. Más de 20 años en el sector financiero."
+        keywords="proveedores tarjetas PVC bancos Peru Bolivia, tarjetas PVC chip EMV contactless, tarjetas MIFARE, rollos termicos POS ATM, fundas RFID, formularios bancarios, KeyERP, ERP gasto administrativo, software a medida Peru, Key Solutions SAC"
         path="/"
         structuredData={homeStructuredData}
       />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-navy-950">
-        {/* Background image */}
+      <section className="relative overflow-hidden bg-navy-950 text-white">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{ backgroundImage: `url(${fondoBg})` }}
           aria-hidden="true"
+          className="absolute -top-48 -right-48 h-[40rem] w-[40rem] rounded-full opacity-30 blur-3xl pointer-events-none"
+          style={{ background: 'radial-gradient(closest-side, #1E6FD9, transparent 70%)' }}
         />
-        {/* Gradient overlay — always applied regardless of image */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(135deg, rgba(9,25,41,0.97) 0%, rgba(13,43,78,0.93) 50%, rgba(30,111,217,0.75) 100%)',
-          }}
-          aria-hidden="true"
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-          {/* Left: copy */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
           <div>
-            <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2.5 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
-              <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
-                Proveedores especializados · Perú y Bolivia
-              </span>
-            </motion.div>
-
             <motion.h1
-              {...fadeUp(0.1)}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight"
+              {...fadeUp(0.05)}
+              className="font-display text-4xl sm:text-5xl lg:text-[3.6rem] font-bold leading-[1.05] tracking-tight text-balance"
             >
-              Tarjetas PVC para{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-200">
-                Bancos y Empresas
-              </span>
-              <br />
-              <span className="text-3xl sm:text-4xl lg:text-5xl text-blue-200 font-bold">
-                Proveedores Especializados en Perú y Bolivia
-              </span>
+              Insumos para el sector financiero y el sistema que ordena su gasto.
             </motion.h1>
-
-            <motion.p
-              {...fadeUp(0.2)}
-              className="mt-6 text-lg text-blue-100/80 leading-relaxed max-w-xl"
-            >
-              Ofrecemos tarjetas PVC bancarias con la tecnología de chip que su institución
-              requiere — EMV, contactless, dual interface, MIFARE y más. También rollos
-              térmicos, fundas RFID y formularios bancarios. Trabajamos con proveedores
-              especializados para cualquier especificación.
+            <motion.p {...fadeUp(0.18)} className="mt-7 text-lg text-blue-100/80 leading-relaxed max-w-xl">
+              Más de 20 años proveyendo tarjetas PVC con chip, rollos térmicos, fundas RFID y
+              formularios a bancos y cooperativas de Perú y Bolivia. Y KeyERP, nuestro sistema de
+              gestión del gasto administrativo, instalado en los servidores de cada cliente.
             </motion.p>
-
-            {/* Product highlights grid */}
-            <motion.div
-              {...fadeUp(0.3)}
-              className="mt-7 grid grid-cols-2 gap-2.5"
-            >
-              {productHighlights.map(({ icon: Icon, label, sub }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2.5 rounded-xl px-3.5 py-3 border border-white/10"
-                  style={{ background: 'rgba(255,255,255,0.06)' }}
-                >
-                  <Icon size={15} className="text-amber-300 flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-xs font-semibold leading-tight">{label}</p>
-                    <p className="text-blue-200/60 text-[10px] leading-tight mt-0.5">{sub}</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* CTAs */}
-            <motion.div {...fadeUp(0.4)} className="mt-9 flex flex-wrap gap-4">
+            <motion.div {...fadeUp(0.3)} className="mt-9 flex flex-wrap gap-3">
               <Link
                 to="/productos"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-400 text-navy-950 font-bold rounded-xl hover:bg-amber-300 active:bg-amber-500 transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-navy-950 font-bold rounded-lg hover:bg-blue-50 transition-colors"
               >
-                Ver catálogo completo
+                Ver catálogo de insumos
                 <ArrowRight size={17} />
               </Link>
-              <Link
-                to="/contacto"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/25 text-white font-semibold rounded-xl hover:bg-white/10 active:bg-white/5 transition-colors"
+              <a
+                href={company.erpUrl}
+                rel="noopener"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
               >
-                Solicitar cotización
-              </Link>
+                Conocer KeyERP
+                <ArrowUpRight size={17} />
+              </a>
             </motion.div>
+            <motion.ul {...fadeUp(0.42)} className="mt-12 flex flex-wrap gap-x-8 gap-y-2 text-sm text-blue-100/60">
+              <li>Más de 20 años en el sector financiero</li>
+              <li>11 instituciones atendidas</li>
+              <li>Lima y La Paz</li>
+            </motion.ul>
           </div>
 
-          {/* Right: stats */}
-          <motion.div
-            {...scaleIn(0.35)}
-            className="grid grid-cols-2 gap-4 lg:justify-self-end w-full max-w-xs"
+          <motion.figure
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
+            className="relative"
           >
-            {[
-              { value: 20, prefix: '+', label: 'Años de experiencia' },
-              { value: 11, suffix: '+', label: 'Clientes institucionales' },
-              { value: 2,  label: 'Países atendidos' },
-              { value: 5,  label: 'Líneas de producto' },
-            ].map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.09, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-2xl p-5 text-center border border-white/15"
-                style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)' }}
-              >
-                <StatCounter
-                  value={s.value}
-                  prefix={s.prefix}
-                  suffix={s.suffix}
-                  viewportMargin="0px"
-                  className="font-display block text-3xl font-bold text-amber-300"
-                />
-                <p className="text-xs text-blue-100/70 mt-1 leading-tight">{s.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40"
-          aria-hidden="true"
-        >
-          <ChevronRight size={22} className="rotate-90" />
-        </motion.div>
-      </section>
-
-      {/* ── ¿POR QUÉ ELEGIRNOS? ───────────────────────────────────────── */}
-      <section className="py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <SectionTitle
-            label="¿Por qué elegirnos?"
-            title="Proveedores especializados con más de 20 años en el sector financiero"
-            subtitle="Trabajamos con proveedores especializados para responder a las especificaciones técnicas de cada institución — desde el tipo de chip hasta la certificación requerida."
-          />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((f, i) => {
-              const Icon = iconMap[f.icon]
-              return (
-                <AnimatedSection key={f.title} delay={i * 0.08}>
-                  <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 h-full">
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
-                      <Icon size={22} className="text-brand-blue" />
-                    </div>
-                    <h3 className="font-bold text-navy-900 mb-2 text-base">{f.title}</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">{f.description}</p>
-                  </div>
-                </AnimatedSection>
-              )
-            })}
-          </div>
+            <img
+              src={heroImg}
+              alt="Tarjetas bancarias con chip EMV, apiladas sobre una mesa"
+              width={640}
+              height={335}
+              className="w-full rounded-xl object-cover shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)]"
+              fetchPriority="high"
+            />
+            <figcaption className="mt-3 text-xs text-blue-100/50">
+              Tarjetas PVC con chip EMV: la especificación la define el banco, nosotros la cumplimos.
+            </figcaption>
+          </motion.figure>
         </div>
       </section>
 
@@ -287,201 +153,275 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Nuestro catálogo"
-            title="Cinco líneas de producto para el sector financiero y empresarial"
-            subtitle="Ofrecemos y distribuimos en Perú y Bolivia. Cada producto se adapta a las especificaciones técnicas y comerciales de su institución."
+            center={false}
+            title="Cinco líneas de insumos para bancos, cooperativas y empresas"
+            subtitle="Cada producto se fabrica a la especificación técnica de su institución: tipo de chip, red de pago, certificación, personalización y formato."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {productCategories.map((product, i) => (
               <ProductCard key={product.id} product={product} index={i} />
             ))}
           </div>
-          <AnimatedSection className="text-center mt-12">
-            <Link
-              to="/productos"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-navy-900 text-white font-semibold rounded-xl hover:bg-navy-800 transition-colors"
-            >
-              Ver catálogo completo
-              <ArrowRight size={17} />
-            </Link>
+
+          <AnimatedSection className="mt-14 border-t border-gray-200 pt-8">
+            <div className="grid gap-8 lg:grid-cols-[14rem_1fr]">
+              <h3 className="font-display text-lg font-bold text-navy-900">Tecnologías de chip disponibles</h3>
+              <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-4">
+                {chipTechs.map(([name, std]) => (
+                  <div key={name}>
+                    <dt className="text-sm font-semibold text-navy-900">{name}</dt>
+                    <dd className="text-sm text-gray-500">{std}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                to="/productos"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors"
+              >
+                Catálogo completo
+                <ArrowRight size={16} />
+              </Link>
+              <Link
+                to="/tarjetas-bancarias"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-navy-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                Tarjetas bancarias
+              </Link>
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── TECNOLOGÍAS DE CHIP ───────────────────────────────────────── */}
-      <section className="py-20 bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <AnimatedSection>
-              <div className="inline-flex items-center gap-2.5 mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
-                <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
-                  Tecnologías disponibles
-                </span>
-              </div>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                Tarjetas PVC con el chip que su banco necesita
-              </h2>
-              <p className="mt-4 text-blue-200/70 max-w-2xl mx-auto text-base leading-relaxed">
-                Coordinamos con fabricantes certificados para suministrar la tecnología de chip
-                exacta que su institución financiera requiere.
-              </p>
-            </AnimatedSection>
-          </div>
+      {/* ── KEYERP ───────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-navy-900 text-white py-24 lg:py-28">
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 -right-40 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full opacity-25 blur-3xl pointer-events-none"
+          style={{ background: 'radial-gradient(closest-side, #5BB8F5, transparent 70%)' }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-20 items-start">
+          <AnimatedSection>
+            <div className="flex items-center gap-3">
+              <img src={keyerpLogo} alt="" width={40} height={43} className="h-10 w-auto rounded-md bg-white p-1" />
+              <span className="text-2xl font-bold tracking-tight">
+                Key<span className="text-sky-300">ERP</span>
+              </span>
+            </div>
+            <h2 className="font-display mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-balance">
+              Nuestro producto: el gasto administrativo de su empresa, con rastro de punta a punta.
+            </h2>
+            <p className="mt-6 text-lg text-blue-100/80 leading-relaxed max-w-xl">
+              KeyERP lleva cada solicitud hasta su asiento contable. La requisición se aprueba, se
+              cotiza, se convierte en orden de compra que compromete presupuesto, se concilia con la
+              factura y se paga. Cada documento cita al anterior, y cada cambio queda con quién,
+              cuándo y por qué.
+            </p>
+            <ul className="mt-7 space-y-2.5 text-[0.95rem] text-blue-50/90">
+              {[
+                'Se instala en los servidores de su empresa; ningún dato sale de su perímetro.',
+                'Se licencia por módulos: empieza con lo que necesita y suma después sin reinstalar.',
+                'Pensado para pasar auditoría: separación de funciones y rastro completo.',
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2.5">
+                  <Check size={17} className="mt-0.5 shrink-0 text-sky-300" aria-hidden="true" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a
+                href={company.erpUrl}
+                rel="noopener"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-navy-950 font-bold rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                Ver KeyERP
+                <ArrowUpRight size={17} />
+              </a>
+              <a
+                href="#contacto"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
+              >
+                Solicitar una demo
+              </a>
+            </div>
+          </AnimatedSection>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {chipTechs.map(({ icon: Icon, name, std }, i) => (
-              <AnimatedSection key={name} delay={i * 0.07}>
-                <div className="rounded-2xl p-5 text-center flex flex-col items-center gap-3 border border-white/10 hover:border-amber-400/30 hover:bg-white/5 transition-all duration-250 h-full"
-                  style={{ background: 'rgba(255,255,255,0.05)' }}>
-                  <div className="w-10 h-10 rounded-xl bg-amber-400/15 flex items-center justify-center">
-                    <Icon size={18} className="text-amber-300" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-white leading-tight">{name}</p>
-                    <p className="text-[10px] text-blue-300/60 mt-1">{std}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection className="text-center mt-10">
-            <Link
-              to="/tarjetas-bancarias"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-amber-300 hover:text-amber-200 transition-colors"
-            >
-              Ver tarjetas bancarias <ArrowRight size={14} />
-            </Link>
+          <AnimatedSection delay={0.15}>
+            <p className="text-sm font-medium text-blue-100/60">Nueve módulos sobre un mismo núcleo</p>
+            <ol className="mt-4 divide-y divide-white/10 border-y border-white/10">
+              {erpModules.map((m) => (
+                <li key={m.title} className="grid gap-1 py-3.5 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                  <h3 className="text-[0.95rem] font-semibold text-white">{m.title}</h3>
+                  <p className="text-sm text-blue-100/70 leading-relaxed">{m.description}</p>
+                </li>
+              ))}
+            </ol>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── MÁS QUE INSUMOS ──────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      {/* ── DESARROLLO DE SOFTWARE ───────────────────────────────────── */}
+      <section className="py-24 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Más que insumos"
-            title="Soluciones empresariales de tecnología, integradas a su negocio"
-            subtitle="Además de proveer insumos para el sector financiero, desarrollamos el software que su empresa necesita: sitios web, sistemas a medida y Key ERP, nuestro sistema de gestión modular."
+            center={false}
+            title="También construimos el software que su operación necesita"
+            subtitle="El mismo equipo que desarrolla KeyERP hace sitios web y sistemas a medida. La exigencia es la que aprendimos trabajando con bancos."
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {softwareServices.map((service, i) => (
-              <SoftwareServiceCard key={service.id} service={service} index={i} />
-            ))}
+          <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <AnimatedSection>
+              <div className="border-t-2 border-navy-900 pt-5">
+                <h3 className="font-display text-2xl font-bold text-navy-900 tracking-tight">Desarrollo web</h3>
+                <p className="mt-3 text-gray-700 leading-relaxed">
+                  Sitios corporativos, landing pages, tiendas y portales administrables. Rápidos,
+                  bien posicionados y con un formulario que llega a su equipo comercial.
+                </p>
+                <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-700">
+                  {webDevServices.map((s) => (
+                    <li key={s.title} className="flex items-start gap-2">
+                      <Check size={15} className="mt-1 shrink-0 text-brand-blue" aria-hidden="true" />
+                      {s.title}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/desarrollo-web"
+                  className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all"
+                >
+                  Desarrollo web <ArrowRight size={15} />
+                </Link>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <div className="border-t-2 border-navy-900 pt-5">
+                <h3 className="font-display text-2xl font-bold text-navy-900 tracking-tight">Software a medida</h3>
+                <p className="mt-3 text-gray-700 leading-relaxed">
+                  Cuando el proceso no cabe en un producto de estante: automatización, integraciones
+                  entre sistemas, paneles y aplicaciones internas construidas alrededor de cómo
+                  trabaja su equipo.
+                </p>
+                <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-700">
+                  {customSoftwareUseCases.map((s) => (
+                    <li key={s.title} className="flex items-start gap-2">
+                      <Check size={15} className="mt-1 shrink-0 text-brand-blue" aria-hidden="true" />
+                      {s.title}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/software-a-medida"
+                  className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all"
+                >
+                  Software a medida <ArrowRight size={15} />
+                </Link>
+              </div>
+            </AnimatedSection>
           </div>
-          <AnimatedSection className="text-center mt-12">
-            <Link
-              to="/soluciones-empresariales"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-navy-900 text-white font-semibold rounded-xl hover:bg-navy-800 transition-colors"
-            >
-              Ver soluciones empresariales
-              <ArrowRight size={17} />
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
 
       {/* ── CLIENTES ──────────────────────────────────────────────────── */}
       <ClientsCarousel />
 
-      {/* ── PRESENCIA REGIONAL ────────────────────────────────────────── */}
+      {/* ── PRESENCIA ─────────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <SectionTitle
-            label="Cobertura regional"
-            title="Presencia en Perú y Bolivia"
-            subtitle="Atendemos a bancos, cooperativas y empresas del sector financiero con distribución directa y logística eficiente."
+            center={false}
+            title="Dos empresas, un mismo equipo"
+            subtitle="Key Solutions atiende desde Lima. En Bolivia, las ventas y la atención se hacen a través de ACOVI Solutions Bolivia."
           />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {presence.map((c, i) => {
-              const Icon = c.icon
-              return (
-                <AnimatedSection key={c.country} delay={i * 0.1}>
-                  <div className="flex items-start gap-5 bg-[#F8FAFC] rounded-2xl p-7 border border-gray-100 hover:shadow-card transition-shadow duration-300">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${c.accent}`}>
-                      <Icon size={22} />
-                    </div>
-                    <div>
-                      <p className="font-extrabold text-navy-900 text-xl">{c.country}</p>
-                      <p className="text-sm font-semibold text-brand-blue mt-0.5">{c.city}</p>
-                      <p className="text-xs text-gray-500 mt-2">{c.detail}</p>
-                      <p className="text-xs text-gray-400 mt-0.5">{c.extra}</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              )
-            })}
-          </div>
+          <AnimatedSection>
+            <dl className="grid gap-8 sm:grid-cols-2">
+              <div className="border-t border-gray-200 pt-5">
+                <dt className="font-display text-xl font-bold text-navy-900">Perú</dt>
+                <dd className="mt-2 text-sm text-gray-700 leading-relaxed">
+                  Key Solutions S.A.C.
+                  <br />
+                  {company.address}
+                  <br />
+                  <span className="text-gray-500">RUC {company.ruc}</span>
+                </dd>
+              </div>
+              <div className="border-t border-gray-200 pt-5">
+                <dt className="font-display text-xl font-bold text-navy-900">Bolivia</dt>
+                <dd className="mt-2 text-sm text-gray-700 leading-relaxed">
+                  ACOVI Solutions Bolivia S.R.L.
+                  <br />
+                  La Paz
+                  <br />
+                  <span className="text-gray-500">Distribución a bancos y cooperativas en todo el país</span>
+                </dd>
+              </div>
+            </dl>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* ── BLOG PREVIEW ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <SectionTitle
-            label="Recursos y guías"
-            title="Blog — Insumos para el sector financiero"
-            subtitle="Artículos educativos sobre tarjetas PVC, tipos de chip, contactless, rollos térmicos, fundas RFID y más."
-          />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+      {/* ── CONTACTO ──────────────────────────────────────────────────── */}
+      <section id="contacto" className="scroll-mt-20 py-24 bg-[#F8FAFC] border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 leading-[1.08] tracking-tight text-balance">
+              Cuéntenos qué necesita.
+            </h2>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              Una cotización de insumos con sus especificaciones, o una demo de KeyERP con los datos
+              de su empresa. Respondemos en el día hábil siguiente.
+            </p>
+            <address className="mt-8 space-y-2 text-[0.95rem] not-italic text-gray-700">
+              <p>
+                <a href={`mailto:${company.email}`} className="font-medium text-navy-900 hover:underline">
+                  {company.email}
+                </a>
+              </p>
+              <p>
+                <a href={`https://wa.me/${company.whatsapp}`} rel="noopener noreferrer" target="_blank" className="hover:text-navy-900">
+                  {company.phone} · WhatsApp
+                </a>
+              </p>
+              <p className="text-gray-500">Lunes a viernes, 9:00 a 18:00</p>
+            </address>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
+              <ContactForm />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── BLOG ──────────────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-8 lg:grid-cols-[14rem_1fr] lg:gap-20">
+          <AnimatedSection>
+            <h2 className="font-display text-2xl font-bold text-navy-900 tracking-tight">Guías del sector</h2>
+            <Link to="/blog" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue">
+              Todos los artículos <ArrowRight size={15} />
+            </Link>
+          </AnimatedSection>
+          <ul className="divide-y divide-gray-200 border-y border-gray-200">
             {blogPreview.map((post, i) => (
-              <AnimatedSection key={post.slug} delay={i * 0.09}>
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="group flex flex-col bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 h-full"
-                >
-                  <span className="inline-block text-xs font-semibold text-brand-blue bg-blue-50 px-2.5 py-1 rounded-lg mb-3 w-fit">
-                    {post.category}
-                  </span>
-                  <h3 className="text-sm font-bold text-navy-900 group-hover:text-brand-blue transition-colors leading-snug mb-4 flex-1">
-                    {post.title}
-                  </h3>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-400 group-hover:text-brand-blue group-hover:gap-2.5 transition-all duration-200">
-                    Leer artículo <ArrowRight size={11} />
-                  </span>
-                </Link>
+              <AnimatedSection key={post.slug} delay={i * 0.06}>
+                <li>
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    className="group flex items-center justify-between gap-6 py-4"
+                  >
+                    <span>
+                      <span className="block text-xs font-medium text-gray-500">{post.category}</span>
+                      <span className="block mt-0.5 font-semibold text-navy-900 group-hover:text-brand-blue transition-colors">
+                        {post.title}
+                      </span>
+                    </span>
+                    <ArrowRight size={16} className="shrink-0 text-gray-400 group-hover:text-brand-blue transition-colors" />
+                  </Link>
+                </li>
               </AnimatedSection>
             ))}
-          </div>
-          <AnimatedSection className="text-center mt-10">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 px-7 py-3 border-2 border-navy-900 text-navy-900 font-semibold rounded-xl hover:bg-navy-900 hover:text-white transition-colors"
-            >
-              Ver todos los artículos
-              <ArrowRight size={16} />
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── CTA FINAL ─────────────────────────────────────────────────── */}
-      <section className="py-24 bg-navy-900 relative overflow-hidden">
-        {/* Subtle decorative glow */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-20 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse, #1E6FD9 0%, transparent 70%)' }}
-          aria-hidden="true"
-        />
-        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <AnimatedSection>
-            <Star size={28} className="text-amber-400 mx-auto mb-5" />
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
-              ¿Necesita tarjetas PVC u otros insumos financieros?
-            </h2>
-            <p className="text-blue-200/75 text-lg mb-9 leading-relaxed">
-              Contáctenos con sus especificaciones técnicas y le respondemos con la solución más
-              adecuada para su institución.
-            </p>
-            <Link
-              to="/contacto"
-              className="inline-flex items-center gap-2 px-9 py-4 bg-amber-400 text-navy-950 font-bold rounded-xl hover:bg-amber-300 active:bg-amber-500 transition-colors text-lg shadow-glow"
-            >
-              Solicitar cotización
-              <ArrowRight size={19} />
-            </Link>
-          </AnimatedSection>
+          </ul>
         </div>
       </section>
     </>

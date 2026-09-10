@@ -1,5 +1,4 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 
@@ -18,59 +17,39 @@ function LineReveal({ children, delay = 0 }) {
   )
 }
 
-export default function SoftwareHero({ eyebrow, lines, subtitle, primaryCta, secondaryCta }) {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const gridY = useTransform(scrollYProgress, [0, 1], [0, 90])
-  const contentOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.35])
-  const contentScale = useTransform(scrollYProgress, [0, 1], [1, 0.97])
-
+function Cta({ cta, primary }) {
+  const cls = primary
+    ? 'inline-flex items-center gap-2 px-7 py-3.5 bg-white text-navy-950 font-bold rounded-lg hover:bg-blue-50 transition-colors'
+    : 'inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors'
+  if (cta.external) {
+    return (
+      <a href={cta.href} className={cls} rel="noopener">
+        {cta.label}
+        {primary && <ArrowRight size={17} />}
+      </a>
+    )
+  }
   return (
-    <section
-      ref={ref}
-      className="relative min-h-[78vh] flex items-center overflow-hidden bg-navy-950"
-    >
-      {/* Subtle grid */}
-      <motion.div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          y: gridY,
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-          backgroundSize: '56px 56px',
-          maskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 100%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 100%)',
-        }}
-      />
-      {/* Glow */}
+    <Link to={cta.href} className={cls}>
+      {cta.label}
+      {primary && <ArrowRight size={17} />}
+    </Link>
+  )
+}
+
+/* Cabecera de las páginas de software. Sin rejilla decorativa ni rótulo: el titular manda. */
+export default function SoftwareHero({ lines, subtitle, primaryCta, secondaryCta }) {
+  return (
+    <section className="relative flex items-center overflow-hidden bg-navy-950 py-24 lg:py-32">
       <div
         aria-hidden="true"
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(30,111,217,0.22) 0%, transparent 65%)' }}
+        className="absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl pointer-events-none"
+        style={{ background: 'radial-gradient(closest-side, #1E6FD9, transparent 70%)' }}
       />
-
-      <motion.div
-        style={{ opacity: contentOpacity, scale: contentScale }}
-        className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-28 text-center"
-      >
-        {eyebrow && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 mb-7"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
-            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-300/90">
-              {eyebrow}
-            </span>
-          </motion.div>
-        )}
-
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight max-w-4xl">
           {lines.map((line, i) => (
-            <LineReveal key={line} delay={0.15 + i * 0.13}>
+            <LineReveal key={line} delay={0.1 + i * 0.12}>
               {line}
             </LineReveal>
           ))}
@@ -78,10 +57,10 @@ export default function SoftwareHero({ eyebrow, lines, subtitle, primaryCta, sec
 
         {subtitle && (
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="mt-7 text-lg text-blue-100/75 leading-relaxed max-w-2xl mx-auto"
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-7 text-lg text-blue-100/80 leading-relaxed max-w-2xl"
           >
             {subtitle}
           </motion.p>
@@ -89,31 +68,16 @@ export default function SoftwareHero({ eyebrow, lines, subtitle, primaryCta, sec
 
         {(primaryCta || secondaryCta) && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-9 flex flex-wrap gap-4 justify-center"
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-9 flex flex-wrap gap-3"
           >
-            {primaryCta && (
-              <Link
-                to={primaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-400 text-navy-950 font-bold rounded-xl hover:bg-amber-300 active:bg-amber-500 transition-colors shadow-lg"
-              >
-                {primaryCta.label}
-                <ArrowRight size={17} />
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link
-                to={secondaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/25 text-white font-semibold rounded-xl hover:bg-white/10 active:bg-white/5 transition-colors"
-              >
-                {secondaryCta.label}
-              </Link>
-            )}
+            {primaryCta && <Cta cta={primaryCta} primary />}
+            {secondaryCta && <Cta cta={secondaryCta} />}
           </motion.div>
         )}
-      </motion.div>
+      </div>
     </section>
   )
 }

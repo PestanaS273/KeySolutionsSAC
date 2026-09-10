@@ -51,7 +51,7 @@ export default function TarjetasEmpresa() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <AnimatedSection direction="right" className="order-2 lg:order-1">
-            <span className="text-xs font-semibold tracking-widest uppercase text-brand-blue">
+            <span className="text-xs font-medium text-gray-500">
               Sectores que atendemos
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-navy-900 mb-6">
