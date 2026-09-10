@@ -25,8 +25,8 @@ export default function Contacto() {
         path="/contacto"
       />
 
-      <section className="bg-navy-950 py-20 px-4 sm:px-6 text-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-navy-950 py-20 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
