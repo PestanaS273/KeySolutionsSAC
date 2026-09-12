@@ -1,186 +1,125 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Shield, Award, Globe, Users } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
-import StatCounter from '../components/ui/StatCounter'
 import SEOHead from '../components/SEOHead'
 import { company } from '../data/company'
-import logo from '../assets/logo.png'
+import { tracks, softwareProjects, partners, presence } from '../data/trayectoria'
 
-const values = [
-  {
-    icon: Shield,
-    title: 'Calidad garantizada',
-    description: 'Cada producto es sometido a rigurosos controles de calidad antes de llegar a nuestros clientes.',
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Nosotros — Key Solutions S.A.C',
+  url: 'https://keysolutionssac.com/nosotros',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Key Solutions S.A.C',
+    url: 'https://keysolutionssac.com',
+    foundingLocation: 'Lima, Perú',
+    areaServed: ['PE', 'BO'],
+    knowsAbout: [
+      'Tarjetas bancarias EMV',
+      'Insumos para operación bancaria',
+      'Canales electrónicos bancarios',
+      'Administración de filas',
+      'Mensajería SWIFT',
+      'ERP de gasto administrativo',
+    ],
   },
-  {
-    icon: Award,
-    title: 'Experiencia comprobada',
-    description: 'Más de 20 años operando en el sector financiero de Perú y Bolivia nos otorgan un conocimiento único del mercado.',
-  },
-  {
-    icon: Globe,
-    title: 'Cobertura regional',
-    description: 'Atendemos a instituciones en Perú y Bolivia, con logística directa y tiempos de entrega eficientes.',
-  },
-  {
-    icon: Users,
-    title: 'Equipo especializado',
-    description: 'Profesionales altamente capacitados con amplia experiencia en el sector financiero e industrial.',
-  },
-]
+}
+
+const fade = (delay = 0) => ({
+  initial: { opacity: 0, y: 18 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
+})
 
 export default function Nosotros() {
   return (
     <>
       <SEOHead
-        title="Nosotros | Key Solutions S.A.C — Proveedores Especializados Tarjetas PVC Bancarias +20 Años en Perú"
-        description="Key Solutions S.A.C: proveedores especializados de tarjetas PVC bancarias VISA, Mastercard y Diners Club con chip EMV en Perú y Bolivia. Más de 20 años de experiencia en el sector financiero. RUC 20612618179."
-        keywords="Key Solutions SAC Peru, proveedores especializados tarjetas PVC bancarias Lima, proveedor insumos bancarios Peru Bolivia, empresa tarjetas bancarias chip EMV Peru, RUC 20612618179, distribuidor VISA Mastercard Peru, sector financiero insumos Peru"
+        title="Nosotros | Key Solutions S.A.C — Más de 20 años con el sector financiero de Perú y Bolivia"
+        description="Key Solutions S.A.C y ACOVI Solutions Bolivia: más de 20 años proveyendo tarjetas bancarias, insumos de operación y software a bancos, cooperativas y mutuales de Perú y Bolivia. Canales electrónicos, administración de filas, SWIFT y KeyERP."
+        keywords="Key Solutions SAC, ACOVI Solutions Bolivia, proveedor sector financiero Peru Bolivia, tarjetas bancarias EMV, canales electronicos bancarios, administracion de filas, SWIFT comercio exterior, KeyERP"
         path="/nosotros"
+        structuredData={structuredData}
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-950 to-navy-800 py-24 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block text-sm font-medium text-blue-100/70 mb-5"
-          >
-            Nuestra empresa
-          </motion.span>
+      {/* Cabecera */}
+      <section className="bg-navy-950 py-24 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight"
+            {...fade(0.05)}
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight max-w-4xl text-balance"
           >
-            Quiénes somos
+            Más de veinte años trabajando para el sector financiero de Perú y Bolivia.
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-5 text-gray-300 text-lg leading-relaxed"
-          >
-            {company.description}
+          <motion.p {...fade(0.18)} className="mt-7 text-lg text-blue-100/80 leading-relaxed max-w-2xl">
+            Empezamos proveyendo tarjetas bancarias y los insumos con los que opera una agencia.
+            Después construimos el software que corre detrás del mostrador: canales electrónicos,
+            filas, mensajería SWIFT. Hoy ese recorrido está en KeyERP, nuestro producto.
           </motion.p>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Quiénes somos */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <AnimatedSection direction="left">
-            <img src={logo} alt="Key Solutions" className="h-20 w-auto mb-6" />
-            <h2 className="text-3xl font-extrabold text-navy-900 mb-4">
-              Nuestra misión
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Proveer soluciones personalizadas y de alta calidad para el sector financiero y empresarial,
-              adaptadas a los requisitos específicos de diseño, materiales e impresión de cada cliente.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Trabajamos con bancos, cooperativas, hoteles, casinos y empresas del sector privado en
-              Perú y Bolivia, entregando productos que cumplen con los más altos estándares internacionales.
-            </p>
-          </AnimatedSection>
-
-          <AnimatedSection direction="right">
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { value: 20, prefix: '+', label: 'Años de experiencia' },
-                { value: 11, suffix: '+', label: 'Clientes institucionales' },
-                { value: 2, label: 'Países' },
-                { value: 5, label: 'Líneas de producto' },
-              ].map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.4 }}
-                  className="bg-brand-light rounded-2xl p-6 text-center shadow-card"
-                >
-                  <StatCounter
-                    value={s.value}
-                    prefix={s.prefix}
-                    suffix={s.suffix}
-                    className="font-display block text-4xl font-bold text-brand-blue"
-                  />
-                  <p className="text-sm text-gray-500 mt-1">{s.label}</p>
-                </motion.div>
-              ))}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+          <SectionTitle center={false} title="Dos empresas, un mismo equipo" />
+          <AnimatedSection>
+            <div className="space-y-5 text-gray-700 leading-relaxed">
+              <p>
+                Key Solutions S.A.C. opera desde Lima y atiende a clientes en Perú y Bolivia. En
+                Bolivia, las ventas y la atención se hacen a través de ACOVI Solutions Bolivia S.R.L.,
+                con presencia en La Paz, Santa Cruz y Cochabamba. Las dos empresas comparten el
+                mismo equipo y la misma forma de trabajar.
+              </p>
+              <p>
+                Nuestros clientes son bancos, cooperativas de ahorro y crédito, mutuales, fondos,
+                aseguradoras, empresas de telecomunicaciones y entidades públicas. Lo que tienen en
+                común es que exigen especificaciones exactas, plazos que se cumplen y un proveedor
+                que sigue ahí el año siguiente.
+              </p>
             </div>
+            <dl className="mt-10 grid gap-8 sm:grid-cols-2">
+              {presence.map((p) => (
+                <div key={p.country} className="border-t border-gray-200 pt-5">
+                  <dt className="font-display text-xl font-bold text-navy-900">{p.country}</dt>
+                  <dd className="mt-2 text-sm text-gray-700 leading-relaxed">
+                    {p.company}
+                    <br />
+                    {p.cities}
+                    <br />
+                    <span className="text-gray-500">{p.detail}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-brand-light">
+      {/* Líneas de trabajo */}
+      <section className="py-20 bg-[#F8FAFC] border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Nuestros valores"
-            title="Lo que nos diferencia"
+            center={false}
+            title="Tres líneas de trabajo, una misma exigencia"
+            subtitle="Cada una nació de una necesidad concreta de una institución financiera y se quedó porque siguió resolviéndola."
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v, i) => (
-              <AnimatedSection key={v.title} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -6 }}
-                  className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow h-full"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
-                    <v.icon size={22} className="text-brand-blue" />
-                  </div>
-                  <h3 className="font-bold text-navy-900 mb-2">{v.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{v.description}</p>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Marcas y estándares */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <SectionTitle
-            label="Marcas y certificaciones"
-            title="Proveedores especializados para las principales redes"
-            subtitle="Trabajamos con las redes de pago más importantes del mundo bajo estándares internacionales de seguridad."
-          />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Redes de pago',
-                items: ['VISA — Débito y Crédito', 'Mastercard — Débito y Crédito', 'Diners Club — Crédito'],
-                color: 'text-brand-blue',
-                bg: 'bg-blue-50',
-              },
-              {
-                title: 'Estándares técnicos',
-                items: ['EMV Chip Certification', 'ISO 7816 (Chip Contact)', 'ISO 14443 (Contactless NFC)', 'CR-80 Dimensiones'],
-                color: 'text-brand-gold',
-                bg: 'bg-yellow-50',
-              },
-              {
-                title: 'Seguridad y cumplimiento',
-                items: ['PCI DSS Compliance', 'Banda magnética triple pista', 'Personalización BIN/CVV', 'Anti-skimming'],
-                color: 'text-green-600',
-                bg: 'bg-green-50',
-              },
-            ].map((group) => (
-              <AnimatedSection key={group.title}>
-                <div className={`${group.bg} rounded-2xl p-6 h-full`}>
-                  <h3 className={`font-bold ${group.color} mb-4`}>{group.title}</h3>
-                  <ul className="space-y-2.5">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
-                        <span className={`w-1.5 h-1.5 rounded-full ${group.color.replace('text-', 'bg-')} flex-shrink-0 mt-1.5`} />
-                        {item}
+          <div className="mt-12 divide-y divide-gray-200 border-y border-gray-200">
+            {tracks.map((t, i) => (
+              <AnimatedSection key={t.title} delay={i * 0.06}>
+                <div className="grid gap-4 py-8 lg:grid-cols-[1fr_1.4fr_1fr] lg:gap-12">
+                  <h3 className="font-display text-2xl font-bold text-navy-900 tracking-tight">{t.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{t.body}</p>
+                  <ul className="space-y-1.5 text-sm text-gray-700">
+                    {t.items.map((it) => (
+                      <li key={it} className="flex items-start gap-2">
+                        <Check size={15} className="mt-1 shrink-0 text-brand-blue" aria-hidden="true" />
+                        {it}
                       </li>
                     ))}
                   </ul>
@@ -188,19 +127,92 @@ export default function Nosotros() {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
 
-          <AnimatedSection className="mt-10 bg-navy-950 rounded-2xl p-8 text-white text-center">
-            <p className="text-sm text-gray-400 mb-2">Empresa peruana con presencia en</p>
-            <p className="text-2xl font-extrabold text-brand-gold mb-4">Perú y Bolivia</p>
-            <p className="text-gray-300 text-sm max-w-2xl mx-auto">
-              Proveedor de tarjetas PVC bancarias, rollos térmicos, fundas RFID y formularios para bancos, cooperativas y empresas del sector financiero. RUC: <span className="text-white font-semibold">20612618179</span>
-            </p>
+      {/* Proyectos de software */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
+          <div>
+            <SectionTitle
+              center={false}
+              title="Software que ya corre en instituciones financieras"
+              subtitle="Sistemas que desarrollamos e instalamos para bancos, cooperativas y mutuales. Es el mismo equipo que hoy construye KeyERP."
+            />
+            <a
+              href={company.erpUrl}
+              rel="noopener"
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors"
+            >
+              Conocer KeyERP
+              <ArrowUpRight size={16} />
+            </a>
+          </div>
+          <AnimatedSection>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-300 text-left text-xs font-medium text-gray-500">
+                  <th scope="col" className="py-2 pr-4 font-medium">Institución</th>
+                  <th scope="col" className="py-2 font-medium">Sistema entregado</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {softwareProjects.map((p) => (
+                  <tr key={p.client}>
+                    <th scope="row" className="py-3 pr-4 align-top font-semibold text-navy-900 whitespace-nowrap">{p.client}</th>
+                    <td className="py-3 align-top text-gray-700">{p.system}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Clients */}
+      {/* Colaboradores */}
+      <section className="py-20 bg-[#F8FAFC] border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
+          <SectionTitle
+            center={false}
+            title="Con quiénes trabajamos"
+            subtitle="Fabricantes y especialistas con los que producimos. Cada uno cubre una parte que no tiene sentido hacer solos."
+          />
+          <div className="grid gap-8 sm:grid-cols-2">
+            {partners.map((p, i) => (
+              <AnimatedSection key={p.name} delay={i * 0.08}>
+                <div className="border-t-2 border-navy-900 pt-5 h-full">
+                  <h3 className="font-display text-xl font-bold text-navy-900">{p.name}</h3>
+                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">{p.body}</p>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline"
+                  >
+                    {p.url.replace('https://', '')} <ArrowUpRight size={14} />
+                  </a>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <ClientsCarousel />
+
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-gray-700">La lista completa de instituciones, por sector, está en la página de clientes.</p>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/clientes" className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-navy-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors">
+              Ver clientes
+            </Link>
+            <Link to="/contacto" className="inline-flex items-center gap-2 px-6 py-3 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors">
+              Contacto <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

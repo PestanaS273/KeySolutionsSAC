@@ -7,7 +7,7 @@ export const company = {
   whatsappMessage: 'Hola, me interesa cotizar productos para el sector financiero.',
   email: 'contacto@keysolutionssac.com',
   erpUrl: 'https://keyerp.keysolutionssac.com',
-  bolivia: 'ACOVI Solutions Bolivia S.R.L. · La Paz',
+  bolivia: 'ACOVI Solutions Bolivia S.R.L. · La Paz, Santa Cruz y Cochabamba',
   linkedin: 'https://www.linkedin.com/in/roberto-pestana-elias-4b0b98202/',
   countries: ['Perú', 'Bolivia'],
   experience: '+20',

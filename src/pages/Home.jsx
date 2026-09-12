@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { productCategories } from '../data/products'
 import { company } from '../data/company'
 import { erpModules, webDevServices, customSoftwareUseCases } from '../data/software'
+import { clientsBySector } from '../data/trayectoria'
 import ProductCard from '../components/ui/ProductCard'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
 import SectionTitle from '../components/ui/SectionTitle'
@@ -57,6 +58,8 @@ const homeStructuredData = {
   },
   areaServed: ['PE', 'BO'],
 }
+
+const totalClients = clientsBySector.reduce((n, s) => n + s.names.length, 0)
 
 const chipTechs = [
   ['EMV contacto', 'ISO 7816'],
@@ -123,8 +126,8 @@ export default function Home() {
             </motion.div>
             <motion.ul {...fadeUp(0.42)} className="mt-12 flex flex-wrap gap-x-8 gap-y-2 text-sm text-blue-100/60">
               <li>Más de 20 años en el sector financiero</li>
-              <li>11 instituciones atendidas</li>
-              <li>Lima y La Paz</li>
+              <li>Más de {totalClients} instituciones atendidas</li>
+              <li>Lima, La Paz, Santa Cruz y Cochabamba</li>
             </motion.ul>
           </div>
 
@@ -350,9 +353,9 @@ export default function Home() {
                 <dd className="mt-2 text-sm text-gray-700 leading-relaxed">
                   ACOVI Solutions Bolivia S.R.L.
                   <br />
-                  La Paz
+                  La Paz, Santa Cruz y Cochabamba
                   <br />
-                  <span className="text-gray-500">Distribución a bancos y cooperativas en todo el país</span>
+                  <span className="text-gray-500">Ventas y atención a instituciones en todo el país</span>
                 </dd>
               </div>
             </dl>
