@@ -6,7 +6,7 @@ import AnimatedSection from '../components/ui/AnimatedSection'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
 import SEOHead from '../components/SEOHead'
 import { company } from '../data/company'
-import { tracks, softwareProjects, partners, presence } from '../data/trayectoria'
+import { tracks, installedSystems, partners, presence } from '../data/trayectoria'
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -137,7 +137,7 @@ export default function Nosotros() {
             <SectionTitle
               center={false}
               title="Software que ya corre en instituciones financieras"
-              subtitle="Sistemas que desarrollamos e instalamos para bancos, cooperativas y mutuales. Es el mismo equipo que hoy construye KeyERP."
+              subtitle="Sistemas que desarrollamos e instalamos en los bancos, cooperativas y mutuales que confiaron en nosotros. Es el mismo equipo que hoy construye KeyERP."
             />
             <a
               href={company.erpUrl}
@@ -149,22 +149,14 @@ export default function Nosotros() {
             </a>
           </div>
           <AnimatedSection>
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-300 text-left text-xs font-medium text-gray-500">
-                  <th scope="col" className="py-2 pr-4 font-medium">Institución</th>
-                  <th scope="col" className="py-2 font-medium">Sistema entregado</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {softwareProjects.map((p) => (
-                  <tr key={p.client}>
-                    <th scope="row" className="py-3 pr-4 align-top font-semibold text-navy-900 whitespace-nowrap">{p.client}</th>
-                    <td className="py-3 align-top text-gray-700">{p.system}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <dl className="divide-y divide-gray-200 border-y border-gray-200">
+              {installedSystems.map((p) => (
+                <div key={p.system} className="grid gap-1 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+                  <dt className="font-semibold text-navy-900">{p.system}</dt>
+                  <dd className="text-sm text-gray-700 leading-relaxed">{p.body}</dd>
+                </div>
+              ))}
+            </dl>
           </AnimatedSection>
         </div>
       </section>
@@ -181,7 +173,8 @@ export default function Nosotros() {
             {partners.map((p, i) => (
               <AnimatedSection key={p.name} delay={i * 0.08}>
                 <div className="border-t-2 border-navy-900 pt-5 h-full">
-                  <h3 className="font-display text-xl font-bold text-navy-900">{p.name}</h3>
+                  <img src={p.logo} alt={p.name} className="h-9 w-auto object-contain" loading="lazy" />
+                  <h3 className="mt-3 font-display text-xl font-bold text-navy-900">{p.name}</h3>
                   <p className="mt-3 text-sm text-gray-700 leading-relaxed">{p.body}</p>
                   <a
                     href={p.url}

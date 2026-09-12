@@ -9,8 +9,16 @@ import ecofuturo from '../assets/ecofuturo.png'
 import jesusCooperativa from '../assets/jesusCooperativa.png'
 import redEnlace from '../assets/redEnlace.png'
 import serviRed from '../assets/serviRed.png'
+import bancoMercantil from '../assets/bancoMercantil.svg'
+import bcp from '../assets/bcp.svg'
+import bancoGanadero from '../assets/bancoGanadero.png'
+import entel from '../assets/entel.svg'
+import cotas from '../assets/cotas.png'
 
 export const clients = [
+  { name: 'Banco Mercantil Santa Cruz', logo: bancoMercantil },
+  { name: 'Banco de Crédito', logo: bcp },
+  { name: 'Banco Ganadero', logo: bancoGanadero },
   { name: 'Red Enlace', logo: redEnlace },
   { name: 'Banco Bisa', logo: bancoBisa },
   { name: 'Banco Unidad', logo: bancoUnidad },
@@ -22,4 +30,6 @@ export const clients = [
   { name: 'BNB', logo: bnb },
   { name: 'Jesús Cooperativa', logo: jesusCooperativa },
   { name: 'ServiRed', logo: serviRed },
+  { name: 'ENTEL', logo: entel },
+  { name: 'COTAS', logo: cotas },
 ]

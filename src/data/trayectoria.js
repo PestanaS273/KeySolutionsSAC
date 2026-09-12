@@ -1,3 +1,6 @@
+import partner2ps from '../assets/partner2ps.png'
+import partnerEnotria from '../assets/partnerEnotria.png'
+
 /*
  * Trayectoria de la empresa: líneas de trabajo, proyectos de software entregados, clientes por
  * sector y empresas con las que colaboramos. Es la fuente de Nosotros, Clientes y la portada.
@@ -22,21 +25,15 @@ export const tracks = [
   },
 ]
 
-/* Proyectos de software entregados a instituciones financieras. Cliente y sistema, sin más. */
-export const softwareProjects = [
-  { client: 'Banco de Crédito', system: 'Home banking, banca telefónica (IVR) y switch para cajeros automáticos' },
-  { client: 'Banco Los Andes', system: 'Switch para cajeros automáticos' },
-  { client: 'Banco Sol', system: 'Pasarela de comunicaciones con la procesadora de tarjetas' },
-  { client: 'ATC', system: 'Soluciones de pago e IVR: recarga y venta de minutos' },
-  { client: 'Banco Nacional de Bolivia', system: 'Administración de filas y herramientas SWIFT' },
-  { client: 'Banco Bisa', system: 'Herramientas SWIFT para comercio exterior' },
-  { client: 'AFP Futuro', system: 'Administración de filas' },
-  { client: 'Fassil', system: 'Administración de filas' },
-  { client: 'Fortaleza', system: 'Administración de filas' },
-  { client: 'Mutual La Paz', system: 'Administración de filas' },
-  { client: 'Cooperativa Jesús Nazareno', system: 'Administración de filas' },
-  { client: 'Cooperativa La Trinidad', system: 'Administración de filas' },
-  { client: 'Cooperativa El Buen Samaritano', system: 'Administración de filas' },
+/* Sistemas instalados en instituciones financieras. Sin decir cuál en cuál: eso es de cada cliente. */
+export const installedSystems = [
+  { system: 'Administración de filas', body: 'Con hardware propio y mantenimiento local, en bancos, mutuales, cooperativas y una AFP.' },
+  { system: 'Switch para cajeros automáticos', body: 'Operando la red de ATM de bancos del sistema financiero boliviano.' },
+  { system: 'Home banking y banca telefónica', body: 'Canales electrónicos con IVR para clientes de banca de personas.' },
+  { system: 'Pasarela con la procesadora de tarjetas', body: 'Comunicación entre el núcleo bancario y la administradora de tarjetas de crédito.' },
+  { system: 'Herramientas para mensajería SWIFT', body: 'Resúmenes, estados de cuenta, órdenes de pago y envío automático a clientes, para el área de comercio exterior.' },
+  { system: 'Cobranza y recarga de saldo', body: 'Soluciones de pago e IVR para venta de minutos y recarga a celulares.' },
+  { system: 'Kioscos multimedia', body: 'Autoservicio en agencias, con diseño propio.' },
 ]
 
 /* Instituciones que han confiado en el equipo a lo largo de su trayectoria, por sector. */
@@ -88,11 +85,13 @@ export const partners = [
   {
     name: '2PSecure',
     url: 'https://www.2ps.pe',
+    logo: partner2ps,
     body: 'Soluciones para medios de pago con más de 20 años en el sector: arquitectura de TI, ciberseguridad, impresión fija y variable de tarjetas financieras y gestión de valorados.',
   },
   {
     name: 'Enotria',
     url: 'https://www.enotria.pe',
+    logo: partnerEnotria,
     body: 'Impresión de formas continuas, valorados y cheques, tarjetas PVC de identificación, llaves de hotel y tarjetas de fidelidad.',
   },
 ]

@@ -112,7 +112,8 @@ export default function Clientes() {
             {partners.map((p, i) => (
               <AnimatedSection key={p.name} delay={i * 0.08}>
                 <div className="border-t-2 border-navy-900 pt-5 h-full">
-                  <h3 className="font-display text-xl font-bold text-navy-900">{p.name}</h3>
+                  <img src={p.logo} alt={p.name} className="h-9 w-auto object-contain" loading="lazy" />
+                  <h3 className="mt-3 font-display text-xl font-bold text-navy-900">{p.name}</h3>
                   <p className="mt-3 text-sm text-gray-700 leading-relaxed">{p.body}</p>
                   <a
                     href={p.url}
