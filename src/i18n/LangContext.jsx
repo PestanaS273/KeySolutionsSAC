@@ -14,7 +14,9 @@ function initialLang() {
   try {
     const saved = localStorage.getItem('lang')
     if (saved === 'es' || saved === 'en') return saved
-  } catch {}
+  } catch {
+    /* sin storage */
+  }
   // Los rastreadores (Google, Bing, previsualizaciones) reciben siempre español: es el idioma que se indexa.
   if (typeof navigator !== 'undefined' && /bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram|linkedin|prerender|headless/i.test(navigator.userAgent)) return 'es'
   const nav = (navigator.language || '').toLowerCase()
@@ -25,7 +27,11 @@ export function LangProvider({ children }) {
   const [lang, setLangState] = useState(initialLang)
   const setLang = useCallback((l) => {
     setLangState(l)
-    try { localStorage.setItem('lang', l) } catch {}
+    try {
+      localStorage.setItem('lang', l)
+    } catch {
+      /* sin storage */
+    }
   }, [])
   useEffect(() => {
     document.documentElement.lang = lang
@@ -39,6 +45,7 @@ export function LangProvider({ children }) {
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useLang() {
   return useContext(LangContext)
 }
