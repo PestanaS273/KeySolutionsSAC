@@ -5,6 +5,7 @@ import { blogPosts } from '../data/blog'
 import SEOHead from '../components/SEOHead'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import SectionTitle from '../components/ui/SectionTitle'
+import { useLang } from '../i18n/LangContext'
 
 const categoryColors = {
   'Tarjetas Bancarias': 'bg-blue-100 text-blue-700',
@@ -15,12 +16,13 @@ const categoryColors = {
 }
 
 export default function Blog() {
+  const { t } = useLang()
   return (
     <>
       <SEOHead
-        title="Blog | Guías sobre Tarjetas PVC, Chip EMV, Rollos Térmicos y más — Key Solutions S.A.C"
-        description="Artículos educativos sobre tarjetas PVC bancarias, chip EMV, contactless NFC, rollos térmicos POS/ATM, fundas RFID y formularios bancarios. Recursos para instituciones financieras en Perú y Bolivia."
-        keywords="blog tarjetas bancarias PVC, chip EMV que es, contactless NFC tarjeta, rollos termicos POS ATM guia, funda RFID que es, formularios bancarios Peru Bolivia, recursos sector financiero"
+        title={t("Blog | Guías sobre Tarjetas PVC, Chip EMV, Rollos Térmicos y más — Key Solutions S.A.C")}
+        description={t("Artículos educativos sobre tarjetas PVC bancarias, chip EMV, contactless NFC, rollos térmicos POS/ATM, fundas RFID y formularios bancarios. Recursos para instituciones financieras en Perú y Bolivia.")}
+        keywords={t("blog tarjetas bancarias PVC, chip EMV que es, contactless NFC tarjeta, rollos termicos POS ATM guia, funda RFID que es, formularios bancarios Peru Bolivia, recursos sector financiero")}
         path="/blog"
       />
 
@@ -32,7 +34,7 @@ export default function Blog() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-block text-sm font-medium text-blue-100/70 mb-5"
           >
-            Recursos y guías
+            {t('Recursos y guías')}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -40,7 +42,7 @@ export default function Blog() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl font-extrabold text-white leading-tight"
           >
-            Blog — Insumos para el Sector Financiero
+            {t('Blog — Insumos para el Sector Financiero')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -48,7 +50,7 @@ export default function Blog() {
             transition={{ delay: 0.2 }}
             className="mt-5 text-gray-300 text-lg leading-relaxed"
           >
-            Guías y recursos sobre tarjetas PVC bancarias, chip EMV, contactless, rollos térmicos, fundas RFID y formularios para bancos y empresas en Perú y Bolivia.
+            {t('Guías y recursos sobre tarjetas PVC bancarias, chip EMV, contactless, rollos térmicos, fundas RFID y formularios para bancos y empresas en Perú y Bolivia.')}
           </motion.p>
         </div>
       </section>
@@ -57,9 +59,9 @@ export default function Blog() {
       <section className="py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Artículos"
-            title="Guías del sector financiero"
-            subtitle="Todo lo que necesitas saber sobre los insumos y tecnologías que usan bancos y cooperativas en Perú y Bolivia."
+            label={t("Artículos")}
+            title={t("Guías del sector financiero")}
+            subtitle={t("Todo lo que necesitas saber sobre los insumos y tecnologías que usan bancos y cooperativas en Perú y Bolivia.")}
           />
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -77,7 +79,7 @@ export default function Blog() {
                     <div className="flex items-center gap-3 mb-4">
                       <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${categoryColors[post.category] || 'bg-gray-100 text-gray-600'}`}>
                         <Tag size={10} />
-                        {post.category}
+                        {t(post.category)}
                       </span>
                       <span className="flex items-center gap-1 text-xs text-gray-400">
                         <Clock size={11} />
@@ -86,15 +88,15 @@ export default function Blog() {
                     </div>
 
                     <h2 className="text-base font-bold text-navy-900 mb-3 leading-snug group-hover:text-brand-blue transition-colors">
-                      {post.title}
+                      {t(post.title)}
                     </h2>
 
                     <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-5">
-                      {post.summary}
+                      {t(post.summary)}
                     </p>
 
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
-                      Leer artículo
+                      {t('Leer artículo')}
                       <ArrowRight size={14} />
                     </span>
                   </div>
@@ -109,13 +111,13 @@ export default function Blog() {
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
-            <p className="text-gray-500 mb-3 text-sm">¿Necesita tarjetas PVC bancarias, rollos térmicos o fundas RFID?</p>
-            <h2 className="text-2xl font-extrabold text-navy-900 mb-6">Solicite una cotización personalizada</h2>
+            <p className="text-gray-500 mb-3 text-sm">{t('¿Necesita tarjetas PVC bancarias, rollos térmicos o fundas RFID?')}</p>
+            <h2 className="text-2xl font-extrabold text-navy-900 mb-6">{t('Solicite una cotización personalizada')}</h2>
             <Link
               to="/contacto"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-navy text-white font-semibold rounded-xl hover:bg-navy-800 transition-colors"
             >
-              Contactar ahora
+              {t('Contactar ahora')}
               <ArrowRight size={17} />
             </Link>
           </AnimatedSection>

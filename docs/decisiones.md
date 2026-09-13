@@ -22,6 +22,18 @@ Reglas que se cumplen en todo el sitio. Cada una con su motivo: sin motivo no es
 - Tono: tercera persona formal («su empresa», «cuéntenos»), frases cortas, cifras sólo cuando
   cambian una decisión. Sin superlativos sin respaldo.
 
+## Idioma y SEO
+
+- **El español es el idioma que se indexa.** Las URLs son las mismas en los dos idiomas; el inglés es
+  un cambio en el navegador del visitante. Por eso los rastreadores reciben siempre español y las
+  palabras clave objetivo están en español. Si algún día hace falta posicionar en inglés, la salida
+  es `/en/…` con `hreflang`, no este conmutador.
+- **Sin enlaces a perfiles personales** (LinkedIn) ni crédito de autor en el pie: el sitio habla de
+  la empresa.
+- Palabras clave objetivo, que aparecen en títulos, descripciones y texto: Key ERP / KeyERP, Key ERP
+  Bolivia, Key ERP Perú, ERP Bolivia, ERP Perú, ERP banca, tarjetas PVC Perú, tarjetas PVC Bolivia,
+  chips Bolivia, desarrollo software Bolivia / Perú, venta de software.
+
 ## Diseño
 
 - **Sin rótulos pequeños en mayúsculas sobre los títulos** («NUESTROS CLIENTES», «¿POR QUÉ

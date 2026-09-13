@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { company } from '../../data/company'
 import { INTERESTS } from '../../data/contact'
+import { useLang } from '../../i18n/LangContext'
 
 
 const inputClass =
@@ -15,6 +16,7 @@ const labelClass = 'block text-sm font-medium text-gray-700 mb-1.5'
  * a qué buzón llega (contacto@keysolutionssac.com).
  */
 export default function ContactForm({ defaultInterest, compact = false }) {
+  const { t } = useLang()
   const [status, setStatus] = useState(null) // null | 'loading' | 'success' | 'error'
   const {
     register,
@@ -69,13 +71,13 @@ export default function ContactForm({ defaultInterest, compact = false }) {
     return (
       <div className="rounded-xl border border-green-200 bg-green-50 p-8" role="status">
         <CheckCircle size={32} className="text-green-600 mb-3" />
-        <h3 className="text-xl font-bold text-navy-900">Mensaje recibido.</h3>
+        <h3 className="text-xl font-bold text-navy-900">{t('Mensaje recibido.')}</h3>
         <p className="mt-2 text-gray-700">Respondemos en el día hábil siguiente a {company.email}.</p>
         <button
           onClick={() => setStatus(null)}
           className="mt-5 text-sm font-semibold text-brand-blue hover:underline"
         >
-          Enviar otro mensaje
+          {t('Enviar otro mensaje')}
         </button>
       </div>
     )
@@ -88,16 +90,16 @@ export default function ContactForm({ defaultInterest, compact = false }) {
       <input type="text" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" {...register('website')} />
 
       <div>
-        <label htmlFor="cf-nombre" className={labelClass}>Nombre y apellido</label>
+        <label htmlFor="cf-nombre" className={labelClass}>{t('Nombre y apellido')}</label>
         <input id="cf-nombre" {...register('nombre', { required: 'Campo obligatorio' })} autoComplete="name" className={inputClass} disabled={busy} />
         {errors.nombre && <p className={errorClass}>{errors.nombre.message}</p>}
       </div>
       <div>
-        <label htmlFor="cf-empresa" className={labelClass}>Empresa o institución</label>
+        <label htmlFor="cf-empresa" className={labelClass}>{t('Empresa o institución')}</label>
         <input id="cf-empresa" {...register('empresa')} autoComplete="organization" className={inputClass} disabled={busy} />
       </div>
       <div>
-        <label htmlFor="cf-email" className={labelClass}>Correo</label>
+        <label htmlFor="cf-email" className={labelClass}>{t('Correo')}</label>
         <input
           id="cf-email"
           type="email"
@@ -112,29 +114,29 @@ export default function ContactForm({ defaultInterest, compact = false }) {
         {errors.email && <p className={errorClass}>{errors.email.message}</p>}
       </div>
       <div>
-        <label htmlFor="cf-telefono" className={labelClass}>Teléfono (opcional)</label>
+        <label htmlFor="cf-telefono" className={labelClass}>{t('Teléfono (opcional)')}</label>
         <input id="cf-telefono" type="tel" autoComplete="tel" placeholder="+51 …" {...register('telefono')} className={inputClass} disabled={busy} />
       </div>
 
       <fieldset className="sm:col-span-2">
-        <legend className={labelClass}>Qué le interesa</legend>
+        <legend className={labelClass}>{t('Qué le interesa')}</legend>
         <div className={`grid gap-x-4 gap-y-2 ${compact ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}`}>
           {INTERESTS.map((p, i) => (
             <label key={p} className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
               <input type="checkbox" {...register(`interests.${i}`)} className="w-4 h-4 accent-brand-blue" disabled={busy} />
-              {p}
+              {t(p)}
             </label>
           ))}
         </div>
       </fieldset>
 
       <div className="sm:col-span-2">
-        <label htmlFor="cf-mensaje" className={labelClass}>Mensaje</label>
+        <label htmlFor="cf-mensaje" className={labelClass}>{t('Mensaje')}</label>
         <textarea
           id="cf-mensaje"
           rows={compact ? 3 : 5}
           {...register('mensaje', { required: 'Campo obligatorio' })}
-          placeholder="Cantidades, especificaciones, o cómo manejan hoy el gasto administrativo."
+          placeholder={t("Cantidades, especificaciones, o cómo manejan hoy el gasto administrativo.")}
           className={`${inputClass} resize-none`}
           disabled={busy}
         />
@@ -149,7 +151,7 @@ export default function ContactForm({ defaultInterest, compact = false }) {
         >
           {busy ? (
             <>
-              <Loader2 size={17} className="animate-spin" /> Enviando
+              <Loader2 size={17} className="animate-spin" /> {t('Enviando')}
             </>
           ) : (
             'Enviar consulta'
@@ -160,7 +162,7 @@ export default function ContactForm({ defaultInterest, compact = false }) {
             <AlertCircle size={15} /> No se pudo enviar. Escríbanos a {company.email}.
           </span>
         ) : (
-          <span className="text-sm text-gray-500">Respondemos en el día hábil siguiente.</span>
+          <span className="text-sm text-gray-500">{t('Respondemos en el día hábil siguiente.')}</span>
         )}
       </div>
     </form>

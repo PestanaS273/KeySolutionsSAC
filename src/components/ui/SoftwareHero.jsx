@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { useLang } from '../../i18n/LangContext'
 
 function LineReveal({ children, delay = 0 }) {
   return (
@@ -18,20 +19,21 @@ function LineReveal({ children, delay = 0 }) {
 }
 
 function Cta({ cta, primary }) {
+  const { t } = useLang()
   const cls = primary
     ? 'inline-flex items-center gap-2 px-7 py-3.5 bg-white text-navy-950 font-bold rounded-lg hover:bg-blue-50 transition-colors'
     : 'inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors'
   if (cta.external) {
     return (
       <a href={cta.href} className={cls} rel="noopener">
-        {cta.label}
+        {t(cta.label)}
         {primary && <ArrowRight size={17} />}
       </a>
     )
   }
   return (
     <Link to={cta.href} className={cls}>
-      {cta.label}
+      {t(cta.label)}
       {primary && <ArrowRight size={17} />}
     </Link>
   )
@@ -39,6 +41,7 @@ function Cta({ cta, primary }) {
 
 /* Cabecera de las páginas de software. Sin rejilla decorativa ni rótulo: el titular manda. */
 export default function SoftwareHero({ lines, subtitle, primaryCta, secondaryCta }) {
+  const { t } = useLang()
   return (
     <section className="relative flex items-center overflow-hidden bg-navy-950 py-24 lg:py-32">
       <div
@@ -50,7 +53,7 @@ export default function SoftwareHero({ lines, subtitle, primaryCta, secondaryCta
         <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight max-w-4xl">
           {lines.map((line, i) => (
             <LineReveal key={line} delay={0.1 + i * 0.12}>
-              {line}
+              {t(line)}
             </LineReveal>
           ))}
         </h1>

@@ -5,6 +5,17 @@ El detalle técnico está en el commit; acá va lo que alguien sin leer código 
 
 ## 2026-09-13 — Logos del pptx, dirección y documentación
 
+## 2026-09-13 — Sitio bilingüe, SEO por palabras clave, sin LinkedIn ni crédito de autor
+
+- **Español e inglés** con botón `ES | EN` en la barra (escritorio y móvil). Idioma inicial: el
+  guardado en el navegador; si no, el del navegador; si no, español. Los rastreadores de buscadores
+  reciben siempre español. Los artículos del blog quedan en español, con aviso en inglés.
+- **SEO**: títulos, descripciones y palabras clave de portada, KeyERP, Soluciones y Tarjetas
+  bancarias apuntan a «Key ERP», «Key ERP Bolivia / Perú», «ERP Bolivia / Perú», «ERP banca»,
+  «tarjetas PVC Perú / Bolivia», «chips Bolivia», «desarrollo software Bolivia / Perú», «venta de
+  software». También en `index.html` y en los datos estructurados.
+- Fuera el enlace a LinkedIn (barra, pie, contacto, datos estructurados) y «Desarrollado por…» en el pie.
+
 - **Nosotros**: bloque «Quiénes están al frente» con los dos socios directores, escrito pero
   **oculto** (`MOSTRAR_DIRECCION = false` en `Nosotros.jsx`) por decisión del dueño. Se muestra cambiando a `true`.
 - Nueve logos más en la rejilla de clientes (cooperativas San Martín de Porres, Fátima, Loyola y

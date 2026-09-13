@@ -8,7 +8,6 @@ export const company = {
   email: 'contacto@keysolutionssac.com',
   erpUrl: 'https://keyerp.keysolutionssac.com',
   bolivia: 'ACOVI Solutions Bolivia S.R.L. · Sede en La Paz, presencia a nivel nacional',
-  linkedin: 'https://www.linkedin.com/in/roberto-pestana-elias-4b0b98202/',
   countries: ['Perú', 'Bolivia'],
   experience: '+20',
   description:

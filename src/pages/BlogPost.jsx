@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight, Clock, Tag, Calendar } from 'lucide-react'
 import { blogPosts } from '../data/blog'
 import SEOHead from '../components/SEOHead'
+import { useLang } from '../i18n/LangContext'
 import AnimatedSection from '../components/ui/AnimatedSection'
 
 const categoryColors = {
@@ -61,6 +62,7 @@ function ContentRenderer({ blocks }) {
 }
 
 export default function BlogPost() {
+  const { t, lang } = useLang()
   const { slug } = useParams()
   const post = blogPosts.find((p) => p.slug === slug)
 
@@ -91,9 +93,9 @@ export default function BlogPost() {
   return (
     <>
       <SEOHead
-        title={post.metaTitle}
-        description={post.metaDescription}
-        keywords={post.keywords}
+        title={t(post.metaTitle)}
+        description={t(post.metaDescription)}
+        keywords={t(post.keywords)}
         path={`/blog/${post.slug}`}
         type="article"
         structuredData={structuredData}
@@ -117,7 +119,7 @@ export default function BlogPost() {
             <span className="text-gray-600">/</span>
             <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${categoryColors[post.category] || 'bg-gray-700 text-gray-200'}`}>
               <Tag size={10} />
-              {post.category}
+              {t(post.category)}
             </span>
           </motion.div>
 
@@ -127,7 +129,7 @@ export default function BlogPost() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-5"
           >
-            {post.title}
+            {t(post.title)}
           </motion.h1>
 
           <motion.div
@@ -144,7 +146,7 @@ export default function BlogPost() {
               <Clock size={13} />
               {post.readTime} de lectura
             </span>
-            <span className="text-brand-gold font-medium">Key Solutions S.A.C</span>
+            <span className="text-brand-gold font-medium">{t('Key Solutions S.A.C')}</span>
           </motion.div>
         </div>
       </section>
@@ -157,12 +159,18 @@ export default function BlogPost() {
             <p className="text-gray-600 italic leading-relaxed">{post.summary}</p>
           </div>
 
+          {lang === 'en' && (
+
+            <p className="mb-6 rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-800">This article is available in Spanish only.</p>
+
+          )}
+
           <ContentRenderer blocks={post.content} />
 
           {/* Divider */}
           <div className="border-t border-gray-100 mt-12 pt-8">
             <p className="text-xs text-gray-400 text-center">
-              Artículo publicado por <strong>Key Solutions S.A.C</strong> — Proveedor de insumos para el sector financiero en Perú y Bolivia.
+              Artículo publicado por <strong>{t('Key Solutions S.A.C')}</strong> — Proveedor de insumos para el sector financiero en Perú y Bolivia.
             </p>
           </div>
         </div>
@@ -179,7 +187,7 @@ export default function BlogPost() {
               >
                 <ArrowLeft size={18} className="text-gray-400 group-hover:text-brand-blue transition-colors flex-shrink-0" />
                 <div>
-                  <p className="text-xs text-gray-400 mb-1">Artículo anterior</p>
+                  <p className="text-xs text-gray-400 mb-1">{t('Artículo anterior')}</p>
                   <p className="text-sm font-semibold text-navy-900 group-hover:text-brand-blue transition-colors leading-snug">{prevPost.title}</p>
                 </div>
               </Link>
@@ -190,7 +198,7 @@ export default function BlogPost() {
                 className="flex items-center gap-3 group text-right flex-1 justify-end"
               >
                 <div>
-                  <p className="text-xs text-gray-400 mb-1">Artículo siguiente</p>
+                  <p className="text-xs text-gray-400 mb-1">{t('Artículo siguiente')}</p>
                   <p className="text-sm font-semibold text-navy-900 group-hover:text-brand-blue transition-colors leading-snug">{nextPost.title}</p>
                 </div>
                 <ArrowRight size={18} className="text-gray-400 group-hover:text-brand-blue transition-colors flex-shrink-0" />
@@ -203,7 +211,7 @@ export default function BlogPost() {
       {/* Related posts */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-xl font-extrabold text-navy-900 mb-8">Más artículos</h2>
+          <h2 className="text-xl font-extrabold text-navy-900 mb-8">{t('Más artículos')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {relatedPosts.map((related) => (
               <AnimatedSection key={related.slug}>

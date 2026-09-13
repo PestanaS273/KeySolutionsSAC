@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react'
 import logoKey from '../../assets/logoKey.png'
 import { company } from '../../data/company'
+import LangToggle from '../ui/LangToggle'
+import { useLang } from '../../i18n/LangContext'
 
 const products = [
   { label: 'Tarjetas PVC Bancarias', href: '/tarjetas-bancarias' },
@@ -19,6 +21,7 @@ const software = [
 ]
 
 export default function Navbar() {
+  const { t } = useLang()
   const [scrolled, setScrolled] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [softwareOpen, setSoftwareOpen] = useState(false)
@@ -50,7 +53,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={logoKey} alt="Key Solutions" className="h-10 w-auto" />
+          <img src={logoKey} alt={t("Key Solutions")} className="h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -59,7 +62,7 @@ export default function Navbar() {
             to="/nosotros"
             className={`${navLink} ${pathname === '/nosotros' ? activeClass : inactiveClass}`}
           >
-            Nosotros
+            {t('Nosotros')}
           </Link>
 
           {/* Dropdown */}
@@ -78,7 +81,7 @@ export default function Navbar() {
                   : inactiveClass
               }`}
             >
-              Productos y Servicios
+              {t('Productos y Servicios')}
               <ChevronDown
                 size={15}
                 className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}
@@ -103,14 +106,14 @@ export default function Navbar() {
                           : 'text-gray-700 hover:bg-gray-50 hover:text-brand-blue'
                       }`}
                     >
-                      {p.label}
+                      {t(p.label)}
                     </Link>
                   ))}
                   <Link
                     to="/productos"
                     className="block px-4 py-3 text-sm font-semibold text-brand-navy border-t border-gray-100 hover:bg-navy-50 transition-colors"
                   >
-                    Ver todos los productos →
+                    {t('Ver todos los productos →')}
                   </Link>
                 </motion.div>
               )}
@@ -132,7 +135,7 @@ export default function Navbar() {
                   : inactiveClass
               }`}
             >
-              Soluciones de Software
+              {t('Soluciones de Software')}
               <ChevronDown
                 size={15}
                 className={`transition-transform duration-200 ${softwareOpen ? 'rotate-180' : ''}`}
@@ -157,14 +160,14 @@ export default function Navbar() {
                           : 'text-gray-700 hover:bg-gray-50 hover:text-brand-blue'
                       }`}
                     >
-                      {s.label}
+                      {t(s.label)}
                     </Link>
                   ))}
                   <Link
                     to="/soluciones-empresariales"
                     className="block px-4 py-3 text-sm font-semibold text-brand-navy border-t border-gray-100 hover:bg-navy-50 transition-colors"
                   >
-                    Ver todas las soluciones →
+                    {t('Ver todas las soluciones →')}
                   </Link>
                 </motion.div>
               )}
@@ -176,37 +179,41 @@ export default function Navbar() {
             rel="noopener"
             className={`${navLink} inline-flex items-center gap-1 text-brand-blue hover:text-navy-900`}
           >
-            KeyERP
+            {t('KeyERP')}
             <ArrowUpRight size={14} />
           </a>
           <Link
             to="/clientes"
             className={`${navLink} ${pathname === '/clientes' ? activeClass : inactiveClass}`}
           >
-            Clientes
+            {t('Clientes')}
           </Link>
           <Link
             to="/blog"
             className={`${navLink} ${pathname.startsWith('/blog') ? activeClass : inactiveClass}`}
           >
-            Blog
+            {t('Blog')}
           </Link>
           <Link
             to="/contacto"
             className="px-5 py-2 bg-brand-navy text-white text-sm font-semibold rounded-lg hover:bg-navy-800 transition-colors duration-200"
           >
-            Contacto
+            {t('Contacto')}
           </Link>
+          <LangToggle />
         </div>
 
         {/* Mobile toggle */}
+        <div className="md:hidden flex items-center gap-2">
+        <LangToggle />
         <button
           className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
           onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Menú"
+          aria-label={t("Menú")}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -224,11 +231,11 @@ export default function Navbar() {
                 to="/nosotros"
                 className="py-2.5 text-sm font-medium text-gray-700 hover:text-brand-blue"
               >
-                Nosotros
+                {t('Nosotros')}
               </Link>
               <div className="py-1">
                 <p className="text-xs font-semibold text-gray-500 mb-2">
-                  Productos y Servicios
+                  {t('Productos y Servicios')}
                 </p>
                 {products.map((p) => (
                   <Link
@@ -236,19 +243,19 @@ export default function Navbar() {
                     to={p.href}
                     className="block py-2 pl-3 text-sm text-gray-700 hover:text-brand-blue border-l-2 border-gray-100 hover:border-brand-blue transition-colors"
                   >
-                    {p.label}
+                    {t(p.label)}
                   </Link>
                 ))}
                 <Link
                   to="/productos"
                   className="block py-2 pl-3 text-sm font-semibold text-brand-navy border-l-2 border-brand-navy"
                 >
-                  Ver todos →
+                  {t('Ver todos →')}
                 </Link>
               </div>
               <div className="py-1">
                 <p className="text-xs font-semibold text-gray-500 mb-2">
-                  Soluciones de Software
+                  {t('Soluciones de Software')}
                 </p>
                 {software.map((s) => (
                   <Link
@@ -256,14 +263,14 @@ export default function Navbar() {
                     to={s.href}
                     className="block py-2 pl-3 text-sm text-gray-700 hover:text-brand-blue border-l-2 border-gray-100 hover:border-brand-blue transition-colors"
                   >
-                    {s.label}
+                    {t(s.label)}
                   </Link>
                 ))}
                 <Link
                   to="/soluciones-empresariales"
                   className="block py-2 pl-3 text-sm font-semibold text-brand-navy border-l-2 border-brand-navy"
                 >
-                  Ver todas →
+                  {t('Ver todas →')}
                 </Link>
               </div>
               <a
@@ -271,25 +278,25 @@ export default function Navbar() {
                 rel="noopener"
                 className="py-2.5 text-sm font-semibold text-brand-blue inline-flex items-center gap-1"
               >
-                KeyERP <ArrowUpRight size={14} />
+                {t('KeyERP')} <ArrowUpRight size={14} />
               </a>
               <Link
                 to="/clientes"
                 className="py-2.5 text-sm font-medium text-gray-700 hover:text-brand-blue"
               >
-                Clientes
+                {t('Clientes')}
               </Link>
               <Link
                 to="/blog"
                 className="py-2.5 text-sm font-medium text-gray-700 hover:text-brand-blue"
               >
-                Blog
+                {t('Blog')}
               </Link>
               <Link
                 to="/contacto"
                 className="mt-2 py-3 text-center bg-brand-navy text-white text-sm font-semibold rounded-lg"
               >
-                Contacto
+                {t('Contacto')}
               </Link>
             </div>
           </motion.div>

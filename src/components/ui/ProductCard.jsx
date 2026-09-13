@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { useLang } from '../../i18n/LangContext'
 
 export default function ProductCard({ product, index = 0 }) {
+  const { t } = useLang()
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -16,7 +18,7 @@ export default function ProductCard({ product, index = 0 }) {
       <div className="relative h-52 overflow-hidden bg-gray-50">
         <motion.img
           src={product.image}
-          alt={product.title}
+          alt={t(product.title)}
           className="w-full h-full object-cover object-center"
           whileHover={{ scale: 1.06 }}
           transition={{ duration: 0.4 }}
@@ -29,14 +31,14 @@ export default function ProductCard({ product, index = 0 }) {
       <div className="p-6 flex flex-col flex-1">
         {product.subtitle && (
           <span className="text-xs font-medium text-gray-500 mb-2">
-            {product.subtitle}
+            {t(product.subtitle)}
           </span>
         )}
         <h3 className="text-lg font-bold text-navy-900 mb-2 group-hover:text-brand-blue transition-colors">
-          {product.title}
+          {t(product.title)}
         </h3>
         <p className="text-sm text-gray-500 leading-relaxed flex-1">
-          {product.description}
+          {t(product.description)}
         </p>
 
         {/* Tags */}
@@ -47,7 +49,7 @@ export default function ProductCard({ product, index = 0 }) {
                 key={tag}
                 className="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full"
               >
-                {tag}
+                {t(tag)}
               </span>
             ))}
           </div>
@@ -59,7 +61,7 @@ export default function ProductCard({ product, index = 0 }) {
             {product.features.map((f) => (
               <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0" />
-                {f}
+                {t(f)}
               </li>
             ))}
           </ul>
@@ -71,7 +73,7 @@ export default function ProductCard({ product, index = 0 }) {
             to={product.href}
             className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all duration-200"
           >
-            Ver más
+            {t('Ver más')}
             <ArrowRight size={15} />
           </Link>
         )}

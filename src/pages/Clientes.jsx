@@ -6,6 +6,7 @@ import { clientsBySector, partners } from '../data/trayectoria'
 import SEOHead from '../components/SEOHead'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
+import { useLang } from '../i18n/LangContext'
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -20,12 +21,13 @@ const structuredData = {
 const total = clientsBySector.reduce((n, s) => n + s.names.length, 0)
 
 export default function Clientes() {
+  const { t } = useLang()
   return (
     <>
       <SEOHead
-        title="Clientes | Bancos, cooperativas y mutuales de Bolivia y Perú — Key Solutions S.A.C"
+        title={t("Clientes | Bancos, cooperativas y mutuales de Bolivia y Perú — Key Solutions S.A.C")}
         description={`${total} instituciones de Bolivia y Perú han trabajado con Key Solutions: Banco Bisa, Banco Mercantil Santa Cruz, Banco Sol, Banco Unión, BNB, Banco FIE, Banco Económico, cooperativas, mutuales, AFP, aseguradoras y telecomunicaciones.`}
-        keywords="clientes Key Solutions, bancos Bolivia proveedor tarjetas, Banco Bisa, Banco Mercantil Santa Cruz, Banco Sol, Banco Union, BNB, Banco FIE, cooperativas Bolivia, mutuales Bolivia, Red Enlace, ATC Bolivia"
+        keywords={t("clientes Key Solutions, bancos Bolivia proveedor tarjetas, Banco Bisa, Banco Mercantil Santa Cruz, Banco Sol, Banco Union, BNB, Banco FIE, cooperativas Bolivia, mutuales Bolivia, Red Enlace, ATC Bolivia")}
         path="/clientes"
         structuredData={structuredData}
       />
@@ -37,7 +39,7 @@ export default function Clientes() {
             animate={{ opacity: 1, y: 0 }}
             className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight max-w-4xl text-balance"
           >
-            Instituciones que han trabajado con nosotros.
+            {t('Instituciones que han trabajado con nosotros.')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -45,9 +47,7 @@ export default function Clientes() {
             transition={{ delay: 0.12 }}
             className="mt-6 text-lg text-blue-100/80 max-w-2xl leading-relaxed"
           >
-            Bancos, cooperativas, mutuales, fondos, aseguradoras, empresas de telecomunicaciones y
-            entidades públicas de Bolivia y Perú, a lo largo de más de veinte años. Tarjetas,
-            insumos de operación y software.
+            {t('Bancos, cooperativas, mutuales, fondos, aseguradoras, empresas de telecomunicaciones y entidades públicas de Bolivia y Perú, a lo largo de más de veinte años. Tarjetas, insumos de operación y software.')}
           </motion.p>
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function Clientes() {
                 <li className="flex items-center justify-center h-12">
                   <img
                     src={client.logo}
-                    alt={client.name}
+                    alt={t(client.name)}
                     loading="lazy"
                     className="max-h-11 max-w-[140px] object-contain"
                   />
@@ -75,12 +75,12 @@ export default function Clientes() {
       {/* Por sector */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <SectionTitle center={false} title="Por sector" />
+          <SectionTitle center={false} title={t("Por sector")} />
           <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {clientsBySector.map((s, i) => (
               <AnimatedSection key={s.sector} delay={i * 0.05}>
                 <h3 className="border-t-2 border-navy-900 pt-4 font-display text-lg font-bold text-navy-900">
-                  {s.sector}
+                  {t(s.sector)}
                 </h3>
                 <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
                   {s.names.map((n) => (
@@ -92,9 +92,7 @@ export default function Clientes() {
           </div>
           <AnimatedSection className="mt-12 max-w-3xl">
             <p className="text-sm text-gray-500 leading-relaxed">
-              Algunas instituciones han cambiado de nombre o se han integrado a otras desde que
-              trabajamos con ellas; se mencionan con el nombre con el que se contrató. Por acuerdos de
-              confidencialidad, otras no se listan. Podemos dar referencias directas a pedido.
+              {t('Algunas instituciones han cambiado de nombre o se han integrado a otras desde que trabajamos con ellas; se mencionan con el nombre con el que se contrató. Por acuerdos de confidencialidad, otras no se listan. Podemos dar referencias directas a pedido.')}
             </p>
           </AnimatedSection>
         </div>
@@ -105,16 +103,16 @@ export default function Clientes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
           <SectionTitle
             center={false}
-            title="Empresas con las que colaboramos"
-            subtitle="Fabricantes y especialistas con los que producimos tarjetas, valorados e impresos."
+            title={t("Empresas con las que colaboramos")}
+            subtitle={t("Fabricantes y especialistas con los que producimos tarjetas, valorados e impresos.")}
           />
           <div className="grid gap-8 sm:grid-cols-2">
             {partners.map((p, i) => (
               <AnimatedSection key={p.name} delay={i * 0.08}>
                 <div className="border-t-2 border-navy-900 pt-5 h-full">
-                  <img src={p.logo} alt={p.name} className="h-9 w-auto object-contain" loading="lazy" />
-                  <h3 className="mt-3 font-display text-xl font-bold text-navy-900">{p.name}</h3>
-                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">{p.body}</p>
+                  <img src={p.logo} alt={t(p.name)} className="h-9 w-auto object-contain" loading="lazy" />
+                  <h3 className="mt-3 font-display text-xl font-bold text-navy-900">{t(p.name)}</h3>
+                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">{t(p.body)}</p>
                   <a
                     href={p.url}
                     target="_blank"
@@ -132,9 +130,9 @@ export default function Clientes() {
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-gray-700">¿Su institución necesita una cotización o referencias directas?</p>
+          <p className="text-gray-700">{t('¿Su institución necesita una cotización o referencias directas?')}</p>
           <Link to="/contacto" className="inline-flex items-center gap-2 px-6 py-3 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors">
-            Contacto <ArrowRight size={16} />
+            {t('Contacto')} <ArrowRight size={16} />
           </Link>
         </div>
       </section>

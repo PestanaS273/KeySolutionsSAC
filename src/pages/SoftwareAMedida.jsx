@@ -7,6 +7,7 @@ import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import SEOHead from '../components/SEOHead'
 import { customSoftwareUseCases, customSoftwareApproach } from '../data/software'
+import { useLang } from '../i18n/LangContext'
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -19,30 +20,31 @@ const structuredData = {
 }
 
 export default function SoftwareAMedida() {
+  const { t } = useLang()
   return (
     <>
       <SEOHead
-        title="Software a Medida — Automatización, Integraciones y Apps Internas"
-        description="Desarrollamos el software que su operación necesita: automatización de procesos, integraciones entre sistemas existentes, paneles de gestión y aplicaciones internas. Perú y Bolivia."
-        keywords="desarrollo software a medida empresas, automatizacion de procesos software, integraciones de sistemas empresariales, aplicaciones internas de gestion, software empresarial Peru Bolivia"
+        title={t("Software a Medida — Automatización, Integraciones y Apps Internas")}
+        description={t("Desarrollamos el software que su operación necesita: automatización de procesos, integraciones entre sistemas existentes, paneles de gestión y aplicaciones internas. Perú y Bolivia.")}
+        keywords={t("desarrollo software a medida empresas, automatizacion de procesos software, integraciones de sistemas empresariales, aplicaciones internas de gestion, software empresarial Peru Bolivia")}
         path="/software-a-medida"
         structuredData={structuredData}
       />
 
       <SoftwareHero
-        lines={['El sistema que su', 'operación necesita']}
-        subtitle="Diseñamos el software alrededor de cómo trabaja su equipo hoy: automatización de procesos, integraciones y herramientas internas que se adaptan a su empresa, no al revés."
-        primaryCta={{ label: 'Contar mi proceso', href: '/contacto' }}
-        secondaryCta={{ label: 'Ver todas las soluciones', href: '/soluciones-empresariales' }}
+        lines={['El sistema que su', 'operación necesita'].map(t)}
+        subtitle={t("Diseñamos el software alrededor de cómo trabaja su equipo hoy: automatización de procesos, integraciones y herramientas internas que se adaptan a su empresa, no al revés.")}
+        primaryCta={{ label: t('Contar mi proceso'), href: '/contacto' }}
+        secondaryCta={{ label: t('Ver todas las soluciones'), href: '/soluciones-empresariales' }}
       />
 
       {/* ── CASOS DE USO ──────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Qué resolvemos"
-            title="Software para los procesos que hoy dependen de hojas de cálculo"
-            subtitle="Cada empresa tiene procesos que ya funcionan, pero que consumen tiempo y son propensos a errores manuales."
+            label={t("Qué resolvemos")}
+            title={t("Software para los procesos que hoy dependen de hojas de cálculo")}
+            subtitle={t("Cada empresa tiene procesos que ya funcionan, pero que consumen tiempo y son propensos a errores manuales.")}
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {customSoftwareUseCases.map((u, i) => {
@@ -58,9 +60,9 @@ export default function SoftwareAMedida() {
                     </div>
                     <div>
                       <h3 className="font-display font-bold text-navy-900 mb-2 tracking-tight">
-                        {u.title}
+                        {t(u.title)}
                       </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed">{u.description}</p>
+                      <p className="text-sm text-gray-500 leading-relaxed">{t(u.description)}</p>
                     </div>
                   </motion.div>
                 </AnimatedSection>
@@ -78,11 +80,11 @@ export default function SoftwareAMedida() {
               <div className="inline-flex items-center gap-2.5 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true" />
                 <span className="text-sm font-medium text-blue-100/70">
-                  Nuestro enfoque
+                  {t('Nuestro enfoque')}
                 </span>
               </div>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                Software construido sobre su proceso real
+                {t('Software construido sobre su proceso real')}
               </h2>
             </AnimatedSection>
           </div>
@@ -92,8 +94,8 @@ export default function SoftwareAMedida() {
                 <div className="flex items-start gap-5 rounded-2xl p-6 border border-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
                   <CheckCircle2 size={22} className="text-amber-300 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-display font-bold text-white mb-1 tracking-tight">{a.title}</h3>
-                    <p className="text-sm text-blue-200/70 leading-relaxed">{a.description}</p>
+                    <h3 className="font-display font-bold text-white mb-1 tracking-tight">{t(a.title)}</h3>
+                    <p className="text-sm text-blue-200/70 leading-relaxed">{t(a.description)}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -107,16 +109,16 @@ export default function SoftwareAMedida() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 mb-4 leading-tight tracking-tight">
-              ¿Qué proceso quiere dejar de hacer a mano?
+              {t('¿Qué proceso quiere dejar de hacer a mano?')}
             </h2>
             <p className="text-gray-500 text-lg mb-9 leading-relaxed">
-              Cuéntenos cómo trabaja hoy su equipo y le proponemos una solución concreta.
+              {t('Cuéntenos cómo trabaja hoy su equipo y le proponemos una solución concreta.')}
             </p>
             <Link
               to="/contacto"
               className="inline-flex items-center gap-2 px-9 py-4 bg-navy-900 text-white font-bold rounded-xl hover:bg-navy-800 transition-colors text-lg"
             >
-              Conversemos
+              {t('Conversemos')}
               <ArrowRight size={19} />
             </Link>
           </AnimatedSection>

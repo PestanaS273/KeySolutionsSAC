@@ -7,6 +7,7 @@ import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import SEOHead from '../components/SEOHead'
 import tres from '../assets/3tarjetas.png'
+import { useLang } from '../i18n/LangContext'
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -147,44 +148,45 @@ const certBadges = [
 ]
 
 export default function TarjetasBanca() {
+  const { t } = useLang()
   return (
     <>
       <SEOHead
-        title="Tarjetas PVC Bancarias — EMV, MIFARE, Dual Interface | Proveedores Especializados Perú y Bolivia — Key Solutions S.A.C"
-        description="Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto (ISO 7816), EMV contactless (ISO 14443), dual interface, MIFARE Classic, MIFARE DESFire EV2/EV3 y chip según especificación del banco. Proveedor para bancos, cooperativas y financieras en Perú y Bolivia. VISA · Mastercard · Diners Club."
-        keywords="tarjetas PVC bancarias Peru, chip EMV Peru Bolivia, tarjetas debito credito PVC Peru, MIFARE DESFire tarjetas banco, dual interface tarjeta bancaria, tarjetas contactless NFC bancarias, proveedor tarjetas PVC banco Lima, proveedor especializado tarjetas PVC financiero, tarjetas VISA Mastercard PVC Peru, chip ISO 7816 ISO 14443 banco, tarjetas bancarias Bolivia, personalización variable tarjetas banco"
+        title={t("Tarjetas PVC Bancarias — EMV, MIFARE, Dual Interface | Proveedores Especializados Perú y Bolivia — Key Solutions S.A.C")}
+        description={t("Proveedores especializados de tarjetas PVC bancarias con múltiples tecnologías de chip: EMV contacto (ISO 7816), EMV contactless (ISO 14443), dual interface, MIFARE Classic, MIFARE DESFire EV2/EV3 y chip según especificación del banco. Proveedor para bancos, cooperativas y financieras en Perú y Bolivia. VISA · Mastercard · Diners Club.")}
+        keywords={t("tarjetas PVC Peru, tarjetas PVC Bolivia, tarjetas PVC bancarias Peru, chips Bolivia, chips bancarios, chip EMV Peru Bolivia, tarjetas debito credito PVC, MIFARE DESFire tarjetas banco, dual interface tarjeta bancaria, tarjetas contactless NFC bancarias, proveedor tarjetas PVC banco Lima, proveedor tarjetas PVC La Paz")}
         path="/tarjetas-bancarias"
         structuredData={structuredData}
       />
 
       <ProductDetailHero
-        label="Proveedores especializados — Perú y Bolivia"
-        title="Tarjetas PVC Bancarias con Múltiples Tecnologías de Chip"
-        subtitle="EMV Contacto · EMV Contactless · Dual Interface · MIFARE · Chip según especificación — Para bancos, cooperativas y financieras"
+        label={t("Proveedores especializados — Perú y Bolivia")}
+        title={t("Tarjetas PVC Bancarias con Múltiples Tecnologías de Chip")}
+        subtitle={t("EMV Contacto · EMV Contactless · Dual Interface · MIFARE · Chip según especificación — Para bancos, cooperativas y financieras")}
       />
 
       {/* Chip technologies */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Tecnologías disponibles"
-            title="Cualquier chip que su banco requiera"
-            subtitle="Trabajamos con proveedores especializados para suministrar la tecnología de chip exacta que su institución financiera necesita, con todas las certificaciones correspondientes."
+            label={t("Tecnologías disponibles")}
+            title={t("Cualquier chip que su banco requiera")}
+            subtitle={t("Trabajamos con proveedores especializados para suministrar la tecnología de chip exacta que su institución financiera necesita, con todas las certificaciones correspondientes.")}
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {chipTechs.map((tech, i) => {
               const Icon = tech.icon
               return (
-                <AnimatedSection key={tech.name} delay={i * 0.07}>
+                <AnimatedSection key={t(tech.name)} delay={i * 0.07}>
                   <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow h-full">
                     <div className={`inline-flex p-3 rounded-xl mb-4 ${tech.color}`}>
                       <Icon size={22} />
                     </div>
                     <div className="flex items-baseline gap-2 mb-1">
-                      <h3 className="text-base font-bold text-navy-900">{tech.name}</h3>
+                      <h3 className="text-base font-bold text-navy-900">{t(tech.name)}</h3>
                       <span className="text-xs font-medium text-gray-400">{tech.standard}</span>
                     </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">{tech.desc}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{t(tech.desc)}</p>
                   </div>
                 </AnimatedSection>
               )
@@ -197,9 +199,9 @@ export default function TarjetasBanca() {
       <section className="py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Ejemplos de producción"
-            title="Tarjetas para las principales redes de pago"
-            subtitle="Producción certificada con la tecnología de chip y personalización variable que cada red requiere."
+            label={t("Ejemplos de producción")}
+            title={t("Tarjetas para las principales redes de pago")}
+            subtitle={t("Producción certificada con la tecnología de chip y personalización variable que cada red requiere.")}
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {tarjetasBanca.map((card, i) => (
@@ -215,22 +217,22 @@ export default function TarjetasBanca() {
           <AnimatedSection direction="left">
             <img
               src={tres}
-              alt="Tarjetas PVC bancarias con chip — Key Solutions"
+              alt={t("Tarjetas PVC bancarias con chip — Key Solutions")}
               className="w-full max-w-md mx-auto rounded-2xl shadow-card-hover animate-float"
             />
           </AnimatedSection>
           <AnimatedSection direction="right">
             <span className="text-xs font-medium text-gray-500">
-              Especificaciones técnicas
+              {t('Especificaciones técnicas')}
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-navy-900 mb-6">
-              Estándar internacional de calidad
+              {t('Estándar internacional de calidad')}
             </h2>
             <ul className="space-y-3">
               {specs.map((s) => (
                 <li key={s} className="flex items-center gap-3 text-gray-700">
                   <span className="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0" />
-                  {s}
+                  {t(s)}
                 </li>
               ))}
             </ul>
@@ -238,7 +240,7 @@ export default function TarjetasBanca() {
               to="/contacto"
               className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-brand-navy text-white font-semibold rounded-xl hover:bg-navy-800 transition-colors"
             >
-              Solicitar cotización
+              {t('Solicitar cotización')}
               <ArrowRight size={17} />
             </Link>
           </AnimatedSection>
@@ -250,13 +252,13 @@ export default function TarjetasBanca() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
             <span className="text-xs font-medium text-gray-500">
-              Certificaciones y estándares
+              {t('Certificaciones y estándares')}
             </span>
             <h2 className="mt-2 text-2xl font-extrabold text-navy-900 mb-3">
-              Chip y certificación según lo que su banco exige
+              {t('Chip y certificación según lo que su banco exige')}
             </h2>
             <p className="text-gray-500 text-sm mb-8 max-w-2xl mx-auto">
-              Coordinamos directamente con fabricantes y proveedores certificados para garantizar que cada lote cumpla los estándares técnicos y de seguridad requeridos por su institución financiera.
+              {t('Coordinamos directamente con fabricantes y proveedores certificados para garantizar que cada lote cumpla los estándares técnicos y de seguridad requeridos por su institución financiera.')}
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-10">
               {certBadges.map((s) => (
@@ -264,23 +266,23 @@ export default function TarjetasBanca() {
                   key={s}
                   className="px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-xs font-semibold rounded-full shadow-sm"
                 >
-                  {s}
+                  {t(s)}
                 </span>
               ))}
             </div>
             <div className="bg-white rounded-2xl border border-gray-100 shadow-card px-8 py-6 max-w-2xl mx-auto">
               <CreditCard className="mx-auto mb-3 text-brand-blue" size={28} />
               <p className="text-navy-900 font-semibold text-base mb-1">
-                ¿Tiene un pliego técnico específico?
+                {t('¿Tiene un pliego técnico específico?')}
               </p>
               <p className="text-gray-500 text-sm mb-5">
-                Envíenos las especificaciones de chip, red de pago, certificación y personalización. Evaluamos con nuestros proveedores y le presentamos una propuesta.
+                {t('Envíenos las especificaciones de chip, red de pago, certificación y personalización. Evaluamos con nuestros proveedores y le presentamos una propuesta.')}
               </p>
               <Link
                 to="/contacto"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-brand-navy text-white text-sm font-semibold rounded-xl hover:bg-navy-800 transition-colors"
               >
-                Enviar especificaciones
+                {t('Enviar especificaciones')}
                 <ArrowRight size={15} />
               </Link>
             </div>

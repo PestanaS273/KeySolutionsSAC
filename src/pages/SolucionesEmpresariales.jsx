@@ -6,6 +6,7 @@ import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import SEOHead from '../components/SEOHead'
 import { softwareServices } from '../data/software'
+import { useLang } from '../i18n/LangContext'
 
 const reasons = [
   {
@@ -37,30 +38,31 @@ const structuredData = {
 }
 
 export default function SolucionesEmpresariales() {
+  const { t } = useLang()
   return (
     <>
       <SEOHead
-        title="Soluciones Empresariales de Software — Desarrollo Web, Software a Medida y ERP"
-        description="Además de insumos, Key Solutions desarrolla soluciones empresariales de software: sitios y aplicaciones web modernas, software a medida y Key ERP, nuestro sistema de gestión modular adaptable a cada empresa."
-        keywords="soluciones empresariales software Peru, desarrollo software a medida Peru Bolivia, ERP empresarial modular, desarrollo web empresas Peru, Key Solutions software"
+        title={t("Desarrollo de software en Bolivia y Perú — Web, a medida y Key ERP | Key Solutions")}
+        description={t("Además de insumos, Key Solutions desarrolla soluciones empresariales de software: sitios y aplicaciones web modernas, software a medida y Key ERP, nuestro sistema de gestión modular adaptable a cada empresa.")}
+        keywords={t("desarrollo software Bolivia, desarrollo software Peru, venta de software, software empresarial Bolivia, software a medida Peru Bolivia, desarrollo web Bolivia, ERP Bolivia, ERP Peru, Key ERP, Key Solutions software")}
         path="/soluciones-empresariales"
         structuredData={structuredData}
       />
 
       <SoftwareHero
-        lines={['Software para empresas', 'que ya saben lo que', 'necesitan.']}
-        subtitle="KeyERP, nuestro sistema de gestión del gasto administrativo, y el desarrollo de sitios web y sistemas a medida. El mismo equipo, la misma exigencia que aprendimos con bancos."
-        primaryCta={{ label: 'Conocer KeyERP', href: 'https://keyerp.keysolutionssac.com', external: true }}
-        secondaryCta={{ label: 'Hablar con nosotros', href: '/contacto' }}
+        lines={['Software para empresas', 'que ya saben lo que', 'necesitan.'].map(t)}
+        subtitle={t("KeyERP, nuestro sistema de gestión del gasto administrativo, y el desarrollo de sitios web y sistemas a medida. El mismo equipo, la misma exigencia que aprendimos con bancos.")}
+        primaryCta={{ label: t('Conocer KeyERP'), href: 'https://keyerp.keysolutionssac.com', external: true }}
+        secondaryCta={{ label: t('Hablar con nosotros'), href: '/contacto' }}
       />
 
       {/* ── SERVICIOS ─────────────────────────────────────────────────── */}
       <section className="py-24 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Nuestras soluciones"
-            title="Tres frentes, un mismo estándar de calidad"
-            subtitle="De un sitio web a un sistema de gestión completo — cada solución se construye pensando en el crecimiento de su empresa."
+            label={t("Nuestras soluciones")}
+            title={t("Tres frentes, un mismo estándar de calidad")}
+            subtitle={t("De un sitio web a un sistema de gestión completo — cada solución se construye pensando en el crecimiento de su empresa.")}
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {softwareServices.map((service, i) => (
@@ -74,14 +76,14 @@ export default function SolucionesEmpresariales() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
-            label="Por qué Key Solutions"
-            title="La misma exigencia que aplicamos al sector financiero"
+            label={t("Por qué Key Solutions")}
+            title={t("La misma exigencia que aplicamos al sector financiero")}
           />
           <dl className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 max-w-4xl mx-auto">
             {reasons.map((r, i) => (
               <AnimatedSection key={r.title} delay={i * 0.06}>
-                <dt className="font-semibold text-navy-900">{r.title}</dt>
-                <dd className="mt-1.5 text-sm text-gray-700 leading-relaxed">{r.description}</dd>
+                <dt className="font-semibold text-navy-900">{t(r.title)}</dt>
+                <dd className="mt-1.5 text-sm text-gray-700 leading-relaxed">{t(r.description)}</dd>
               </AnimatedSection>
             ))}
           </dl>
@@ -93,16 +95,16 @@ export default function SolucionesEmpresariales() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
-              ¿Qué solución necesita su empresa?
+              {t('¿Qué solución necesita su empresa?')}
             </h2>
             <p className="text-blue-200/75 text-lg mb-9 leading-relaxed">
-              Cuéntenos su proceso o su idea y le proponemos el camino más directo para resolverlo.
+              {t('Cuéntenos su proceso o su idea y le proponemos el camino más directo para resolverlo.')}
             </p>
             <Link
               to="/contacto"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-navy-950 font-bold rounded-lg hover:bg-blue-50 transition-colors text-lg"
             >
-              Conversemos
+              {t('Conversemos')}
               <ArrowRight size={19} />
             </Link>
           </AnimatedSection>

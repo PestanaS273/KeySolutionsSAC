@@ -14,4 +14,5 @@ antes de tocar contenido o diseño; actualizarla en el mismo commit que el cambi
   instalaciones de KeyERP) están en `docs/decisiones.md` y no admiten excepción.
 - **Cada entrega** agrega su entrada en `docs/bitacora.md` y regenera `dist/` con `npm run build`.
 - El contenido se edita en `src/data/`, no en los componentes (ver `docs/contenido.md`).
+- **Todo texto visible va en español dentro de `t('…')` y con su traducción en `src/i18n/en.js`.**
 - Puerto de desarrollo para no chocar con otros proyectos: `npx vite --port 7433 --strictPort`.

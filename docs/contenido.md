@@ -3,9 +3,17 @@
 Regla: **el contenido está en `src/data/`, las páginas lo pintan.** Para cambiar un texto, un
 cliente o un dato de la empresa no hace falta tocar un componente.
 
+## Idiomas — `src/i18n/`
+
+`LangContext.jsx` decide el idioma y expone `t()`; `en.js` es el diccionario español → inglés,
+indexado por la frase en español exactamente como está en el código (espacios normalizados).
+**Regla**: todo texto visible se escribe en español dentro de `t('…')` y se agrega su traducción a
+`en.js`. Lo que falte se muestra en español, nunca rompe. Los datos de `src/data/` se traducen al
+pintarlos (`t(item.title)`), así que los ficheros de datos siguen en español.
+
 ## Datos de la empresa — `src/data/company.js`
 
-Nombre, RUC, dirección, teléfono, WhatsApp, correo (`contacto@keysolutionssac.com`), LinkedIn,
+Nombre, RUC, dirección, teléfono, WhatsApp, correo (`contacto@keysolutionssac.com`),
 URL de KeyERP (`erpUrl`) y la línea de ACOVI Solutions Bolivia (`bolivia`). Lo leen la barra
 superior, el pie, la portada, Contacto y Nosotros.
 
