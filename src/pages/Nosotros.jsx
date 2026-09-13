@@ -6,7 +6,7 @@ import AnimatedSection from '../components/ui/AnimatedSection'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
 import SEOHead from '../components/SEOHead'
 import { company } from '../data/company'
-import { tracks, installedSystems, partners, presence } from '../data/trayectoria'
+import { tracks, installedSystems, partners, presence, directors } from '../data/trayectoria'
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -94,6 +94,28 @@ export default function Nosotros() {
                     <br />
                     <span className="text-gray-500">{p.detail}</span>
                   </dd>
+                </div>
+              ))}
+            </dl>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Dirección */}
+      <section className="py-20 bg-white border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+          <SectionTitle
+            center={false}
+            title="Quiénes están al frente"
+            subtitle="Dos socios con el mismo peso en la empresa, cada uno al frente de un área."
+          />
+          <AnimatedSection>
+            <dl className="grid gap-8 sm:grid-cols-2">
+              {directors.map((d) => (
+                <div key={d.name} className="border-t-2 border-navy-900 pt-5">
+                  <dt className="font-display text-xl font-bold text-navy-900">{d.name}</dt>
+                  <dd className="mt-1 text-sm font-semibold text-brand-blue">{d.role}</dd>
+                  <dd className="mt-3 text-sm text-gray-700 leading-relaxed">{d.body}</dd>
                 </div>
               ))}
             </dl>

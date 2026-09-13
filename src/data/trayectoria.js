@@ -101,6 +101,20 @@ export const partners = [
   },
 ]
 
+/* Dirección: dos socios con el mismo peso. Sin fotos ni perfiles personales, a propósito. */
+export const directors = [
+  {
+    name: 'Roberto Pestana',
+    role: 'Socio director · Dirección comercial y relaciones institucionales',
+    body: 'Más de veinte años proveyendo al sector financiero de Perú y Bolivia. La relación directa con cada institución, desde la especificación hasta la entrega.',
+  },
+  {
+    name: 'Sebastián Pestana',
+    role: 'Socio director · Dirección de tecnología y desarrollo',
+    body: 'Lidera KeyERP y todo el desarrollo de la empresa: aplicaciones empresariales, sitios web, integraciones y automatización.',
+  },
+]
+
 export const presence = [
   { country: 'Perú', company: 'Key Solutions S.A.C.', cities: 'Lima', detail: 'Av. Raúl Ferrero 1542, La Molina · RUC 20612618179' },
   { country: 'Bolivia', company: 'ACOVI Solutions Bolivia S.R.L.', cities: 'La Paz, Santa Cruz y Cochabamba', detail: 'Ventas y atención a instituciones en todo el país' },
