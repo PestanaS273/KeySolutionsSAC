@@ -14,6 +14,15 @@ import bcp from '../assets/bcp.svg'
 import bancoGanadero from '../assets/bancoGanadero.png'
 import entel from '../assets/entel.svg'
 import cotas from '../assets/cotas.png'
+import coopSanMartin from '../assets/coopSanMartin.png'
+import coopFatima from '../assets/coopFatima.png'
+import crecerIfd from '../assets/crecerIfd.png'
+import cidreIfd from '../assets/cidreIfd.png'
+import diaconiaIfd from '../assets/diaconiaIfd.png'
+import laPrimera from '../assets/laPrimera.png'
+import laPromotora from '../assets/laPromotora.png'
+import coopSanAntonio from '../assets/coopSanAntonio.png'
+import coopLoyola from '../assets/coopLoyola.png'
 
 export const clients = [
   { name: 'Banco Mercantil Santa Cruz', logo: bancoMercantil },
@@ -30,6 +39,15 @@ export const clients = [
   { name: 'BNB', logo: bnb },
   { name: 'Jesús Cooperativa', logo: jesusCooperativa },
   { name: 'ServiRed', logo: serviRed },
+  { name: 'Cooperativa San Martín de Porres', logo: coopSanMartin },
+  { name: 'Cooperativa Fátima', logo: coopFatima },
+  { name: 'Cooperativa Loyola', logo: coopLoyola },
+  { name: 'Cooperativa San Antonio', logo: coopSanAntonio },
+  { name: 'Crecer IFD', logo: crecerIfd },
+  { name: 'CIDRE IFD', logo: cidreIfd },
+  { name: 'Diaconía IFD', logo: diaconiaIfd },
+  { name: 'La Primera EFV', logo: laPrimera },
+  { name: 'La Promotora EFV', logo: laPromotora },
   { name: 'ENTEL', logo: entel },
   { name: 'COTAS', logo: cotas },
 ]

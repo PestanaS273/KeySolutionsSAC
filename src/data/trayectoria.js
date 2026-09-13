@@ -56,11 +56,16 @@ export const clientsBySector = [
     names: [
       'Jesús Nazareno', 'Jerusalén', 'La Merced', 'La Trinidad', 'San Mateo', 'El Buen Samaritano',
       'Fátima', 'Hospicio', 'Montero', 'San Gabriel', 'San Luis', 'San Martín de Porres', 'San Pedro',
+      'San Antonio', 'Loyola',
     ],
   },
   {
-    sector: 'Mutuales, fondos y AFP',
-    names: ['AFP Futuro', 'Mutual La Paz', 'Mutual La Primera', 'Mutual La Promotora', 'Mutual Paititi', 'Mutual Pando', 'Mutual La Plata', 'Fortaleza SAFI'],
+    sector: 'Instituciones financieras de desarrollo',
+    names: ['Crecer IFD', 'CIDRE IFD', 'Diaconía IFD', 'Ecofuturo'],
+  },
+  {
+    sector: 'Mutuales, EFV, fondos y AFP',
+    names: ['AFP Futuro', 'Mutual La Paz', 'La Primera EFV', 'La Promotora EFV', 'Mutual Paititi', 'Mutual Pando', 'Mutual La Plata', 'Fortaleza SAFI'],
   },
   {
     sector: 'Seguros',
