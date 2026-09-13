@@ -30,6 +30,9 @@ const structuredData = {
   },
 }
 
+/* Dirección: oculta por decisión del 2026-09-13. Cambiar a `true` para mostrarla. */
+const MOSTRAR_DIRECCION = false
+
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 18 },
   animate: { opacity: 1, y: 0 },
@@ -101,8 +104,7 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* Dirección: oculta por decisión del 2026-09-13. Para mostrarla, cambiar `false` por `true`. */}
-      {false && (
+      {MOSTRAR_DIRECCION && (
         <>
       {/* Dirección */}
       <section className="py-20 bg-white border-t border-gray-200">

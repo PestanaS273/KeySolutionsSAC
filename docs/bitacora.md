@@ -6,7 +6,7 @@ El detalle técnico está en el commit; acá va lo que alguien sin leer código 
 ## 2026-09-13 — Logos del pptx, dirección y documentación
 
 - **Nosotros**: bloque «Quiénes están al frente» con los dos socios directores, escrito pero
-  **oculto** (`{false && (…)}` en `Nosotros.jsx`) por decisión del dueño. Se muestra cambiando a `true`.
+  **oculto** (`MOSTRAR_DIRECCION = false` en `Nosotros.jsx`) por decisión del dueño. Se muestra cambiando a `true`.
 - Nueve logos más en la rejilla de clientes (cooperativas San Martín de Porres, Fátima, Loyola y
   San Antonio; Crecer, CIDRE y Diaconía IFD; La Primera y La Promotora EFV). Total: 25 logos.
 - Sector nuevo en Clientes: «Instituciones financieras de desarrollo». «Mutuales» pasa a
