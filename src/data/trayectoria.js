@@ -117,5 +117,5 @@ export const directors = [
 
 export const presence = [
   { country: 'Perú', company: 'Key Solutions S.A.C.', cities: 'Lima', detail: 'Av. Raúl Ferrero 1542, La Molina · RUC 20612618179' },
-  { country: 'Bolivia', company: 'ACOVI Solutions Bolivia S.R.L.', cities: 'La Paz, Santa Cruz y Cochabamba', detail: 'Ventas y atención a instituciones en todo el país' },
+  { country: 'Bolivia', company: 'ACOVI Solutions Bolivia S.R.L.', cities: 'Sede en La Paz · presencia a nivel nacional', detail: 'Ventas y atención a instituciones en todo el país' },
 ]

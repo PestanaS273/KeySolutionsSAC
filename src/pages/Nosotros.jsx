@@ -76,7 +76,7 @@ export default function Nosotros() {
               <p>
                 Key Solutions S.A.C. opera desde Lima y atiende a clientes en Perú y Bolivia. En
                 Bolivia, las ventas y la atención se hacen a través de ACOVI Solutions Bolivia S.R.L.,
-                con presencia en La Paz, Santa Cruz y Cochabamba. Las dos empresas comparten el
+                con sede en La Paz y presencia a nivel nacional. Las dos empresas comparten el
                 mismo equipo y la misma forma de trabajar.
               </p>
               <p>

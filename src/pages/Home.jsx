@@ -127,7 +127,7 @@ export default function Home() {
             <motion.ul {...fadeUp(0.42)} className="mt-12 flex flex-wrap gap-x-8 gap-y-2 text-sm text-blue-100/60">
               <li>Más de 20 años en el sector financiero</li>
               <li>Más de {totalClients} instituciones atendidas</li>
-              <li>Lima, La Paz, Santa Cruz y Cochabamba</li>
+              <li>Lima y La Paz, con presencia en toda Bolivia</li>
             </motion.ul>
           </div>
 
@@ -353,7 +353,7 @@ export default function Home() {
                 <dd className="mt-2 text-sm text-gray-700 leading-relaxed">
                   ACOVI Solutions Bolivia S.R.L.
                   <br />
-                  La Paz, Santa Cruz y Cochabamba
+                  Sede en La Paz · presencia a nivel nacional
                   <br />
                   <span className="text-gray-500">Ventas y atención a instituciones en todo el país</span>
                 </dd>
