@@ -11,6 +11,8 @@ Reglas que se cumplen en todo el sitio. Cada una con su motivo: sin motivo no es
 - **No se dice qué sistema se instaló en qué institución.** Se listan los sistemas (qué hacen) y,
   aparte, las instituciones (por sector). Cruzarlos es información del cliente, no nuestra.
   Decisión del dueño, 2026-09-13.
+- **La dirección (los dos socios) no se muestra por ahora.** El bloque existe en Nosotros, en el
+  folleto y en el deck, oculto; se activa cuando el dueño lo decida. Sin fotos ni perfiles personales.
 - **No se menciona si KeyERP tiene o no instalaciones.** Se describe el producto y quién está
   detrás.
 - **Los clientes se nombran con el nombre con el que se contrató**, aunque hayan cambiado o se

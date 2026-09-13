@@ -101,6 +101,9 @@ export default function Nosotros() {
         </div>
       </section>
 
+      {/* Dirección: oculta por decisión del 2026-09-13. Para mostrarla, cambiar `false` por `true`. */}
+      {false && (
+        <>
       {/* Dirección */}
       <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
@@ -122,6 +125,9 @@ export default function Nosotros() {
           </AnimatedSection>
         </div>
       </section>
+
+        </>
+      )}
 
       {/* Líneas de trabajo */}
       <section className="py-20 bg-[#F8FAFC] border-y border-gray-200">
