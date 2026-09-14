@@ -3,7 +3,7 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
-## 2026-09-14 — Portada con video de fondo, barra transparente y ritmo nuevo
+## 2026-09-14 — Portada con video de fondo, barra transparente y ritmo nuevo (commit `f5fbf26`)
 
 - **El hero de la portada es ahora un video de fondo.** Tres planos encadenados en monocromo virado
   a marino: la maquinaria que produce el insumo, un terminal POS con la tarjeta y unas manos
