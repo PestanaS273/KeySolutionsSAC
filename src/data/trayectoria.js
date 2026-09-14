@@ -61,7 +61,7 @@ export const clientsBySector = [
   },
   {
     sector: 'Instituciones financieras de desarrollo',
-    names: ['Crecer IFD', 'CIDRE IFD', 'Diaconía IFD', 'Ecofuturo'],
+    names: ['Crecer IFD', 'CIDRE IFD', 'Diaconía IFD'],
   },
   {
     sector: 'Mutuales, EFV, fondos y AFP',
