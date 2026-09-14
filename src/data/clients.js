@@ -5,6 +5,7 @@ import bancoSol from '../assets/bancoSol.png'
 import bancoUnidad from '../assets/bancoUnidad.png'
 import bancoUnion from '../assets/bancoUnion.png'
 import bnb from '../assets/bnb.png'
+import cajaCusco from '../assets/cajaCusco.svg'
 import ecofuturo from '../assets/ecofuturo.png'
 import jesusCooperativa from '../assets/jesusCooperativa.png'
 import redEnlace from '../assets/redEnlace.png'
@@ -37,6 +38,7 @@ export const clients = [
   { name: 'Banco Sol', logo: bancoSol },
   { name: 'Banco Unión', logo: bancoUnion },
   { name: 'BNB', logo: bnb },
+  { name: 'Caja Cusco', logo: cajaCusco },
   { name: 'Jesús Cooperativa', logo: jesusCooperativa },
   { name: 'ServiRed', logo: serviRed },
   { name: 'Cooperativa San Martín de Porres', logo: coopSanMartin },

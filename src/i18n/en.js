@@ -326,6 +326,7 @@ export const EN = {
   "Autoservicio en agencias, con diseño propio.": "Self-service in branches, with our own design.",
   "Redes de pago y procesadoras": "Payment networks and processors",
   "Cooperativas de ahorro y crédito": "Savings and credit cooperatives",
+  "Cajas municipales": "Municipal savings banks",
   "Instituciones financieras de desarrollo": "Development finance institutions",
   "Mutuales, EFV, fondos y AFP": "Savings and loan institutions, funds and pension funds",
   "Sector público": "Public sector",

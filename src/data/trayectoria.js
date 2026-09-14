@@ -59,6 +59,10 @@ export const clientsBySector = [
     ],
   },
   {
+    sector: 'Cajas municipales',
+    names: ['Caja Cusco'],
+  },
+  {
     sector: 'Instituciones financieras de desarrollo',
     names: ['Crecer IFD', 'CIDRE IFD', 'Diaconía IFD'],
   },

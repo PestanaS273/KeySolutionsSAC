@@ -3,8 +3,13 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
-## 2026-09-14 — Se depura la lista de clientes por sector
+## 2026-09-14 — Se depura la lista de clientes por sector y entra Caja Cusco
 
+- **Entra Caja Cusco**, la primera institución peruana con logo en la rejilla. Se suma también a
+  la lista por sector, en un sector nuevo, «Cajas municipales»: una caja municipal de ahorro y
+  crédito no es un banco ni una cooperativa, así que no encajaba en ninguno de los existentes.
+  El logotipo es el oficial, tomado del sitio de la institución
+  (`cmac-cusco.com.pe/images/logo-cajacuzco.svg`), en SVG de 5 KB.
 - **Salen cuatro cooperativas que ya no existen**: San Luis, La Trinidad, San Gabriel y El Buen
   Samaritano. El sector de cooperativas de ahorro y crédito pasa de 15 a 11 nombres.
 - **Ecofuturo deja de aparecer dos veces.** Estaba como «Banco Ecofuturo» en Bancos y como
@@ -12,7 +17,7 @@ El detalle técnico está en el commit; acá va lo que alguien sin leer código 
   banco, así que queda sólo en Bancos; el sector de IFD se queda con Crecer IFD, CIDRE IFD y
   Diaconía IFD.
 - El total de instituciones que se muestra en la página y en la meta descripción se calcula
-  sumando las listas, así que baja solo de 65 a 60.
+  sumando las listas, así que queda en 61 (65 menos las cinco bajas, más Caja Cusco).
 - El carrusel de logos no cambia: ahí Ecofuturo sigue como «Eco Futuro», el nombre con el que se
   contrató, según la regla de `decisiones.md`.
 
