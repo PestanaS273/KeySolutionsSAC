@@ -1,7 +1,7 @@
-import variasTarjetas from '../assets/varias-tarjetas.png'
-import tarjetaHotel from '../assets/tarjeta-hotel.png'
-import sobreRfid from '../assets/sobre-rfid.jpg'
-import rollos from '../assets/rollos.png'
+import variasTarjetas from '../assets/varias-tarjetas.webp'
+import tarjetaPvc from '../assets/tarjeta-pvc.webp'
+import sobreRfid from '../assets/sobre-rfid.webp'
+import rollos from '../assets/rollos.webp'
 import formatosPreimpresos from '../assets/formatos-preimpresos.webp'
 
 // ─── Overview for home / productos page ───────────────────────────────────────
@@ -22,7 +22,7 @@ export const productCategories = [
     subtitle: 'Identificación · Control de Acceso · Hotel',
     description:
       'Tarjetas PVC para hoteles, casinos, empresas y sistemas de transporte. Chip, banda magnética y código de barras disponibles.',
-    image: tarjetaHotel,
+    image: tarjetaPvc,
     href: '/tarjetas-empresa',
     tags: ['PVC', 'Chip', 'Código de barras'],
   },
@@ -60,9 +60,9 @@ export const productCategories = [
 
 // ─── Detail data per category ──────────────────────────────────────────────────
 
-import visaDebito from '../assets/visa-debito.jpeg'
-import mastercardCredito from '../assets/mastercard-credito.png'
-import dinner from '../assets/dinner.jpeg'
+import visaDebito from '../assets/visa-debito.webp'
+import mastercardCredito from '../assets/mastercard-credito.webp'
+import dinner from '../assets/dinner.webp'
 
 export const tarjetasBanca = [
   {
@@ -85,8 +85,7 @@ export const tarjetasBanca = [
   },
 ]
 
-import tarjetaIdentificacion from '../assets/tarjeta-identificacion.avif'
-import tarjetaPvcHotel from '../assets/tarjeta-pvc-hotel.png'
+import tarjetaIdentificacion from '../assets/tarjeta-identificacion.webp'
 
 export const tarjetasEmpresa = [
   {
@@ -98,37 +97,35 @@ export const tarjetasEmpresa = [
   {
     title: 'Tarjeta Llave de Hotel',
     description: 'Tarjeta magnética para apertura de habitaciones. Utilizada por hoteles, casinos y complejos residenciales.',
-    image: tarjetaPvcHotel,
+    image: tarjetaPvc,
     features: ['Chip compatible', 'Banda magnética', 'Diseño a medida', 'Durabilidad garantizada'],
   },
 ]
 
-import unSobre from '../assets/un-sobre.webp'
-import sobrerfidPortada from '../assets/sobrerfid-portada.svg'
+import rfidPortada from '../assets/rfid-portada.webp'
 
 export const fundasBloqueo = [
   {
     title: 'Funda de Bloqueo RFID Individual',
     description: 'Funda de papel aluminio waterproof que bloquea la señal RFID de tarjetas de crédito, débito y documentos. Diseño slim para bolsillos y billeteras.',
-    image: unSobre,
+    image: sobreRfid,
     features: ['Bloqueo RFID 100%', 'Papel aluminio impermeable', 'Perfil delgado', 'Múltiples colores'],
   },
   {
     title: 'Funda RFID Personalizada',
     description: 'Versión con impresión full color para bancos y empresas. Ideal como material de entrega junto a tarjetas bancarias nuevas.',
-    image: sobrerfidPortada,
+    image: rfidPortada,
     features: ['Impresión full color', 'Logo corporativo', 'Producción por lote', 'Variedad de tamaños'],
   },
 ]
 
-import rollos80 from '../assets/rollos80.jpeg'
-import rolloAutocopiante from '../assets/rollo-autocopiante.jpeg'
+import rolloAutocopiante from '../assets/rollo-autocopiante.webp'
 
 export const rollosTerm = [
   {
     title: 'Rollo Térmico 80×80',
     description: 'Rollo de papel térmico estándar 80mm × 80mm para impresoras POS y terminales de punto de venta. Alta calidad de impresión.',
-    image: rollos80,
+    image: rollos,
     features: ['Medida 80×80mm', 'Compatible POS', 'Alta definición', 'Calidad certificada'],
   },
   {
@@ -139,8 +136,8 @@ export const rollosTerm = [
   },
 ]
 
-import sobreVentana from '../assets/sobre-ventana.avif'
-import pinmailer from '../assets/pinmailer.jpeg'
+import sobreVentana from '../assets/sobre-ventana.webp'
+import pinmailer from '../assets/pinmailer.webp'
 
 export const sobres = [
   {

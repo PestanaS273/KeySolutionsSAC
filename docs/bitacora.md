@@ -3,6 +3,31 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
+## 2026-09-14 — Fotografía de producto unificada: un solo set, sin marcas ajenas
+
+- **Las 16 fotos de producto se reemplazan por un set de 13 tomas coherentes entre sí.** Mismo
+  fondo de estudio, mismo ángulo de tres cuartos, misma dirección de sombra y mismo encuadre en
+  todas. Antes había cuatro fondos distintos (blanco puro, degradado gris, foto de ambiente y
+  collage de catálogo), cinco relaciones de aspecto y piezas de hasta 190×176 px que se veían
+  borrosas al escalar. El catálogo se leía como un recorte de proveedores; ahora se lee como una
+  sola sesión de fotos.
+- **Salen las marcas registradas de terceros.** Las tarjetas que se mostraban llevaban arte de
+  VISA, Mastercard, Diners Club y UnionPay: eran mockups de banco de imágenes con marca ajena
+  presentados como producción propia. Las reemplazan cuerpos de tarjeta genéricos con chip EMV,
+  banda magnética y símbolo contactless, que es literalmente lo que Key Solutions fabrica; la
+  franquicia se nombra en el texto de cada ficha, como corresponde. Si en algún momento se quiere
+  mostrar el logotipo de una franquicia, se compone el arte oficial del portal de proveedor
+  certificado sobre estas tomas (ver `imagenes.md`).
+- **Ninguna imagen lleva texto.** Las anteriores traían rótulos quemados de catálogos ajenos, alguno
+  en otro idioma.
+- **Pesan la sexta parte.** De unos 3 MB en png/jpeg/webp/avif/svg mezclados a 472 KB en WebP,
+  todas a 1200×900. `mastercard-credito` sola pasó de 688 KB a 51 KB.
+- Se retiran además dos imágenes sueltas que rompían el conjunto: el diagrama de 399×145 px de la
+  página de tarjetas bancarias y el clipart vectorial de tarjeta azul con «BANK NAME / 1234 5678»
+  de la de tarjetas empresa.
+- Cómo se produjo el set y qué falta por generar: [`imagenes.md`](imagenes.md) y los prompts en
+  [`imagenes-prompts.md`](imagenes-prompts.md).
+
 ## 2026-09-14 — Permisos de `dist/` normalizados en el build
 
 - `npm run build` termina ahora con `npm run permisos` (755 en carpetas, 644 en ficheros). Vite

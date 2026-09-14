@@ -6,7 +6,7 @@ import ProductDetailHero from '../components/ui/ProductDetailHero'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import SEOHead from '../components/SEOHead'
-import frenteReverso from '../assets/frente-reverso.avif'
+import frenteReverso from '../assets/tarjeta-pvc.webp'
 import { useLang } from '../i18n/LangContext'
 
 const sectors = [

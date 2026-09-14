@@ -10,6 +10,8 @@ que es otro repositorio: `KeyERPWeb`).
 | [`contenido.md`](contenido.md) | Dónde vive cada texto, dato y logo, y cómo se edita sin tocar componentes. |
 | [`despliegue.md`](despliegue.md) | Build, subida a cPanel, formulario (Web3Forms), Search Console, el video del hero y verificación. |
 | [`decisiones.md`](decisiones.md) | Reglas de contenido y diseño que no se negocian, con su porqué. |
+| [`imagenes.md`](imagenes.md) | Guía de producción del set de fotos de producto: prompts, consistencia, banco de imágenes y normalización. |
+| [`imagenes-prompts.md`](imagenes-prompts.md) | Los 16 prompts completos en inglés, listos para pegar en Nano Banana o DALL·E. |
 
 **Última actualización del sitio: 2026-09-14** (ver bitácora).
 
