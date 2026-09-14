@@ -92,6 +92,16 @@ derivaron del original `logoKey.png`, que viene con fondo blanco opaco. El «KS�
 el bloque cian, así que el bloque se redibuja y el calado se pinta encima usando el canal rojo del
 original como máscara. Si cambia el logo, hay que rehacer los dos derivados.
 
+## Permisos de los ficheros
+
+`npm run build` termina con `npm run permisos`, que deja `dist/` en 755 para carpetas y 644 para
+ficheros. Vite copia `public/` conservando los permisos del disco, así que un fichero que quedó en
+600 o 700 en el equipo sube así y el servidor web —que corre con otro usuario— no puede leerlo: el
+navegador recibe un **403 Forbidden**, no un 404, lo cual despista porque el fichero sí está.
+
+Si aparece un 403 en un recurso estático (una imagen, el video del hero, el póster), es esto. En
+el servidor se corrige desde el gestor de archivos de cPanel, con «Change Permissions» a 644.
+
 ## Verificación antes de subir
 
 - `npm run build` sin errores.

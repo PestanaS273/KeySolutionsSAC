@@ -3,6 +3,14 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
+## 2026-09-14 — Permisos de `dist/` normalizados en el build
+
+- `npm run build` termina ahora con `npm run permisos` (755 en carpetas, 644 en ficheros). Vite
+  copia `public/` conservando los permisos del disco, y un fichero que quede en 600 o 700 sube así
+  y el servidor devuelve **403 Forbidden** al pedirlo. Pasó en el sitio de KeyERP con el logo del
+  pie; acá se previene antes de que ocurra, importante ahora que la portada sirve video y póster
+  desde `public/`.
+
 ## 2026-09-14 — Portada con video de fondo, barra transparente y ritmo nuevo (commit `f5fbf26`)
 
 - **El hero de la portada es ahora un video de fondo.** Tres planos encadenados en monocromo virado

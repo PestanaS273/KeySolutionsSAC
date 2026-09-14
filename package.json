@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run permisos",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "permisos": "find dist -type d -exec chmod 755 {} + && find dist -type f -exec chmod 644 {} +"
   },
   "dependencies": {
     "@web3forms/react": "^1.1.3",
