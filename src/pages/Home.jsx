@@ -10,9 +10,9 @@ import ClientsCarousel from '../components/ui/ClientsCarousel'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import ContactForm from '../components/ui/ContactForm'
+import HeroVideo from '../components/ui/HeroVideo'
 import SEOHead from '../components/SEOHead'
 import { blogPosts } from '../data/blog'
-import heroImg from '../assets/tarjetascarousel.png'
 import keyerpLogo from '../assets/keyerp-logo.png'
 import { useLang } from '../i18n/LangContext'
 
@@ -90,70 +90,62 @@ export default function Home() {
       />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-navy-950 text-white">
+      {/* El -mt-16 mete el hero por debajo de la barra, que en la portada arranca transparente. */}
+      <section className="relative isolate -mt-16 flex min-h-[38rem] items-end overflow-hidden bg-navy-950 text-white lg:min-h-[min(92vh,50rem)]">
+        <HeroVideo />
+        {/* Oscurecido en dos tiempos: arriba para que se lea la barra, abajo para el titular. */}
         <div
           aria-hidden="true"
-          className="absolute -top-48 -right-48 h-[40rem] w-[40rem] rounded-full opacity-30 blur-3xl pointer-events-none"
-          style={{ background: 'radial-gradient(closest-side, #1E6FD9, transparent 70%)' }}
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(9,25,41,0.66) 0%, rgba(9,25,41,0.46) 32%, rgba(9,25,41,0.74) 62%, rgba(9,25,41,0.90) 82%, rgba(9,25,41,0.96) 100%)',
+          }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
-          <div>
-            <motion.h1
-              {...fadeUp(0.05)}
-              className="font-display text-4xl sm:text-5xl lg:text-[3.6rem] font-bold leading-[1.05] tracking-tight text-balance"
-            >
-              {t('Insumos para el sector financiero y el sistema que ordena su gasto.')}
-            </motion.h1>
-            <motion.p {...fadeUp(0.18)} className="mt-7 text-lg text-blue-100/80 leading-relaxed max-w-xl">
-              {t('Más de 20 años proveyendo tarjetas PVC con chip, rollos térmicos, fundas RFID y formularios a bancos y cooperativas de Perú y Bolivia. Y KeyERP, nuestro sistema de gestión del gasto administrativo, instalado en los servidores de cada cliente.')}
-            </motion.p>
-            <motion.div {...fadeUp(0.3)} className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/productos"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-navy-950 font-bold rounded-lg hover:bg-blue-50 transition-colors"
-              >
-                {t('Ver catálogo de insumos')}
-                <ArrowRight size={17} />
-              </Link>
-              <a
-                href={company.erpUrl}
-                rel="noopener"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
-              >
-                {t('Conocer KeyERP')}
-                <ArrowUpRight size={17} />
-              </a>
-            </motion.div>
-            <motion.ul {...fadeUp(0.42)} className="mt-12 flex flex-wrap gap-x-8 gap-y-2 text-sm text-blue-100/60">
-              <li>{t('Más de 20 años en el sector financiero')}</li>
-              <li>{t('Más de N instituciones atendidas').replace('N', totalClients)}</li>
-              <li>{t('Lima y La Paz, con presencia en toda Bolivia')}</li>
-            </motion.ul>
-          </div>
 
-          <motion.figure
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
-            className="relative"
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-4 pb-12 pt-24 sm:px-6 sm:pt-28 lg:pb-20 lg:pt-40">
+          <motion.h1
+            {...fadeUp(0.05)}
+            className="font-display max-w-[16ch] text-[clamp(2.4rem,5.8vw,4.25rem)] font-bold leading-[1.04] tracking-[-0.025em] text-balance"
           >
-            <img
-              src={heroImg}
-              alt={t("Tarjetas bancarias con chip EMV, apiladas sobre una mesa")}
-              width={640}
-              height={335}
-              className="w-full rounded-xl object-cover shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)]"
-              fetchPriority="high"
-            />
-            <figcaption className="mt-3 text-xs text-blue-100/50">
-              {t('Tarjetas PVC con chip EMV: la especificación la define el banco, nosotros la cumplimos.')}
-            </figcaption>
-          </motion.figure>
+            {t('Insumos y desarrollo de software para el sector financiero.')}
+          </motion.h1>
+          <motion.p
+            {...fadeUp(0.18)}
+            className="mt-5 max-w-[58ch] text-pretty text-base leading-[1.6] text-blue-50/85 sm:mt-6 lg:text-lg lg:leading-[1.7]"
+          >
+            {t('Más de 20 años proveyendo tarjetas PVC con chip, rollos térmicos, fundas RFID y formularios a bancos y cooperativas de Perú y Bolivia. Y KeyERP, nuestro sistema de gestión del gasto administrativo, instalado en los servidores de cada cliente.')}
+          </motion.p>
+          <motion.div {...fadeUp(0.3)} className="mt-8 flex flex-wrap gap-3 sm:mt-9">
+            <Link
+              to="/productos"
+              className="group inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3.5 font-bold text-navy-950 transition-colors duration-200 hover:bg-blue-50"
+            >
+              {t('Ver catálogo de insumos')}
+              <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+            </Link>
+            <a
+              href={company.erpUrl}
+              rel="noopener"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/35 bg-white/5 px-7 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors duration-200 hover:border-white/60 hover:bg-white/15"
+            >
+              {t('Conocer KeyERP')}
+              <ArrowUpRight size={17} />
+            </a>
+          </motion.div>
+          <motion.ul
+            {...fadeUp(0.42)}
+            className="mt-10 flex flex-col gap-y-2 border-t border-white/15 pt-5 text-sm text-blue-50/70 sm:mt-12 sm:flex-row sm:flex-wrap sm:gap-x-10"
+          >
+            <li>{t('Más de 20 años en el sector financiero')}</li>
+            <li>{t('Más de N instituciones atendidas').replace('N', totalClients)}</li>
+            <li>{t('Perú y Bolivia')}</li>
+          </motion.ul>
         </div>
       </section>
 
       {/* ── CATÁLOGO ─────────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="seccion bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             center={false}
@@ -181,10 +173,10 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/productos"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors"
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors"
               >
                 {t('Catálogo completo')}
-                <ArrowRight size={16} />
+                <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
               <Link
                 to="/tarjetas-bancarias"
@@ -198,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* ── KEYERP ───────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-navy-900 text-white py-24 lg:py-28">
+      <section className="seccion-amplia relative overflow-hidden bg-navy-900 text-white">
         <div
           aria-hidden="true"
           className="absolute top-1/2 -right-40 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full opacity-25 blur-3xl pointer-events-none"
@@ -263,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* ── DESARROLLO DE SOFTWARE ───────────────────────────────────── */}
-      <section className="py-24 bg-[#F8FAFC]">
+      <section className="seccion bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             center={false}
@@ -287,9 +279,9 @@ export default function Home() {
                 </ul>
                 <Link
                   to="/desarrollo-web"
-                  className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all"
+                  className="group inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-brand-blue transition-colors"
                 >
-                  {t('Desarrollo web')} <ArrowRight size={15} />
+                  {t('Desarrollo web')} <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
                 </Link>
               </div>
             </AnimatedSection>
@@ -309,9 +301,9 @@ export default function Home() {
                 </ul>
                 <Link
                   to="/software-a-medida"
-                  className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all"
+                  className="group inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-brand-blue transition-colors"
                 >
-                  {t('Software a medida')} <ArrowRight size={15} />
+                  {t('Software a medida')} <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
                 </Link>
               </div>
             </AnimatedSection>
@@ -323,7 +315,7 @@ export default function Home() {
       <ClientsCarousel />
 
       {/* ── PRESENCIA ─────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="seccion-compacta bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <SectionTitle
             center={false}
@@ -358,7 +350,7 @@ export default function Home() {
       </section>
 
       {/* ── CONTACTO ──────────────────────────────────────────────────── */}
-      <section id="contacto" className="scroll-mt-20 py-24 bg-[#F8FAFC] border-t border-gray-200">
+      <section id="contacto" className="seccion-amplia scroll-mt-20 bg-[#F8FAFC] border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
           <AnimatedSection>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 leading-[1.08] tracking-tight text-balance">
@@ -390,12 +382,12 @@ export default function Home() {
       </section>
 
       {/* ── BLOG ──────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="seccion-compacta bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-8 lg:grid-cols-[14rem_1fr] lg:gap-20">
           <AnimatedSection>
             <h2 className="font-display text-2xl font-bold text-navy-900 tracking-tight">{t('Guías del sector')}</h2>
-            <Link to="/blog" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue">
-              {t('Todos los artículos')} <ArrowRight size={15} />
+            <Link to="/blog" className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors">
+              {t('Todos los artículos')} <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </AnimatedSection>
           <ul className="divide-y divide-gray-200 border-y border-gray-200">

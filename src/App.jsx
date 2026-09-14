@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import TopBar from './components/layout/TopBar'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
@@ -71,14 +71,18 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
-        <TopBar />
-        <Navbar />
-        <AnimatedRoutes />
-        <Footer />
-        <WhatsAppButton />
-      </div>
-    </BrowserRouter>
+    /* `reducedMotion="user"` hace que framer respete la preferencia del sistema en todo el sitio:
+       quien pide menos movimiento recibe un fundido en vez de desplazamientos. */
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <div className="flex flex-col min-h-screen">
+          <TopBar />
+          <Navbar />
+          <AnimatedRoutes />
+          <Footer />
+          <WhatsAppButton />
+        </div>
+      </BrowserRouter>
+    </MotionConfig>
   )
 }

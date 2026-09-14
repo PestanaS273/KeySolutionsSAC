@@ -2,6 +2,7 @@
  * src/data/*.js (espacios normalizados). Lo que no esté acá se muestra en español. Generado y
  * mantenido a mano: al agregar texto al sitio, agregar su traducción acá. */
 export const EN = {
+  "Insumos y desarrollo de software para el sector financiero.": "Supplies and software development for the financial sector.",
   "Software a Medida — Automatización, Integraciones y Apps Internas": "Custom Software — Automation, Integrations and Internal Apps",
   "Desarrollamos el software que su operación necesita: automatización de procesos, integraciones entre sistemas existentes, paneles de gestión y aplicaciones internas. Perú y Bolivia.": "We build the software your operation needs: process automation, integrations between existing systems, management dashboards and internal applications. Peru and Bolivia.",
   "desarrollo software a medida empresas, automatizacion de procesos software, integraciones de sistemas empresariales, aplicaciones internas de gestion, software empresarial Peru Bolivia": "custom software development companies, process automation software, enterprise system integrations, internal management applications, business software Peru Bolivia",

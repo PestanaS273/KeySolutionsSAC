@@ -7,7 +7,7 @@ import { useLang } from '../../i18n/LangContext'
 export default function SoftwareServiceCard({ service, index = 0 }) {
   const { t } = useLang()
   const linkCls =
-    'inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all duration-200'
+    'group inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-brand-blue transition-colors duration-200'
   return (
     <AnimatedSection delay={index * 0.08} className="h-full">
       <div className="h-full flex flex-col border-t-2 border-navy-900 pt-5">
@@ -20,7 +20,7 @@ export default function SoftwareServiceCard({ service, index = 0 }) {
           </a>
         ) : (
           <Link to={service.href} className={linkCls}>
-            {t('Conocer más')} <ArrowRight size={15} />
+            {t('Conocer más')} <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
         )}
       </div>

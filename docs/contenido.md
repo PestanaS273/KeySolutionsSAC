@@ -80,7 +80,13 @@ suborganización y KeyERP como producto) está en `index.html`.
 
 ## Componentes compartidos — `src/components/`
 
-- `layout/`: `TopBar`, `Navbar` (ítem KeyERP externo), `Footer`.
+- `layout/`: `TopBar`, `Navbar` (ítem KeyERP externo), `Footer`. La barra cambia de piel según la
+  página: en la portada arranca transparente sobre el video y se vuelve blanca translúcida al hacer
+  scroll; en el resto arranca ya en ese estado. Usa dos logos derivados, `logoKey-blanco.png` (sobre el video) y
+  `logoKey-transparente.png` (sobre la barra clara).
+- `ui/HeroVideo.jsx`: el video de fondo del hero de la portada. Decide en el cliente si lo descarga
+  o deja el póster fijo (movimiento reducido, móvil, ahorro de datos, 2G/3G). Los ficheros están en
+  `public/video/`; cómo se generan, en `despliegue.md`; qué puede mostrar, en `decisiones.md`.
 - `ui/SectionTitle.jsx`: título y subtítulo de sección. **No pinta rótulo pequeño** aunque se le
   pase `label` (ver `decisiones.md`).
 - `ui/SoftwareHero.jsx`: cabecera de las páginas de software. Acepta `primaryCta.external`.

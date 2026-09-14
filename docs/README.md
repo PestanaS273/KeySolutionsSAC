@@ -8,10 +8,10 @@ que es otro repositorio: `KeyERPWeb`).
 |---|---|
 | [`bitacora.md`](bitacora.md) | Qué cambió y cuándo. **Se actualiza en cada entrega.** |
 | [`contenido.md`](contenido.md) | Dónde vive cada texto, dato y logo, y cómo se edita sin tocar componentes. |
-| [`despliegue.md`](despliegue.md) | Build, subida a cPanel, formulario (Web3Forms), Search Console y verificación. |
+| [`despliegue.md`](despliegue.md) | Build, subida a cPanel, formulario (Web3Forms), Search Console, el video del hero y verificación. |
 | [`decisiones.md`](decisiones.md) | Reglas de contenido y diseño que no se negocian, con su porqué. |
 
-**Última actualización del sitio: 2026-09-13** (ver bitácora).
+**Última actualización del sitio: 2026-09-14** (ver bitácora).
 
 ## Cómo se mantiene esta carpeta
 

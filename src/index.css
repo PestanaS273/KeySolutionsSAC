@@ -16,15 +16,58 @@
   }
 
   body {
-    font-family: 'Schibsted Grotesk', system-ui, sans-serif;
-    font-feature-settings: 'ss01', 'cv11';
-    background-color: #F8FAFC;
-    color: #1A202C;
+    font-family: Archivo, system-ui, sans-serif;
+    /* Cifras de ancho fijo en todo el sitio: los precios y las tablas se alinean solos. */
+    font-variant-numeric: tabular-nums;
+    background-color: #f8fafc;
+    color: #1a202c;
+  }
+
+  /* Un foco visible y consistente en todo el sitio: quien navega con teclado necesita saber
+     dónde está parado, y el anillo por defecto del navegador se pierde sobre el marino. */
+  :focus-visible {
+    outline: 2px solid #1e6fd9;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Quien pide menos movimiento no debería tener que sufrir el desplazamiento suave. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Ritmo vertical de las secciones. Tres pasos, no uno: si todas las secciones respiran igual,
+     la página se lee como una lista y no como un recorrido. */
+  .seccion {
+    padding-block: clamp(4.5rem, 8vw, 7rem);
+  }
+
+  .seccion-amplia {
+    padding-block: clamp(5.5rem, 10vw, 9rem);
+  }
+
+  .seccion-compacta {
+    padding-block: clamp(3.25rem, 5.5vw, 4.75rem);
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
   }
 }

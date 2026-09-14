@@ -223,8 +223,8 @@ export default function BlogPost() {
                     {related.category}
                   </span>
                   <h3 className="text-sm font-bold text-navy-900 group-hover:text-brand-blue transition-colors leading-snug mb-2">{related.title}</h3>
-                  <span className="text-xs text-brand-blue font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Leer <ArrowRight size={11} />
+                  <span className="group text-xs text-brand-blue font-semibold inline-flex items-center gap-1 transition-colors">
+                    Leer <ArrowRight size={11} className="transition-transform duration-200 group-hover:translate-x-0.5" />
                   </span>
                 </Link>
               </AnimatedSection>
@@ -245,10 +245,10 @@ export default function BlogPost() {
             </p>
             <Link
               to="/contacto"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-gold text-navy-950 font-bold rounded-xl hover:bg-yellow-400 transition-colors shadow-glow"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-brand-gold text-navy-950 font-bold rounded-xl hover:bg-yellow-400 transition-colors shadow-glow"
             >
               Solicitar cotización
-              <ArrowRight size={17} />
+              <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </AnimatedSection>
         </div>

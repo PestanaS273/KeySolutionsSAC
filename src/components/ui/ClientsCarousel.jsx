@@ -33,8 +33,8 @@ export default function ClientsCarousel() {
           ))}
         </ul>
         <AnimatedSection className="mt-8 text-center">
-          <Link to="/clientes" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all">
-            {t('Más de N instituciones por sector').replace('N', total)} <ArrowRight size={15} />
+          <Link to="/clientes" className="group inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors">
+            {t('Más de N instituciones por sector').replace('N', total)} <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
         </AnimatedSection>
       </div>

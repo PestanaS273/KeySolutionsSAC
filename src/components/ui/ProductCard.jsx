@@ -71,10 +71,10 @@ export default function ProductCard({ product, index = 0 }) {
         {product.href && (
           <Link
             to={product.href}
-            className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all duration-200"
+            className="group inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-brand-blue transition-colors duration-200"
           >
             {t('Ver más')}
-            <ArrowRight size={15} />
+            <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
         )}
       </div>

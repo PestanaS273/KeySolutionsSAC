@@ -95,9 +95,9 @@ export default function Blog() {
                       {t(post.summary)}
                     </p>
 
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue group-hover:gap-2.5 transition-all">
+                    <span className="group inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors">
                       {t('Leer artículo')}
-                      <ArrowRight size={14} />
+                      <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
                     </span>
                   </div>
                 </Link>
@@ -115,10 +115,10 @@ export default function Blog() {
             <h2 className="text-2xl font-extrabold text-navy-900 mb-6">{t('Solicite una cotización personalizada')}</h2>
             <Link
               to="/contacto"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-navy text-white font-semibold rounded-xl hover:bg-navy-800 transition-colors"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-brand-navy text-white font-semibold rounded-xl hover:bg-navy-800 transition-colors"
             >
               {t('Contactar ahora')}
-              <ArrowRight size={17} />
+              <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </AnimatedSection>
         </div>

@@ -25,8 +25,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
-        display: ['"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
+        sans: ['Archivo', 'system-ui', 'sans-serif'],
+        display: ['Archivo', 'system-ui', 'sans-serif'],
+        /* Sólo para cifras, importes y códigos: las columnas tienen que cuadrar. */
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       keyframes: {
         marquee: {
