@@ -3,16 +3,18 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
-## 2026-09-14 — Ecofuturo deja de aparecer dos veces en la lista por sector
+## 2026-09-14 — Se depura la lista de clientes por sector
 
-- **Ecofuturo estaba listado en dos sectores a la vez**, como «Banco Ecofuturo» en Bancos y como
+- **Salen cuatro cooperativas que ya no existen**: San Luis, La Trinidad, San Gabriel y El Buen
+  Samaritano. El sector de cooperativas de ahorro y crédito pasa de 15 a 11 nombres.
+- **Ecofuturo deja de aparecer dos veces.** Estaba como «Banco Ecofuturo» en Bancos y como
   «Ecofuturo» en Instituciones financieras de desarrollo. Es la misma institución y hoy es un
-  banco, así que queda sólo en Bancos. El sector de IFD se queda con Crecer IFD, CIDRE IFD y
+  banco, así que queda sólo en Bancos; el sector de IFD se queda con Crecer IFD, CIDRE IFD y
   Diaconía IFD.
 - El total de instituciones que se muestra en la página y en la meta descripción se calcula
-  sumando las listas, así que baja solo de 65 a 64.
-- El carrusel de logos no cambia: ahí sigue como «Eco Futuro», el nombre con el que se contrató,
-  según la regla de `decisiones.md`.
+  sumando las listas, así que baja solo de 65 a 60.
+- El carrusel de logos no cambia: ahí Ecofuturo sigue como «Eco Futuro», el nombre con el que se
+  contrató, según la regla de `decisiones.md`.
 
 ## 2026-09-14 — Fotografía de producto unificada: un solo set, sin marcas ajenas
 

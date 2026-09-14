@@ -54,9 +54,8 @@ export const clientsBySector = [
   {
     sector: 'Cooperativas de ahorro y crédito',
     names: [
-      'Jesús Nazareno', 'Jerusalén', 'La Merced', 'La Trinidad', 'San Mateo', 'El Buen Samaritano',
-      'Fátima', 'Hospicio', 'Montero', 'San Gabriel', 'San Luis', 'San Martín de Porres', 'San Pedro',
-      'San Antonio', 'Loyola',
+      'Jesús Nazareno', 'Jerusalén', 'La Merced', 'San Mateo', 'Fátima', 'Hospicio', 'Montero',
+      'San Martín de Porres', 'San Pedro', 'San Antonio', 'Loyola',
     ],
   },
   {
