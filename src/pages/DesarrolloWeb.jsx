@@ -54,7 +54,7 @@ export default function DesarrolloWeb() {
                 <AnimatedSection key={s.title} delay={i * 0.08}>
                   <motion.div
                     whileHover={{ y: -6 }}
-                    className="bg-[#F8FAFC] rounded-2xl p-6 h-full border border-gray-100 hover:border-brand-blue/20 transition-colors duration-300"
+                    className="bg-brand-light rounded-2xl p-6 h-full border border-gray-100 hover:border-brand-blue/20 transition-colors duration-300"
                   >
                     <div className="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4">
                       {Icon && <Icon size={20} className="text-amber-300" />}
@@ -93,7 +93,7 @@ export default function DesarrolloWeb() {
       </section>
 
       {/* ── PROCESO ───────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#F8FAFC]">
+      <section className="py-24 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             label={t("Cómo trabajamos")}

@@ -30,7 +30,7 @@ function ContentRenderer({ blocks }) {
               <ul key={i} className="mb-5 space-y-2">
                 {block.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-3 text-gray-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0 mt-2" />
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -41,7 +41,7 @@ function ContentRenderer({ blocks }) {
               <ol key={i} className="mb-5 space-y-2">
                 {block.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-3 text-gray-700">
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-blue text-white text-xs flex items-center justify-center font-bold mt-0.5">{j + 1}</span>
+                    <span className="shrink-0 w-5 h-5 rounded-full bg-brand-blue text-white text-xs flex items-center justify-center font-bold mt-0.5">{j + 1}</span>
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -102,7 +102,7 @@ export default function BlogPost() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-950 to-navy-800 py-20 px-4 sm:px-6">
+      <section className="bg-linear-to-br from-navy-950 to-navy-800 py-20 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ export default function BlogPost() {
                 to={`/blog/${prevPost.slug}`}
                 className="flex items-center gap-3 group text-left flex-1"
               >
-                <ArrowLeft size={18} className="text-gray-400 group-hover:text-brand-blue transition-colors flex-shrink-0" />
+                <ArrowLeft size={18} className="text-gray-400 group-hover:text-brand-blue transition-colors shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 mb-1">{t('Artículo anterior')}</p>
                   <p className="text-sm font-semibold text-navy-900 group-hover:text-brand-blue transition-colors leading-snug">{prevPost.title}</p>
@@ -201,7 +201,7 @@ export default function BlogPost() {
                   <p className="text-xs text-gray-400 mb-1">{t('Artículo siguiente')}</p>
                   <p className="text-sm font-semibold text-navy-900 group-hover:text-brand-blue transition-colors leading-snug">{nextPost.title}</p>
                 </div>
-                <ArrowRight size={18} className="text-gray-400 group-hover:text-brand-blue transition-colors flex-shrink-0" />
+                <ArrowRight size={18} className="text-gray-400 group-hover:text-brand-blue transition-colors shrink-0" />
               </Link>
             )}
           </div>
@@ -234,7 +234,7 @@ export default function BlogPost() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-navy-900 to-brand-blue">
+      <section className="py-16 bg-linear-to-br from-navy-900 to-brand-blue">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedSection>
             <h2 className="text-2xl font-extrabold text-white mb-3">

@@ -59,7 +59,7 @@ export default function FundasBloqueo() {
             {benefits.map((b, i) => (
               <AnimatedSection key={b} delay={i * 0.07}>
                 <div className="flex items-start gap-3 p-4 bg-brand-light rounded-xl">
-                  <span className="w-2.5 h-2.5 rounded-full bg-brand-blue flex-shrink-0 mt-1.5" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-brand-blue shrink-0 mt-1.5" />
                   <p className="text-gray-700">{t(b)}</p>
                 </div>
               </AnimatedSection>

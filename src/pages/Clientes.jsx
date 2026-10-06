@@ -99,7 +99,7 @@ export default function Clientes() {
       </section>
 
       {/* Colaboradores */}
-      <section className="py-20 bg-[#F8FAFC] border-y border-gray-200">
+      <section className="py-20 bg-brand-light border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
           <SectionTitle
             center={false}

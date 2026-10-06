@@ -57,7 +57,7 @@ export default function SolucionesEmpresariales() {
       />
 
       {/* ── SERVICIOS ─────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#F8FAFC]">
+      <section className="py-24 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             label={t("Nuestras soluciones")}

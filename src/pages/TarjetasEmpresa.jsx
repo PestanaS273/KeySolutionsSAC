@@ -62,7 +62,7 @@ export default function TarjetasEmpresa() {
             <ul className="space-y-3">
               {sectors.map((s) => (
                 <li key={s} className="flex items-center gap-3 text-gray-700">
-                  <span className="w-2 h-2 rounded-full bg-brand-gold flex-shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-brand-gold shrink-0" />
                   {t(s)}
                 </li>
               ))}

@@ -59,7 +59,7 @@ export default function KeyErp() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#F8FAFC]">
+      <section className="py-24 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <SectionTitle center={false} title={t("Configurado para cada empresa, sin tocar el programa")} />
           <AnimatedSection>

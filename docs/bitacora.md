@@ -3,6 +3,19 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
+## 2026-10-06 — Dependencias sin vulnerabilidades: Tailwind 4
+
+- GitHub avisó de dependencias vulnerables (`source-map-js`, `braces`, `brace-expansion` y otras,
+  16 en total). Todas eran de las herramientas de construcción, no de lo que llega al navegador.
+  `npm audit fix` corrigió nueve; las siete restantes venían de Tailwind 3, que no tiene versión
+  corregida, así que el sitio pasa a **Tailwind 4**, la misma versión que el sitio de KeyERP.
+  `npm audit`: 0 vulnerabilidades.
+- La migración la hizo la herramienta oficial (`@tailwindcss/upgrade`): el tema que estaba en
+  `tailwind.config.js` vive ahora en `src/index.css` (bloque `@theme`) y PostCSS usa
+  `@tailwindcss/postcss`. Comparadas captura por captura diez páginas en escritorio y móvil antes y
+  después: sin cambios visibles (diferencias de 1 a 10 px de alto por interlineado en páginas de
+  miles de píxeles).
+
 ## 2026-10-06 — Logo nuevo, KeyERP con once módulos y analítica con consentimiento
 
 - **Logo oficial nuevo** en la barra (versión con texto marino sobre fondo claro y versión con

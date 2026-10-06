@@ -91,7 +91,7 @@ export default function Home() {
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       {/* El -mt-16 mete el hero por debajo de la barra, que en la portada arranca transparente. */}
-      <section className="relative isolate -mt-16 flex min-h-[38rem] items-end overflow-hidden bg-navy-950 text-white lg:min-h-[min(92vh,50rem)]">
+      <section className="relative isolate -mt-16 flex min-h-152 items-end overflow-hidden bg-navy-950 text-white lg:min-h-[min(92vh,50rem)]">
         <HeroVideo />
         {/* Oscurecido en dos tiempos: arriba para que se lea la barra, abajo para el titular. */}
         <div
@@ -106,7 +106,7 @@ export default function Home() {
         <div className="relative z-20 mx-auto w-full max-w-7xl px-4 pb-12 pt-24 sm:px-6 sm:pt-28 lg:pb-20 lg:pt-40">
           <motion.h1
             {...fadeUp(0.05)}
-            className="font-display max-w-[16ch] text-[clamp(2.4rem,5.8vw,4.25rem)] font-bold leading-[1.04] tracking-[-0.025em] text-balance"
+            className="font-display max-w-[16ch] text-[clamp(2.4rem,5.8vw,4.25rem)] font-bold leading-[1.04] tracking-tight text-balance"
           >
             {t('Insumos y desarrollo de software para el sector financiero.')}
           </motion.h1>
@@ -127,7 +127,7 @@ export default function Home() {
             <a
               href={company.erpUrl}
               rel="noopener"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/35 bg-white/5 px-7 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors duration-200 hover:border-white/60 hover:bg-white/15"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/35 bg-white/5 px-7 py-3.5 font-semibold text-white backdrop-blur-xs transition-colors duration-200 hover:border-white/60 hover:bg-white/15"
             >
               {t('Conocer KeyERP')}
               <ArrowUpRight size={17} />
@@ -193,7 +193,7 @@ export default function Home() {
       <section className="seccion-amplia relative overflow-hidden bg-navy-900 text-white">
         <div
           aria-hidden="true"
-          className="absolute top-1/2 -right-40 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full opacity-25 blur-3xl pointer-events-none"
+          className="absolute top-1/2 -right-40 h-136 w-136 -translate-y-1/2 rounded-full opacity-25 blur-3xl pointer-events-none"
           style={{ background: 'radial-gradient(closest-side, #5BB8F5, transparent 70%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-20 items-start">
@@ -256,7 +256,7 @@ export default function Home() {
       </section>
 
       {/* ── DESARROLLO DE SOFTWARE ───────────────────────────────────── */}
-      <section className="seccion bg-[#F8FAFC]">
+      <section className="seccion bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             center={false}
@@ -351,7 +351,7 @@ export default function Home() {
       </section>
 
       {/* ── CONTACTO ──────────────────────────────────────────────────── */}
-      <section id="contacto" className="seccion-amplia scroll-mt-20 bg-[#F8FAFC] border-t border-gray-200">
+      <section id="contacto" className="seccion-amplia scroll-mt-20 bg-brand-light border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
           <AnimatedSection>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 leading-[1.08] tracking-tight text-balance">

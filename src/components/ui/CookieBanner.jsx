@@ -27,7 +27,7 @@ export default function CookieBanner() {
       role="dialog"
       aria-live="polite"
       aria-label={t('Aviso de cookies')}
-      className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-3xl rounded-xl border border-gray-200 bg-white p-5 shadow-2xl sm:inset-x-6 sm:bottom-6 sm:flex sm:items-center sm:gap-6"
+      className="fixed inset-x-3 bottom-3 z-60 mx-auto max-w-3xl rounded-xl border border-gray-200 bg-white p-5 shadow-2xl sm:inset-x-6 sm:bottom-6 sm:flex sm:items-center sm:gap-6"
     >
       <p className="text-sm leading-relaxed text-gray-700">
         {t('Usamos cookies de Google Analytics para contar visitas de forma agregada. Sólo se activan si usted acepta.')}{' '}

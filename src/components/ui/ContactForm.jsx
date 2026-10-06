@@ -8,7 +8,7 @@ import { useLang } from '../../i18n/LangContext'
 
 
 const inputClass =
-  'w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-[0.95rem] text-gray-900 placeholder-gray-500 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-colors disabled:opacity-60'
+  'w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-[0.95rem] text-gray-900 placeholder-gray-500 focus:outline-hidden focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-colors disabled:opacity-60'
 const errorClass = 'mt-1 text-xs text-red-600'
 const labelClass = 'block text-sm font-medium text-gray-700 mb-1.5'
 

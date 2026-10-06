@@ -93,11 +93,11 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3">
             <li className="flex items-start gap-2 text-sm text-gray-400">
-              <MapPin size={15} className="mt-0.5 flex-shrink-0 text-gray-500" />
+              <MapPin size={15} className="mt-0.5 shrink-0 text-gray-500" />
               {company.address}
             </li>
             <li className="flex items-start gap-2 text-sm text-gray-400">
-              <MapPin size={15} className="mt-0.5 flex-shrink-0 text-gray-500" />
+              <MapPin size={15} className="mt-0.5 shrink-0 text-gray-500" />
               {company.bolivia}
             </li>
             <li>

@@ -50,7 +50,7 @@ export default function Navbar() {
   /* Cada ítem es una pastilla que se resalta sola al pasar el cursor. La barra entera no cambia:
      que todo el fondo se aclare por acercarse a un enlace era desproporcionado. */
   const navLink =
-    'px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' +
+    'px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 ' +
     (overlay ? 'focus-visible:ring-white focus-visible:ring-offset-navy-950' : 'focus-visible:ring-brand-blue focus-visible:ring-offset-white')
   const activeClass = overlay ? 'text-white bg-white/15' : 'text-brand-gold bg-navy-50'
   const inactiveClass = overlay
@@ -67,7 +67,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link to="/" className="flex-shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+        <Link to="/" className="shrink-0 rounded-xs focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-blue">
           <img
             src={overlay ? logoKeyBlanco : logoKeyColor}
             alt={t("Key Solutions")}
@@ -221,7 +221,7 @@ export default function Navbar() {
           </Link>
           <Link
             to="/contacto"
-            className={`ml-3 px-5 py-2 text-sm font-semibold rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+            className={`ml-3 px-5 py-2 text-sm font-semibold rounded-lg transition-colors duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 ${
               overlay
                 ? 'bg-white text-navy-950 hover:bg-blue-50 focus-visible:ring-white focus-visible:ring-offset-navy-950'
                 : 'bg-brand-navy text-white hover:bg-navy-800 focus-visible:ring-brand-blue focus-visible:ring-offset-white'

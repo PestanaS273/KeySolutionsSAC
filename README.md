@@ -12,7 +12,7 @@ contenido, despliegue en cPanel y decisiones de contenido y diseño.
 
 - [React 19](https://react.dev) + [Vite](https://vitejs.dev)
 - [React Router](https://reactrouter.com) para el ruteo
-- [Tailwind CSS](https://tailwindcss.com) para estilos
+- [Tailwind CSS](https://tailwindcss.com) 4 para estilos (tema en `src/index.css`, bloque `@theme`)
 - [Framer Motion](https://www.framer.com/motion/) para animaciones
 - Tipografía Schibsted Grotesk (Google Fonts), compartida con el sitio de KeyERP
 - [react-helmet-async](https://github.com/staylor/react-helmet-async) para SEO por página

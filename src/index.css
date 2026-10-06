@@ -1,6 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #0d2b4e;
+  --color-navy-950: #091929;
+
+  --color-brand-blue: #1e6fd9;
+  --color-brand-navy: #0d2b4e;
+  --color-brand-gold: #f5a623;
+  --color-brand-light: #f8fafc;
+
+  --font-sans: Archivo, system-ui, sans-serif;
+  --font-display: Archivo, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-float: float 4s ease-in-out infinite;
+
+  --shadow-card: 0 4px 20px rgba(13, 43, 78, 0.08);
+  --shadow-card-hover: 0 16px 45px rgba(13, 43, 78, 0.18);
+  --shadow-glow: 0 0 30px rgba(30, 111, 217, 0.25);
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility seccion {
+  /* Ritmo vertical de las secciones. Tres pasos, no uno: si todas las secciones respiran igual,
+     la página se lee como una lista y no como un recorrido. */
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+}
+
+@utility seccion-amplia {
+  padding-block: clamp(5.5rem, 10vw, 9rem);
+}
+
+@utility seccion-compacta {
+  padding-block: clamp(3.25rem, 5.5vw, 4.75rem);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
 
 @layer base {
   * {
@@ -43,31 +129,5 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-  }
-}
-
-@layer components {
-  /* Ritmo vertical de las secciones. Tres pasos, no uno: si todas las secciones respiran igual,
-     la página se lee como una lista y no como un recorrido. */
-  .seccion {
-    padding-block: clamp(4.5rem, 8vw, 7rem);
-  }
-
-  .seccion-amplia {
-    padding-block: clamp(5.5rem, 10vw, 9rem);
-  }
-
-  .seccion-compacta {
-    padding-block: clamp(3.25rem, 5.5vw, 4.75rem);
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-pretty {
-    text-wrap: pretty;
   }
 }

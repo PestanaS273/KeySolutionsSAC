@@ -59,7 +59,7 @@ export default function Privacidad() {
               : t('Hoy este sitio no usa cookies de analítica ni de publicidad.')}
           </p>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
+            <table className="w-full min-w-136 border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-gray-200 text-gray-500">
                   <th className="py-2 pr-4 font-medium">{t('Nombre')}</th>

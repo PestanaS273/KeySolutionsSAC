@@ -24,7 +24,7 @@ export default function ProductCard({ product, index = 0 }) {
           transition={{ duration: 0.4 }}
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-linear-to-t from-navy-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
       {/* Content */}
@@ -60,7 +60,7 @@ export default function ProductCard({ product, index = 0 }) {
           <ul className="mt-4 space-y-1.5">
             {product.features.map((f) => (
               <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0" />
                 {t(f)}
               </li>
             ))}

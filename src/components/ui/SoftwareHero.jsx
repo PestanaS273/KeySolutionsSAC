@@ -46,7 +46,7 @@ export default function SoftwareHero({ lines, subtitle, primaryCta, secondaryCta
     <section className="relative flex items-center overflow-hidden bg-navy-950 py-24 lg:py-32">
       <div
         aria-hidden="true"
-        className="absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl pointer-events-none"
+        className="absolute -top-40 -right-40 h-144 w-xl rounded-full opacity-30 blur-3xl pointer-events-none"
         style={{ background: 'radial-gradient(closest-side, #1E6FD9, transparent 70%)' }}
       />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">

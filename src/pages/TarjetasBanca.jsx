@@ -231,7 +231,7 @@ export default function TarjetasBanca() {
             <ul className="space-y-3">
               {specs.map((s) => (
                 <li key={s} className="flex items-center gap-3 text-gray-700">
-                  <span className="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-brand-blue shrink-0" />
                   {t(s)}
                 </li>
               ))}
@@ -264,7 +264,7 @@ export default function TarjetasBanca() {
               {certBadges.map((s) => (
                 <span
                   key={s}
-                  className="px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-xs font-semibold rounded-full shadow-sm"
+                  className="px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-xs font-semibold rounded-full shadow-xs"
                 >
                   {t(s)}
                 </span>

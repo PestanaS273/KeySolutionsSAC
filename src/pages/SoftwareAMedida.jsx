@@ -53,9 +53,9 @@ export default function SoftwareAMedida() {
                 <AnimatedSection key={u.title} delay={i * 0.08}>
                   <motion.div
                     whileHover={{ y: -6 }}
-                    className="flex items-start gap-5 bg-[#F8FAFC] rounded-2xl p-7 border border-gray-100 hover:shadow-card transition-all duration-300 h-full"
+                    className="flex items-start gap-5 bg-brand-light rounded-2xl p-7 border border-gray-100 hover:shadow-card transition-all duration-300 h-full"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
                       {Icon && <Icon size={22} className="text-brand-blue" />}
                     </div>
                     <div>
@@ -92,7 +92,7 @@ export default function SoftwareAMedida() {
             {customSoftwareApproach.map((a, i) => (
               <AnimatedSection key={a.title} delay={i * 0.1}>
                 <div className="flex items-start gap-5 rounded-2xl p-6 border border-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
-                  <CheckCircle2 size={22} className="text-amber-300 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={22} className="text-amber-300 shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-display font-bold text-white mb-1 tracking-tight">{t(a.title)}</h3>
                     <p className="text-sm text-blue-200/70 leading-relaxed">{t(a.description)}</p>
