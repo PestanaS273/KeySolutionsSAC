@@ -16,7 +16,7 @@ const structuredData = {
   operatingSystem: 'Web',
   provider: { '@type': 'Organization', name: 'Key Solutions S.A.C' },
   description:
-    'KeyERP: sistema de gestión del gasto administrativo. Compras, cuentas por pagar, contabilidad, activos fijos, contratos, viáticos, caja chica, presupuesto y paneles, instalado en los servidores de la empresa.',
+    'KeyERP: ERP del gasto administrativo para bancos, cooperativas e instituciones financieras de Bolivia y Perú. Almacenes, compras y cuentas por pagar, conciliación bancaria, contabilidad y presupuesto, activos y patrimonio, contratos y seguros, viáticos, proyectos, bóveda de valorados, paneles y Keia, un asistente con IA. Instalado en los servidores de la institución.',
 }
 
 /* Página puente: resume el producto y manda al sitio propio de KeyERP, que es donde está el detalle. */
@@ -25,9 +25,9 @@ export default function KeyErp() {
   return (
     <>
       <SEOHead
-        title={t("Key ERP (KeyERP) — ERP para banca y empresas de Bolivia y Perú")}
-        description={t("Key ERP (KeyERP) es el ERP de Key Solutions para bancos, cooperativas y empresas de Bolivia y Perú: compras, cuentas por pagar, contabilidad, activos fijos, contratos, viáticos, caja chica y presupuesto. Se instala en los servidores de la empresa y se licencia por módulos.")}
-        keywords={t("Key ERP, KeyERP, Key ERP Bolivia, Key ERP Peru, ERP Bolivia, ERP Peru, ERP banca, ERP bancario, ERP gasto administrativo, sistema de compras y cuentas por pagar, control de presupuesto, venta software ERP, Key Solutions")}
+        title={t("Key ERP (KeyERP) — ERP para bancos, cooperativas e instituciones financieras de Bolivia y Perú")}
+        description={t("Key ERP (KeyERP) es el ERP de Key Solutions para bancos, cooperativas, IFD y cajas de Bolivia y Perú: once módulos —compras, contabilidad, activos, contratos, bóveda de valorados y más— y Keia, un asistente con IA. Se instala en los servidores de la institución y se licencia por módulos.")}
+        keywords={t("Key ERP, KeyERP, Key ERP Bolivia, Key ERP Peru, ERP para bancos, ERP para cooperativas, ERP instituciones financieras, ERP Bolivia, ERP Peru, ERP banca, ERP bancario, ERP con inteligencia artificial, ERP gasto administrativo, venta software ERP, Key Solutions")}
         path="/key-erp"
         structuredData={structuredData}
       />
@@ -43,8 +43,8 @@ export default function KeyErp() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <SectionTitle
             center={false}
-            title={t("Nueve módulos sobre un mismo núcleo")}
-            subtitle={t("Comparten proveedores, centros de costo, aprobaciones y plan de cuentas. Se activan por licencia; sumar uno después no exige reinstalar nada.")}
+            title={t("Once módulos sobre un mismo núcleo")}
+            subtitle={t("Almacenes y abastecimiento viene con toda instalación; los otros diez se activan por licencia. Comparten proveedores, centros de costo, aprobaciones y plan de cuentas.")}
           />
           <AnimatedSection>
             <ol className="divide-y divide-gray-200 border-y border-gray-200">

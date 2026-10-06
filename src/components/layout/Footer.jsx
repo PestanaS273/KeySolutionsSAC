@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
 import { useLang } from '../../i18n/LangContext'
 
 import { company } from '../../data/company'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logoKey-blanco.webp'
 
 const productLinks = [
   { label: 'Tarjetas PVC Bancarias', href: '/tarjetas-bancarias' },
@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand */}
         <div className="sm:col-span-2 lg:col-span-2">
-          <img src={logo} alt={t("Key Solutions")} className="h-12 w-auto mb-4 brightness-200" />
+          <img src={logo} alt={t("Key Solutions")} width={578} height={206} className="h-12 w-auto mb-4" />
           <p className="text-sm leading-relaxed text-gray-400 max-w-xs">
             {t(company.description)}
           </p>
@@ -139,7 +139,10 @@ export default function Footer() {
 
       <div className="border-t border-navy-800 max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-600">
         <span>© {new Date().getFullYear()} {t(company.name)}. {t('Todos los derechos reservados.')}</span>
-        <span>{t('Perú y Bolivia')}</span>
+        <span className="flex items-center gap-4">
+          <Link to="/privacidad" className="hover:text-gray-300 transition-colors">{t('Privacidad y cookies')}</Link>
+          <span>{t('Perú y Bolivia')}</span>
+        </span>
       </div>
     </footer>
   )

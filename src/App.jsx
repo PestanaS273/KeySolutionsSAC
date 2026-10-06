@@ -20,6 +20,10 @@ import SolucionesEmpresariales from './pages/SolucionesEmpresariales'
 import DesarrolloWeb from './pages/DesarrolloWeb'
 import SoftwareAMedida from './pages/SoftwareAMedida'
 import KeyErp from './pages/KeyErp'
+import Privacidad from './pages/Privacidad'
+import CookieBanner from './components/ui/CookieBanner'
+import { initAnalytics } from './lib/analytics'
+import { useEffect } from 'react'
 
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
@@ -58,6 +62,7 @@ function AnimatedRoutes() {
           <Route path="/desarrollo-web" element={<DesarrolloWeb />} />
           <Route path="/software-a-medida" element={<SoftwareAMedida />} />
           <Route path="/key-erp" element={<KeyErp />} />
+          <Route path="/privacidad" element={<Privacidad />} />
 
           {/* Redirects de URLs antiguas → nuevas (301 equivalente en cliente) */}
           <Route path="/tarjetas-banca" element={<Navigate to="/tarjetas-bancarias" replace />} />
@@ -70,6 +75,7 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  useEffect(initAnalytics, [])
   return (
     /* `reducedMotion="user"` hace que framer respete la preferencia del sistema en todo el sitio:
        quien pide menos movimiento recibe un fundido en vez de desplazamientos. */
@@ -81,6 +87,7 @@ export default function App() {
           <AnimatedRoutes />
           <Footer />
           <WhatsAppButton />
+          <CookieBanner />
         </div>
       </BrowserRouter>
     </MotionConfig>

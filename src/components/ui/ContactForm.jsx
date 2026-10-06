@@ -1,3 +1,4 @@
+import { track } from '../../lib/analytics'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
@@ -60,6 +61,7 @@ export default function ContactForm({ defaultInterest, compact = false }) {
       const json = await res.json()
       if (json.success) {
         setStatus('success')
+        track('generate_lead', { form: 'contacto' })
         reset()
       } else setStatus('error')
     } catch {

@@ -1,0 +1,25 @@
+# Key Solutions S.A.C.
+
+> Key Solutions S.A.C. (Lima, Perú) provee insumos y software al sector financiero de Perú y Bolivia desde hace más de 20 años: tarjetas PVC bancarias con chip, rollos térmicos, fundas RFID y formularios preimpresos, desarrollo de software a medida y KeyERP, su ERP para bancos y cooperativas. En Bolivia opera a través de ACOVI Solutions Bolivia S.R.L., con sede en La Paz.
+
+## Insumos para el sector financiero
+
+- [Tarjetas PVC bancarias](https://keysolutionssac.com/tarjetas-bancarias): chip EMV, contactless, dual interface y MIFARE.
+- [Tarjetas para empresas](https://keysolutionssac.com/tarjetas-empresa): identificación, control de acceso y hoteles.
+- [Fundas RFID](https://keysolutionssac.com/fundas-rfid): bloqueo contra lectura no autorizada de tarjetas.
+- [Rollos térmicos](https://keysolutionssac.com/rollos-termicos): para POS y cajeros automáticos.
+- [Sobres y formularios](https://keysolutionssac.com/sobres-preimpresos): PIN mailer, sobres con ventana y formas continuas.
+- [Catálogo completo](https://keysolutionssac.com/productos)
+
+## Software
+
+- [KeyERP](https://keyerp.keysolutionssac.com): ERP del gasto administrativo para bancos, cooperativas, IFD y cajas de Bolivia y Perú, con once módulos y Keia, un asistente con IA que corre en los servidores de la institución. Resumen en [/key-erp](https://keysolutionssac.com/key-erp).
+- [Desarrollo web](https://keysolutionssac.com/desarrollo-web)
+- [Software a medida](https://keysolutionssac.com/software-a-medida)
+
+## Empresa
+
+- [Nosotros](https://keysolutionssac.com/nosotros)
+- [Clientes](https://keysolutionssac.com/clientes): bancos, cooperativas, IFD y cajas de Perú y Bolivia.
+- [Guías](https://keysolutionssac.com/blog): artículos sobre tarjetas EMV, contactless, rollos térmicos, fundas RFID y PIN mailer.
+- [Contacto](https://keysolutionssac.com/contacto): contacto@keysolutionssac.com, +51 949 284 735. Av. Raúl Ferrero 1542, La Molina, Lima.

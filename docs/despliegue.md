@@ -43,6 +43,41 @@ repositorio (`KeyERPWeb`); tiene su propia guía.
   por DNS), cubre también el subdominio; si es de prefijo de URL, el subdominio necesita su
   propia propiedad.
 
+## Prerender (HTML ya armado por página)
+
+- `npm run build` = `vite build` + `node scripts/prerender.mjs` + permisos. El prerender abre cada
+  ruta de `public/sitemap.xml` en un navegador real y guarda `dist/<ruta>/index.html` con el
+  contenido completo: Google, los asistentes de IA (que casi nunca ejecutan JavaScript) y las
+  previsualizaciones de WhatsApp o LinkedIn leen la página entera. Termina con una línea por ruta:
+  `t1 h1 oculto:0` es lo correcto (un título, un h1, ningún texto con opacidad 0).
+- **Una ruta pública nueva entra al sitemap y con eso se prerenderiza.**
+- Necesita Playwright (`@playwright/test`, ya en devDependencies) y su navegador:
+  `npx playwright install chromium` la primera vez en un equipo nuevo.
+- `.htaccess`: `DirectorySlash Off` y una regla que sirve `/ruta/index.html` para `/ruta`, sin la
+  redirección 301 a `/ruta/` que Apache haría por defecto (la canónica va sin barra). Probado con
+  Apache 2.4 local.
+- Al arrancar, `src/main.jsx` borra los metadatos marcados `data-prerender` antes de que la app
+  vuelva a pintarlos, para que no queden duplicados.
+
+## Analítica (Google Analytics 4)
+
+- ID de medición de este sitio: **`G-FQRJF0NJHM`** (propiedad «Key Solutions», flujo web
+  `keysolutionssac.com`). Va en `.env` como `VITE_GA_ID`; `.env` no se sube a git, así que en un
+  equipo nuevo hay que volver a ponerlo. No se pega el fragmento `gtag.js` que da Google en
+  `index.html`: el código de `src/lib/analytics.js` lo carga sólo después del consentimiento.
+- `VITE_GA_ID` se lee en `npm run build`. Se embebe en el build: cambiarlo exige volver a construir y subir.
+- Sin consentimiento no se carga nada. Aceptar y rechazar están al mismo nivel en el aviso, y la
+  elección se cambia desde `/privacidad`.
+- Las vistas de página de la navegación interna, los clics a otros sitios (WhatsApp incluido) y el
+  scroll los mide GA4 con la medición mejorada, activa por defecto en el flujo web.
+- Evento propio: `generate_lead` (formulario de contacto enviado). En GA: Administrar → Eventos →
+  marcarlo como **evento clave** para verlo como conversión.
+
+## `llms.txt`
+
+`public/llms.txt`: resumen del sitio con enlaces, pensado para asistentes de IA (formato
+propuesto en llmstxt.org). Si cambia una página importante, se actualiza acá.
+
 ## Video del hero — `public/video/`
 
 Tres ficheros, servidos tal cual desde `public/` (no pasan por Vite, así conservan su nombre):
@@ -87,10 +122,15 @@ for t in 2 6.5 11; do ffmpeg -v error -ss $t -t 0.5 -i master.mp4 \
   | awk -F= '/YAVG/{s+=$2;n++} END{printf "%s\n", s/n}'; done
 ```
 
-**Los logos de la barra** (`src/assets/logoKey-blanco.png` y `logoKey-transparente.png`) se
-derivaron del original `logoKey.png`, que viene con fondo blanco opaco. El «KS» está calado sobre
-el bloque cian, así que el bloque se redibuja y el calado se pinta encima usando el canal rojo del
-original como máscara. Si cambia el logo, hay que rehacer los dos derivados.
+**Los logos** salen de los originales oficiales en
+`Desktop/KeyERP-presentacion/Presentacion Empresa/Logos Empresa/` (`Logo completo.png`, 2048×768, y
+`Logo solo.png`, 1254×1254, ambos con transparencia). `logoKey-transparente.webp` es el completo
+recortado a 206 px de alto (texto marino, para fondo claro); `logoKey-blanco.webp` es el mismo con el
+texto «KEY SOLUTIONS SAC» repintado en blanco conservando el alfa (para el hero, la barra sobre el
+video y el pie). Los favicons, `apple-touch-icon.png`, `favicon.svg` y `og-image.png` (1200×630, logo
+blanco sobre marino) salen del «Logo solo» y del completo blanco. El logo del pie del sitio de KeyERP
+(`KeyERPWeb/public/key-solutions.png`) es el completo blanco a 60 px. Si cambia el logo, se rehacen
+todos los derivados en los dos repositorios.
 
 ## Permisos de los ficheros
 

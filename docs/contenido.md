@@ -40,12 +40,20 @@ Categorías (portada, catálogo) y productos por categoría (páginas de product
 ## Software y KeyERP — `src/data/software.js`
 
 `softwareServices` (las tres líneas: web, a medida, KeyERP con `external: true`), `erpModules`
-(los nueve módulos, mismos nombres y orden que el sitio de KeyERP), `erpCustomization`,
+(los once módulos —la base de almacenes más diez licenciables, Keia entre ellos—, mismos nombres y orden que el sitio de KeyERP), `erpCustomization`,
 `erpDifferentiators`, `webDevServices`, `webDevStack`, `webDevProcess`, `customSoftwareUseCases`,
 `customSoftwareApproach`.
 
 **Si cambia un módulo de KeyERP, se cambia en los dos repositorios**: acá en `erpModules` y en
 `KeyERPWeb/src/data/modules.ts`.
+
+## Privacidad, cookies y analítica
+
+`src/pages/Privacidad.jsx` (`/privacidad`, enlazada desde el pie y desde el aviso) explica qué se
+hace con los datos del formulario y qué cookies hay. `src/lib/analytics.js` carga Google
+Analytics 4 sólo con `VITE_GA_ID` en `.env` y sólo después de que el visitante acepta en el aviso
+(`src/components/ui/CookieBanner.jsx`). Es el mismo código que el sitio de KeyERP. `track()` envía
+eventos propios; hoy, `generate_lead` desde `ContactForm.jsx`.
 
 ## Formulario de contacto — `src/data/contact.js` y `src/components/ui/ContactForm.jsx`
 
@@ -82,8 +90,8 @@ suborganización y KeyERP como producto) está en `index.html`.
 
 - `layout/`: `TopBar`, `Navbar` (ítem KeyERP externo), `Footer`. La barra cambia de piel según la
   página: en la portada arranca transparente sobre el video y se vuelve blanca translúcida al hacer
-  scroll; en el resto arranca ya en ese estado. Usa dos logos derivados, `logoKey-blanco.png` (sobre el video) y
-  `logoKey-transparente.png` (sobre la barra clara).
+  scroll; en el resto arranca ya en ese estado. Usa dos logos derivados, `logoKey-blanco.webp` (sobre el video; también en el pie) y
+  `logoKey-transparente.webp` (sobre la barra clara).
 - `ui/HeroVideo.jsx`: el video de fondo del hero de la portada. Decide en el cliente si lo descarga
   o deja el póster fijo (movimiento reducido, móvil, ahorro de datos, 2G/3G). Los ficheros están en
   `public/video/`; cómo se generan, en `despliegue.md`; qué puede mostrar, en `decisiones.md`.

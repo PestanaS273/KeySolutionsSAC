@@ -13,7 +13,7 @@ que es otro repositorio: `KeyERPWeb`).
 | [`imagenes.md`](imagenes.md) | Guía de producción del set de fotos de producto: prompts, consistencia, banco de imágenes y normalización. |
 | [`imagenes-prompts.md`](imagenes-prompts.md) | Los 16 prompts completos en inglés, listos para pegar en Nano Banana o DALL·E. |
 
-**Última actualización del sitio: 2026-09-14** (ver bitácora).
+**Última actualización del sitio: 2026-10-06** (ver bitácora).
 
 ## Cómo se mantiene esta carpeta
 

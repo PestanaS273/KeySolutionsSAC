@@ -24,12 +24,16 @@ export default function AnimatedSection({
     },
   }
 
+  /* En el prerender (navegador automatizado) se guarda ya visible: un buscador que lee el HTML no
+     debe encontrar texto con opacidad 0. */
+  const still = typeof navigator !== 'undefined' && navigator.webdriver
+
   return (
     <motion.div
       ref={ref}
       variants={variants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      initial={still ? 'visible' : 'hidden'}
+      animate={still || inView ? 'visible' : 'hidden'}
       className={className}
     >
       {children}

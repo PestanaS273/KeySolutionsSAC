@@ -27,7 +27,7 @@ const homeStructuredData = {
   telephone: '+51-949-284-735',
   email: company.email,
   description:
-    'Proveedores de tarjetas PVC bancarias con chip EMV, contactless, dual interface y MIFARE, rollos térmicos POS/ATM, fundas RFID y formularios bancarios en Perú y Bolivia. Desarrolladores de KeyERP, sistema de gestión del gasto administrativo.',
+    'Proveedores de tarjetas PVC bancarias con chip EMV, contactless, dual interface y MIFARE, rollos térmicos POS/ATM, fundas RFID y formularios bancarios en Perú y Bolivia. Desarrolladores de KeyERP, el ERP del gasto administrativo para bancos y cooperativas de Bolivia y Perú.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Av. Raúl Ferrero 1542',
@@ -52,7 +52,7 @@ const homeStructuredData = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Rollos Térmicos POS y ATM 80x80' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fundas de Bloqueo RFID Anti-Clonación' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sobres PIN Mailer, Con Ventana y Formas Continuas' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'KeyERP — Gestión del gasto administrativo', url: 'https://keyerp.keysolutionssac.com' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'KeyERP — ERP para bancos y cooperativas', url: 'https://keyerp.keysolutionssac.com' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Desarrollo Web a Medida' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Software Empresarial a Medida' } },
     ],
@@ -114,7 +114,7 @@ export default function Home() {
             {...fadeUp(0.18)}
             className="mt-5 max-w-[58ch] text-pretty text-base leading-[1.6] text-blue-50/85 sm:mt-6 lg:text-lg lg:leading-[1.7]"
           >
-            {t('Más de 20 años proveyendo tarjetas PVC con chip, rollos térmicos, fundas RFID y formularios a bancos y cooperativas de Perú y Bolivia. Y KeyERP, nuestro sistema de gestión del gasto administrativo, instalado en los servidores de cada cliente.')}
+            {t('Más de 20 años proveyendo tarjetas PVC con chip, rollos térmicos, fundas RFID y formularios a bancos y cooperativas de Perú y Bolivia. Y KeyERP, nuestro ERP del gasto administrativo para bancos y cooperativas, instalado en los servidores de cada cliente.')}
           </motion.p>
           <motion.div {...fadeUp(0.3)} className="mt-8 flex flex-wrap gap-3 sm:mt-9">
             <Link
@@ -205,7 +205,7 @@ export default function Home() {
               </span>
             </div>
             <h2 className="font-display mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-balance">
-              {t('Nuestro producto: el gasto administrativo de su empresa, con rastro de punta a punta.')}
+              {t('Nuestro producto: el ERP del gasto administrativo para bancos y cooperativas, con rastro de punta a punta.')}
             </h2>
             <p className="mt-6 text-lg text-blue-100/80 leading-relaxed max-w-xl">
               {t('KeyERP lleva cada solicitud hasta su asiento contable. La requisición se aprueba, se cotiza, se convierte en orden de compra que compromete presupuesto, se concilia con la factura y se paga. Cada documento cita al anterior, y cada cambio queda con quién, cuándo y por qué.')}
@@ -215,6 +215,7 @@ export default function Home() {
                 'Se instala en los servidores de su empresa; ningún dato sale de su perímetro.',
                 'Se licencia por módulos: empieza con lo que necesita y suma después sin reinstalar.',
                 'Pensado para pasar auditoría: separación de funciones y rastro completo.',
+                'Con Keia, un asistente con IA que conoce el sistema y no saca datos de la institución.',
               ].map((txt) => (
                 <li key={txt} className="flex items-start gap-2.5">
                   <Check size={17} className="mt-0.5 shrink-0 text-sky-300" aria-hidden="true" />
@@ -241,7 +242,7 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.15}>
-            <p className="text-sm font-medium text-blue-100/60">{t('Nueve módulos sobre un mismo núcleo')}</p>
+            <p className="text-sm font-medium text-blue-100/60">{t('Once módulos sobre un mismo núcleo')}</p>
             <ol className="mt-4 divide-y divide-white/10 border-y border-white/10">
               {erpModules.map((m) => (
                 <li key={m.title} className="grid gap-1 py-3.5 sm:grid-cols-[11rem_1fr] sm:gap-6">

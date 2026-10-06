@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react'
-import logoKeyColor from '../../assets/logoKey-transparente.png'
-import logoKeyBlanco from '../../assets/logoKey-blanco.png'
+import logoKeyColor from '../../assets/logoKey-transparente.webp'
+import logoKeyBlanco from '../../assets/logoKey-blanco.webp'
 import { company } from '../../data/company'
 import LangToggle from '../ui/LangToggle'
 import { useLang } from '../../i18n/LangContext'
@@ -71,8 +71,8 @@ export default function Navbar() {
           <img
             src={overlay ? logoKeyBlanco : logoKeyColor}
             alt={t("Key Solutions")}
-            width={294}
-            height={103}
+            width={578}
+            height={206}
             className="h-10 w-auto"
           />
         </Link>

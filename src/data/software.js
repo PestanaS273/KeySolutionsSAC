@@ -139,16 +139,19 @@ export const customSoftwareApproach = [
 
 // ─── Key ERP ────────────────────────────────────────────────────────────────
 
+// Los mismos once módulos, con el mismo nombre, que el sitio de KeyERP (KeyERPWeb/src/data/modules.ts).
 export const erpModules = [
-  { title: 'Compras', description: 'Requisición, cotización con puntaje, orden de compra y recepción. Cada documento cita al anterior.' },
-  { title: 'Cuentas por pagar', description: 'Factura conciliada en tres vías contra orden y recepción, retenciones calculadas y pago cruzado con el banco.' },
-  { title: 'Contabilidad', description: 'Cada factura, pago y depreciación genera su asiento sobre el plan de cuentas de la empresa.' },
-  { title: 'Activos fijos', description: 'Alta desde la orden de compra, depreciación mensual, traslados entre sedes y baja con asiento.' },
-  { title: 'Contratos de servicio', description: 'Cuotas, devengo mensual y alertas antes de que un contrato venza sin nadie mirando.' },
-  { title: 'Viáticos', description: 'Solicitud, anticipo, rendición con comprobantes y saldo calculado.' },
-  { title: 'Caja chica', description: 'Fondos por sede con reposición automática al llegar al umbral.' },
-  { title: 'Presupuesto', description: 'Comprometido al emitir la orden y ejecutado al facturar: el disponible es real en todo momento.' },
-  { title: 'Paneles', description: 'Gasto por sede, proveedor y categoría, con detección de duplicados y desvíos.' },
+  { title: 'Almacenes y abastecimiento', description: 'La base de toda instalación: stock por agencia, reposición calculada por consumo, solicitudes internas y valija entre agencias.' },
+  { title: 'Compras y cuentas por pagar', description: 'Cotización, evaluación por criterios y adjudicación firmada; factura leída desde su QR o XML, conciliación de tres vías, retenciones y pago con doble firma.' },
+  { title: 'Conciliación bancaria', description: 'El extracto contra los pagos, línea por línea: el sistema sugiere el cruce y una persona lo confirma.' },
+  { title: 'Contabilidad y presupuesto', description: 'Asientos desde cada documento, presupuesto que avisa o bloquea antes de gastar y caja chica por agencia.' },
+  { title: 'Activos fijos y patrimonio', description: 'Depreciación, traslados y bajas; inmuebles, vehículos, documentos que vencen y equipos de seguridad con su mantenimiento.' },
+  { title: 'Contratos, seguros y licencias', description: 'Cuotas y devengo de cada contrato, pólizas con coberturas y siniestros, y licencias de software con sus vencimientos.' },
+  { title: 'Viáticos', description: 'Solicitud, anticipo, rendición con comprobantes y saldo calculado, con escalas por cargo y destino.' },
+  { title: 'Proyectos y obras', description: 'Presupuesto, contratista, avance físico y capitalización al activo fijo al terminar la obra.' },
+  { title: 'Bóveda de valorados', description: 'Corte diario de chequeras, tarjetas y formularios por agencia, con diferencias a doble firma.' },
+  { title: 'Paneles y reportes', description: 'Panel ejecutivo, paneles por área, análisis de gasto y reportes programados por correo.' },
+  { title: 'Keia, asistente con IA', description: 'Responde cómo se usa el sistema y cómo va el gasto, y cita la fuente. Corre en los servidores de la institución.' },
 ]
 
 export const erpCustomization = [
@@ -156,7 +159,7 @@ export const erpCustomization = [
     icon: 'ToggleRight',
     title: 'Módulos que se activan a demanda',
     description:
-      'Cada empresa empieza con lo que necesita — inventario, por ejemplo — y suma módulos cuando los necesita, sin migrar datos ni reinstalar nada.',
+      'Cada institución empieza con la base de almacenes y suma módulos cuando los necesita, sin migrar datos ni reinstalar nada.',
   },
   {
     icon: 'Sliders',

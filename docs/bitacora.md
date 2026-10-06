@@ -3,6 +3,29 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
+## 2026-10-06 — Logo nuevo, KeyERP con once módulos y analítica con consentimiento
+
+- **Logo oficial nuevo** en la barra (versión con texto marino sobre fondo claro y versión con
+  texto blanco sobre el video), en el pie, en los favicons, en el icono de iOS y en la imagen para
+  redes (`og-image.png`, ahora 1200×630). Salen de los originales de
+  `Presentacion Empresa/Logos Empresa/`. El pie mostraba una foto de oficina en lugar del logo
+  (`logo.png` era una fotografía); queda corregido.
+- **KeyERP pasa a once módulos** en la portada y en `/key-erp`, con los mismos nombres que el sitio
+  de KeyERP: Almacenes y abastecimiento, Compras y cuentas por pagar, Conciliación bancaria,
+  Contabilidad y presupuesto, Activos fijos y patrimonio, Contratos, seguros y licencias, Viáticos,
+  Proyectos y obras, Bóveda de valorados, Paneles y reportes, y Keia, el asistente con IA.
+- **SEO de KeyERP**: título, descripción y datos estructurados orientados a «ERP para bancos,
+  cooperativas e instituciones financieras de Bolivia y Perú», con Keia y la bóveda de valorados.
+- **Analítica con consentimiento**: Google Analytics 4 (`G-FQRJF0NJHM`) con aviso de cookies al
+  entrar, aceptar y rechazar al mismo nivel, y página nueva de privacidad y cookies (`/privacidad`,
+  en el pie y en el sitemap). Sin aceptar no se descarga nada de Google. Se mide además el envío
+  del formulario (`generate_lead`).
+- **HTML ya armado en cada página (prerender).** Hasta ahora Google y los asistentes de IA
+  recibían una página casi vacía y tenían que ejecutar JavaScript para ver algo; ahora cada una de
+  las 22 rutas del sitemap llega completa, con su título, su descripción y sin textos ocultos por
+  animaciones. El `.htaccess` sirve esas páginas sin redirigir a la versión con barra final.
+- **`llms.txt`**: resumen del sitio para asistentes de IA.
+
 ## 2026-09-14 — Se depura la lista de clientes por sector y entra Caja Cusco
 
 - **Entra Caja Cusco**, la primera institución peruana con logo en la rejilla. Se suma también a

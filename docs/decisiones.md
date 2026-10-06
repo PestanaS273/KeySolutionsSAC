@@ -77,5 +77,13 @@ Reglas que se cumplen en todo el sitio. Cada una con su motivo: sin motivo no es
 
 - Todo enlace a KeyERP va a `company.erpUrl` (`https://keyerp.keysolutionssac.com`), con icono de
   flecha externa. La página `/key-erp` se mantiene como puente porque está indexada.
-- Los nueve módulos se nombran igual en los dos sitios; si cambia uno, se cambian los dos
-  ficheros de datos.
+- Los once módulos se nombran igual en los dos sitios; si cambia uno, se cambian los dos
+  ficheros de datos. Son los del catálogo del sistema (la base de almacenes y diez que se
+  licencian, Keia entre ellos). Decisión del dueño, 2026-10-06; antes eran nueve.
+
+## Privacidad
+
+- **Analítica sólo con consentimiento.** Google Analytics no carga nada hasta que el visitante
+  acepta; aceptar y rechazar pesan lo mismo. Lo pide la ley peruana de datos personales para las
+  cookies que no son necesarias, y a este sitio lo leen bancos. La política está en `/privacidad`
+  y conviene que la revise un abogado.
