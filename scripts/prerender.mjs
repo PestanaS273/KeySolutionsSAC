@@ -86,6 +86,11 @@ try {
     }, [templateLd, template])
     let html = await page.content()
     if (!html.startsWith('<!DOCTYPE')) html = '<!DOCTYPE html>\n' + html
+    /* Vite precarga los trozos de JavaScript de cada página con la URL completa del servidor del
+       prerender (http://localhost:…/assets/…). Guardados así, en producción apuntan a la máquina
+       del visitante: la CSP los bloquea y la navegación falla. Se dejan relativos a la raíz. */
+    html = html.replaceAll(ORIGIN, '')
+    if (html.includes('localhost:')) throw new Error(`quedó una URL local en ${route}`)
     const dir = join('dist', route === '/' ? '' : route)
     await mkdir(dir, { recursive: true })
     await writeFile(join(dir, 'index.html'), html)

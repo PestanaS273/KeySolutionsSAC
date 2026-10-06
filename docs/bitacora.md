@@ -3,6 +3,12 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
+## 2026-10-06 — El prerender no deja URLs del servidor local
+
+- El mismo arreglo que en el sitio de KeyERP: el prerender deja relativas las rutas de los
+  scripts que Vite precarga y se detiene si queda alguna URL `localhost`. En este sitio no había
+  ocurrido, pero quedaba expuesto.
+
 ## 2026-10-06 — Dependencias sin vulnerabilidades: Tailwind 4
 
 - GitHub avisó de dependencias vulnerables (`source-map-js`, `braces`, `brace-expansion` y otras,
