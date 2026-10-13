@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { clients } from '../data/clients'
-import { clientsBySector, partners } from '../data/trayectoria'
+import { clientsBySector } from '../data/trayectoria'
 import SEOHead from '../components/SEOHead'
 import SectionTitle from '../components/ui/SectionTitle'
 import AnimatedSection from '../components/ui/AnimatedSection'
@@ -95,36 +95,6 @@ export default function Clientes() {
               {t('Algunas instituciones han cambiado de nombre o se han integrado a otras desde que trabajamos con ellas; se mencionan con el nombre con el que se contrató. Por acuerdos de confidencialidad, otras no se listan. Podemos dar referencias directas a pedido.')}
             </p>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Colaboradores */}
-      <section className="py-20 bg-brand-light border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
-          <SectionTitle
-            center={false}
-            title={t("Empresas con las que colaboramos")}
-            subtitle={t("Fabricantes y especialistas con los que producimos tarjetas, valorados e impresos.")}
-          />
-          <div className="grid gap-8 sm:grid-cols-2">
-            {partners.map((p, i) => (
-              <AnimatedSection key={p.name} delay={i * 0.08}>
-                <div className="border-t-2 border-navy-900 pt-5 h-full">
-                  <img src={p.logo} alt={t(p.name)} className="h-9 w-auto object-contain" loading="lazy" />
-                  <h3 className="mt-3 font-display text-xl font-bold text-navy-900">{t(p.name)}</h3>
-                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">{t(p.body)}</p>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline"
-                  >
-                    {p.url.replace('https://', '')} <ArrowUpRight size={14} />
-                  </a>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 

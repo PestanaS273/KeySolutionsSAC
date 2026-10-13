@@ -159,7 +159,7 @@ El detalle técnico está en el commit; acá va lo que alguien sin leer código 
 - **Nosotros** reescrita: titular de trayectoria, «Dos empresas, un mismo equipo» (Key Solutions
   en Lima; ACOVI Solutions Bolivia en La Paz, Santa Cruz y Cochabamba), tres líneas de trabajo,
   «Software que ya corre en instituciones financieras» (siete sistemas, **sin decir en cuál
-  institución**), «Con quiénes trabajamos» (2PSecure, Enotria) con logos.
+  institución**), (sección «Con quiénes trabajamos» retirada).
 - **Clientes** reescrita: logos, 60+ instituciones por sector, nota de nombres históricos y
   confidencialidad, colaboradores.
 - Logos nuevos de Banco Mercantil Santa Cruz, BCP, Banco Ganadero, Entel y COTAS.

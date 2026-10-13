@@ -1,9 +1,7 @@
-import partner2ps from '../assets/partner2ps.png'
-import partnerEnotria from '../assets/partnerEnotria.png'
 
 /*
  * Trayectoria de la empresa: líneas de trabajo, proyectos de software entregados, clientes por
- * sector y empresas con las que colaboramos. Es la fuente de Nosotros, Clientes y la portada.
+ * sector. Es la fuente de Nosotros, Clientes y la portada.
  * Sólo nombres de instituciones públicas y conocidas; sin datos internos.
  */
 
@@ -85,22 +83,6 @@ export const clientsBySector = [
   {
     sector: 'Hotelería y comercio',
     names: ['Hotel Los Tajibos', 'Hotel Europa', 'Hotel Casa Blanca', 'Hotel Garden Plaza', 'Hotel Santa Cruz', 'Burger King', 'Joyería Carrasco'],
-  },
-]
-
-/* Empresas con las que colaboramos hoy. */
-export const partners = [
-  {
-    name: '2PSecure',
-    url: 'https://www.2ps.pe',
-    logo: partner2ps,
-    body: 'Soluciones para medios de pago con más de 20 años en el sector: arquitectura de TI, ciberseguridad, impresión fija y variable de tarjetas financieras y gestión de valorados.',
-  },
-  {
-    name: 'Enotria',
-    url: 'https://www.enotria.pe',
-    logo: partnerEnotria,
-    body: 'Impresión de formas continuas, valorados y cheques, tarjetas PVC de identificación, llaves de hotel y tarjetas de fidelidad.',
   },
 ]
 

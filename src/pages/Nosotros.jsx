@@ -6,7 +6,7 @@ import AnimatedSection from '../components/ui/AnimatedSection'
 import ClientsCarousel from '../components/ui/ClientsCarousel'
 import SEOHead from '../components/SEOHead'
 import { company } from '../data/company'
-import { tracks, installedSystems, partners, presence, directors } from '../data/trayectoria'
+import { tracks, installedSystems, presence, directors } from '../data/trayectoria'
 import { useLang } from '../i18n/LangContext'
 
 const structuredData = {
@@ -182,36 +182,6 @@ export default function Nosotros() {
               ))}
             </dl>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Colaboradores */}
-      <section className="py-20 bg-brand-light border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
-          <SectionTitle
-            center={false}
-            title={t("Con quiénes trabajamos")}
-            subtitle={t("Fabricantes y especialistas con los que producimos. Cada uno cubre una parte que no tiene sentido hacer solos.")}
-          />
-          <div className="grid gap-8 sm:grid-cols-2">
-            {partners.map((p, i) => (
-              <AnimatedSection key={p.name} delay={i * 0.08}>
-                <div className="border-t-2 border-navy-900 pt-5 h-full">
-                  <img src={p.logo} alt={t(p.name)} className="h-9 w-auto object-contain" loading="lazy" />
-                  <h3 className="mt-3 font-display text-xl font-bold text-navy-900">{t(p.name)}</h3>
-                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">{t(p.body)}</p>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline"
-                  >
-                    {p.url.replace('https://', '')} <ArrowUpRight size={14} />
-                  </a>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 

@@ -17,7 +17,7 @@ Nombre, RUC, dirección, teléfono, WhatsApp, correo (`contacto@keysolutionssac.
 URL de KeyERP (`erpUrl`) y la línea de ACOVI Solutions Bolivia (`bolivia`). Lo leen la barra
 superior, el pie, la portada, Contacto y Nosotros.
 
-## Trayectoria, clientes y colaboradores — `src/data/trayectoria.js`
+## Trayectoria y clientes — `src/data/trayectoria.js`
 
 | Export | Qué es | Dónde se ve |
 |---|---|---|
@@ -71,7 +71,7 @@ Artículos con `slug`, `title`, `category` y contenido. La portada muestra los t
 |---|---|---|
 | `/` | `Home.jsx` | Hero, catálogo, KeyERP, software, clientes, presencia, contacto, guías |
 | `/nosotros` | `Nosotros.jsx` | Todo sale de `trayectoria.js` |
-| `/clientes` | `Clientes.jsx` | Logos + sectores + colaboradores |
+| `/clientes` | `Clientes.jsx` | Logos + sectores |
 | `/contacto` | `Contacto.jsx` | Formulario + datos |
 | `/key-erp` | `KeyErp.jsx` | Página puente al subdominio; se conserva porque está indexada |
 | `/soluciones-empresariales`, `/desarrollo-web`, `/software-a-medida` | | Software |
