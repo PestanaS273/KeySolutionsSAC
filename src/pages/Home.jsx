@@ -242,7 +242,7 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.15}>
-            <p className="text-sm font-medium text-blue-100/60">{t('Once módulos sobre un mismo núcleo')}</p>
+            <p className="text-sm font-medium text-blue-100/60">{t('Una plataforma base y dieciséis módulos encima')}</p>
             <ol className="mt-4 divide-y divide-white/10 border-y border-white/10">
               {erpModules.map((m) => (
                 <li key={m.title} className="grid gap-1 py-3.5 sm:grid-cols-[11rem_1fr] sm:gap-6">

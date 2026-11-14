@@ -13,7 +13,7 @@
 
 ## Software
 
-- [KeyERP](https://keyerp.keysolutionssac.com): ERP del gasto administrativo para bancos, cooperativas, IFD y cajas de Bolivia y Perú, con once módulos y Keia, un asistente con IA que corre en los servidores de la institución. Resumen en [/key-erp](https://keysolutionssac.com/key-erp).
+- [KeyERP](https://keyerp.keysolutionssac.com): ERP del gasto administrativo para bancos, cooperativas, IFD y cajas de Bolivia y Perú, con una plataforma base y dieciséis módulos que se licencian encima, entre ellos Keia, un asistente con IA que corre en los servidores de la institución. Resumen en [/key-erp](https://keysolutionssac.com/key-erp).
 - [Desarrollo web](https://keysolutionssac.com/desarrollo-web)
 - [Software a medida](https://keysolutionssac.com/software-a-medida)
 

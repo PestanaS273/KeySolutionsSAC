@@ -40,7 +40,7 @@ Categorías (portada, catálogo) y productos por categoría (páginas de product
 ## Software y KeyERP — `src/data/software.js`
 
 `softwareServices` (las tres líneas: web, a medida, KeyERP con `external: true`), `erpModules`
-(los once módulos —la base de almacenes más diez licenciables, Keia entre ellos—, mismos nombres y orden que el sitio de KeyERP), `erpCustomization`,
+(los dieciséis módulos que se licencian sobre la plataforma base, Keia entre ellos, mismos nombres y orden que el sitio de KeyERP), `erpCustomization`,
 `erpDifferentiators`, `webDevServices`, `webDevStack`, `webDevProcess`, `customSoftwareUseCases`,
 `customSoftwareApproach`.
 

@@ -26,7 +26,7 @@ export default function KeyErp() {
     <>
       <SEOHead
         title={t("Key ERP (KeyERP) — ERP para bancos, cooperativas e instituciones financieras de Bolivia y Perú")}
-        description={t("Key ERP (KeyERP) es el ERP de Key Solutions para bancos, cooperativas, IFD y cajas de Bolivia y Perú: once módulos —compras, contabilidad, activos, contratos, bóveda de valorados y más— y Keia, un asistente con IA. Se instala en los servidores de la institución y se licencia por módulos.")}
+        description={t("Key ERP (KeyERP) es el ERP de Key Solutions para bancos, cooperativas, IFD y cajas de Bolivia y Perú: una plataforma base y dieciséis módulos que se licencian encima —compras, contabilidad, activos, contratos, bóveda de valorados, cumplimiento normativo y más—, entre ellos Keia, un asistente con IA. Se instala en los servidores de la institución.")}
         keywords={t("Key ERP, KeyERP, Key ERP Bolivia, Key ERP Peru, ERP para bancos, ERP para cooperativas, ERP instituciones financieras, ERP Bolivia, ERP Peru, ERP banca, ERP bancario, ERP con inteligencia artificial, ERP gasto administrativo, venta software ERP, Key Solutions")}
         path="/key-erp"
         structuredData={structuredData}
@@ -43,8 +43,8 @@ export default function KeyErp() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <SectionTitle
             center={false}
-            title={t("Once módulos sobre un mismo núcleo")}
-            subtitle={t("Almacenes y abastecimiento viene con toda instalación; los otros diez se activan por licencia. Comparten proveedores, centros de costo, aprobaciones y plan de cuentas.")}
+            title={t("Una plataforma base y dieciséis módulos encima")}
+            subtitle={t("Toda instalación trae la plataforma base; encima se licencia cualquier módulo, solo o junto a otros. Comparten proveedores, centros de costo, aprobaciones y plan de cuentas.")}
           />
           <AnimatedSection>
             <ol className="divide-y divide-gray-200 border-y border-gray-200">

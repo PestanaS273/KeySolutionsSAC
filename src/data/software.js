@@ -139,9 +139,9 @@ export const customSoftwareApproach = [
 
 // ─── Key ERP ────────────────────────────────────────────────────────────────
 
-// Los mismos once módulos, con el mismo nombre, que el sitio de KeyERP (KeyERPWeb/src/data/modules.ts).
+// Los mismos dieciséis módulos sobre la plataforma base, con el mismo nombre, que el sitio de KeyERP (KeyERPWeb/src/data/modules.ts).
 export const erpModules = [
-  { title: 'Almacenes y abastecimiento', description: 'La base de toda instalación: stock por agencia, reposición calculada por consumo, solicitudes internas y valija entre agencias.' },
+  { title: 'Almacenes y abastecimiento', description: 'Stock por agencia, reposición calculada por consumo, solicitudes internas y valija entre agencias.' },
   { title: 'Compras y cuentas por pagar', description: 'Cotización, evaluación por criterios y adjudicación firmada; factura leída desde su QR o XML, conciliación de tres vías, retenciones y pago con doble firma.' },
   { title: 'Conciliación bancaria', description: 'El extracto contra los pagos, línea por línea: el sistema sugiere el cruce y una persona lo confirma.' },
   { title: 'Contabilidad y presupuesto', description: 'Asientos desde cada documento, presupuesto que avisa o bloquea antes de gastar y caja chica por agencia.' },
@@ -150,7 +150,12 @@ export const erpModules = [
   { title: 'Viáticos', description: 'Solicitud, anticipo, rendición con comprobantes y saldo calculado, con escalas por cargo y destino.' },
   { title: 'Proyectos y obras', description: 'Presupuesto, contratista, avance físico y capitalización al activo fijo al terminar la obra.' },
   { title: 'Bóveda de valorados', description: 'Corte diario de chequeras, tarjetas y formularios por agencia, con diferencias a doble firma.' },
+  { title: 'Cumplimiento normativo', description: 'Normas del regulador con plazo de adecuación, obligaciones y plan de acción, normativa interna con aprobación, biblioteca y acuse de lectura.' },
   { title: 'Paneles y reportes', description: 'Panel ejecutivo, paneles por área, análisis de gasto y reportes programados por correo.' },
+  { title: 'Ventas y cuentas por cobrar', description: 'Del pedido al cobro: pedidos con reserva y control de crédito, entregas con costo de ventas, facturas, devoluciones, cobros y cartera.' },
+  { title: 'Costo de producción', description: 'El costo real de cada producto, proceso por proceso: partes de producción, prorrateo de servicios, coproductos y cierre conciliado con contabilidad.' },
+  { title: 'Importaciones', description: 'Cada compra al exterior en un expediente: embarque, aduana, tributos, gastos vinculados y costo puesto en almacén.' },
+  { title: 'Recursos humanos', description: 'Legajo, contratación, jornadas, ausencias, vacaciones, marcaciones y horas extra del personal.' },
   { title: 'Keia, asistente con IA', description: 'Responde cómo se usa el sistema y cómo va el gasto, y cita la fuente. Corre en los servidores de la institución.' },
 ]
 
@@ -159,7 +164,7 @@ export const erpCustomization = [
     icon: 'ToggleRight',
     title: 'Módulos que se activan a demanda',
     description:
-      'Cada institución empieza con la base de almacenes y suma módulos cuando los necesita, sin migrar datos ni reinstalar nada.',
+      'Cada institución empieza con la plataforma base y suma los módulos que necesita, en cualquier combinación, sin migrar datos ni reinstalar nada.',
   },
   {
     icon: 'Sliders',

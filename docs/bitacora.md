@@ -3,6 +3,13 @@
 Una entrada por entrega, la más reciente arriba. Fecha, commit y lo que cambió para el visitante.
 El detalle técnico está en el commit; acá va lo que alguien sin leer código necesita saber.
 
+## 2026-11-15 — KeyERP: plataforma base y dieciséis módulos
+
+- La página de KeyERP y la portada dicen ahora «una plataforma base y dieciséis módulos encima»:
+  almacenes deja de ser la base obligatoria y cualquier módulo se licencia sobre la plataforma.
+- La lista de módulos suma Cumplimiento normativo, Ventas y cuentas por cobrar, Costo de
+  producción, Importaciones y Recursos humanos, con los mismos nombres que el sitio de KeyERP.
+
 ## 2026-10-06 — El prerender no deja URLs del servidor local
 
 - El mismo arreglo que en el sitio de KeyERP: el prerender deja relativas las rutas de los
