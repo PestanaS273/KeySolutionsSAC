@@ -61,7 +61,7 @@ repositorio (`KeyERPWeb`); tiene su propia guía.
 
 ## Analítica (Google Analytics 4)
 
-- ID de medición de este sitio: **`G-FQRJF0NJHM`** (propiedad «Key Solutions», flujo web
+- ID de medición de este sitio: **`G-03Y3P77QEY`** (propiedad «Key Solutions», flujo web
   `keysolutionssac.com`). Va en `.env` como `VITE_GA_ID`; `.env` no se sube a git, así que en un
   equipo nuevo hay que volver a ponerlo. No se pega el fragmento `gtag.js` que da Google en
   `index.html`: el código de `src/lib/analytics.js` lo carga sólo después del consentimiento.
